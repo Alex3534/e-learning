@@ -25,69 +25,31 @@ export const TruestedCompanies: { imgSrc: string }[] = [
   }
 ]
 
-export const courseData: {
+export const IAData: {
   heading: string;
   imgSrc: string;
-  name: string;
-  students: number;
-  classes: number;
-  price: number;
-  rating: number;
+  desc: string;
+  vues: number;
 }[] = [
     {
-      heading: 'Full stack modern javascript',
-      name: "Colt stelle",
+      heading: 'Intelligence Artificielle',
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas temporibus voluptates neque, laborum qui hic sunt adipisci rem dolorum consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, odio?",
       imgSrc: '/images/courses/courseone.png',
-      students: 150,
-      classes: 12,
-      price: 20,
-      rating: 4.4,
+      vues: 150,
     },
     {
-      heading: 'Design system with React programme',
-      name: "Colt stelle",
+      heading: 'Commerce en ligne',
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas temporibus voluptates neque, laborum qui hic sunt adipisci rem dolorum consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, odio?",
       imgSrc: '/images/courses/coursetwo.png',
-      students: 130,
-      classes: 12,
-      price: 20,
-      rating: 4.5,
+      vues: 130,
     },
     {
-      heading: 'Design banner with Figma',
-      name: "Colt stelle",
-      imgSrc: '/images/courses/coursethree.png',
-      students: 120,
-      classes: 12,
-      price: 20,
-      rating: 5,
-    },
-    {
-      heading: 'We Launch Delia Webflow this Week!',
-      name: "Colt stelle",
+      heading: 'lorem ipsum, ita.',
+      desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas temporibus voluptates neque, laborum qui hic sunt adipisci rem dolorum consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, odio?",
       imgSrc: '/images/courses/courseone.png',
-      students: 150,
-      classes: 12,
-      price: 20,
-      rating: 5,
+      vues: 150,
     },
-    {
-      heading: 'We Launch Delia Webflow this Week!',
-      name: "Colt stelle",
-      imgSrc: '/images/courses/coursetwo.png',
-      students: 150,
-      classes: 12,
-      price: 20,
-      rating: 5,
-    },
-    {
-      heading: 'We Launch Delia Webflow this Week!',
-      name: "Colt stelle",
-      imgSrc: '/images/courses/coursethree.png',
-      students: 150,
-      classes: 12,
-      price: 20,
-      rating: 4.2,
-    },
+    
   ]
 
 export const MentorData: { profession: string; name: string; imgSrc: string }[] = [
