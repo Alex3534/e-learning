@@ -39,15 +39,15 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="mb-10 text-center mx-auto inline-block max-w-[160px]">
-        <Logo />
+      <div className="mb-10 text-center mx-auto inline-block max-w-[320px]">
+      <h2 className="text-4xl font-extrabold"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Horizon Ecrits</span></h2>
       </div>
 
       <SocialSignUp />
 
       <span className="z-1 relative my-8 block text-center before:content-[''] before:absolute before:h-px before:w-40% before:bg-black/60 before:left-0 before:top-3 after:content-[''] after:absolute after:h-px after:w-40% after:bg-black/60 after:top-3 after:right-0">
         <span className="relative z-10 inline-block px-3 text-base text-black">
-          OR
+          OU
         </span>
       </span>
 
@@ -55,55 +55,43 @@ const SignUp = () => {
         <div className="mb-[22px]">
           <input
             type="text"
-            placeholder="Name"
+            placeholder="Votre nom"
             name="name"
             required
-            className="w-full rounded-md border border-black/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-grey focus:border-primary focus-visible:shadow-none text-white dark:focus:border-primary"
+            className="w-full rounded-md border border-black/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-grey focus:border-primary focus-visible:shadow-none text-dark dark:focus:border-primary"
           />
         </div>
         <div className="mb-[22px]">
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Votre email"
             name="email"
             required
-            className="w-full rounded-md border border-black/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-grey focus:border-primary focus-visible:shadow-none text-white dark:focus:border-primary"
+            className="w-full rounded-md border border-black/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-grey focus:border-primary focus-visible:shadow-none text-dark dark:focus:border-primary"
           />
         </div>
         <div className="mb-[22px]">
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Votre mot de passe"
             name="password"
             required
-            className="w-full rounded-md border border-black/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-grey focus:border-primary focus-visible:shadow-none text-white dark:focus:border-primary"
+            className="w-full rounded-md border border-black/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-grey focus:border-primary focus-visible:shadow-none text-dark dark:focus:border-primary"
           />
         </div>
         <div className="mb-9">
           <button
             type="submit"
-            className="flex w-full items-center text-18 font-medium justify-center rounded-md bg-primary px-5 py-3 text-darkmode transition duration-300 ease-in-out hover:bg-transparent hover:text-primary border-primary border "
+            className="flex w-full items-center text-18 font-medium justify-center rounded-md bg-primary px-5 py-3 text-white transition duration-300 ease-in-out hover:bg-transparent hover:text-primary border-primary border "
           >
-            Sign Up {loading && <Loader />}
+            S'inscrire {loading && <Loader />}
           </button>
         </div>
       </form>
 
-      <p className="text-body-secondary mb-4 text-white text-base">
-        By creating an account you are agree with our{" "}
-        <a href="/#" className="text-primary hover:underline">
-          Privacy
-        </a>{" "}
-        and{" "}
-        <a href="/#" className="text-primary hover:underline">
-          Policy
-        </a>
-      </p>
-
-      <p className="text-body-secondary text-white text-base">
-        Already have an account?
+      <p className="text-body-secondary text-dark text-base">
         <Link href="/" className="pl-2 text-primary hover:underline">
-          Sign In
+          Se connecter
         </Link>
       </p>
     </>

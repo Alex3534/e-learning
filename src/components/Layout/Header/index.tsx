@@ -76,8 +76,8 @@ const Header: React.FC = () => {
     >
       <div className="lg:py-0 py-2">
         <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md flex items-center justify-between px-4">
-          <Logo />
-          <nav className="hidden lg:flex flex-grow items-center gap-8 justify-center">
+          <h2 className="text-4xl font-extrabold"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Horizon Ecrits</span></h2>
+          <nav className="hidden xl:flex flex-grow items-center gap-8 justify-center">
             {headerData.map((item, index) => (
               <HeaderLink key={index} item={item} />
             ))}
@@ -85,12 +85,12 @@ const Header: React.FC = () => {
           <div className="flex items-center gap-4">
             <Link
               href="#"
-              className="hidden lg:block bg-primary text-white hover:bg-primary/15 hover:text-primary px-16 py-5 rounded-full text-lg font-medium"
+              className="hidden xl:block bg-primary text-white hover:bg-primary/15 hover:text-primary px-16 py-5 rounded-full text-lg font-medium"
               onClick={() => {
                 setIsSignInOpen(true);
               }}
             >
-              Sign In
+              Connexion
             </Link>
             {isSignInOpen && (
               <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
@@ -114,12 +114,12 @@ const Header: React.FC = () => {
             )}
             <Link
               href="#"
-              className="hidden lg:block bg-primary/15 hover:bg-primary text-primary hover:text-white px-16 py-5 rounded-full text-lg font-medium"
+              className="hidden xl:block bg-primary/15 hover:bg-primary text-primary hover:text-white px-16 py-5 rounded-full text-lg font-medium"
               onClick={() => {
                 setIsSignUpOpen(true);
               }}
             >
-              Sign Up
+              Inscription
             </Link>
             {isSignUpOpen && (
               <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
@@ -143,12 +143,12 @@ const Header: React.FC = () => {
             )}
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
-              className="block lg:hidden p-2 rounded-lg"
+              className="block xl:hidden p-2 rounded-lg border"
               aria-label="Toggle mobile menu"
             >
-              <span className="block w-6 h-0.5 bg-white"></span>
-              <span className="block w-6 h-0.5 bg-white mt-1.5"></span>
-              <span className="block w-6 h-0.5 bg-white mt-1.5"></span>
+              <span className="block w-6 h-0.5 bg-gray-300"></span>
+              <span className="block w-6 h-0.5 bg-gray-300 mt-1.5"></span>
+              <span className="block w-6 h-0.5 bg-gray-300 mt-1.5"></span>
             </button>
           </div>
         </div>
@@ -157,20 +157,23 @@ const Header: React.FC = () => {
         )}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 right-0 h-full w-full bg-darkmode shadow-lg transform transition-transform duration-300 max-w-xs ${navbarOpen ? "translate-x-0" : "translate-x-full"
+          className={`xl:hidden fixed top-0 right-0 h-full w-full bg-white shadow-lg transform transition-transform duration-300 max-w-xs ${navbarOpen ? "translate-x-0" : "translate-x-full"
             } z-50`}
         >
           <div className="flex items-center justify-between p-4">
-            <h2 className="text-lg font-bold text-midnight_text dark:text-midnight_text">
-              <Logo />
-            </h2>
+            <h2 className="text-2xl font-extrabold"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Horizon Ecrits</span></h2>
 
-            {/*  */}
+            {/* close side bar */}
             <button
               onClick={() => setNavbarOpen(false)}
-              className="bg-[url('/images/closed.svg')] bg-no-repeat bg-contain w-5 h-5 absolute top-0 right-0 mr-8 mt-8 dark:invert"
+              className="text-red w-5 h-5 absolute top-0 right-0 mr-8 mt-8 dark:invert"
               aria-label="Close menu Modal"
-            ></button>
+            >
+              <Icon
+                icon="tabler:currency-xrp"
+                className="text-black hover:text-primary text-24 inline-block me-2"
+              />
+            </button>
           </div>
           <nav className="flex flex-col items-start p-4">
             {headerData.map((item, index) => (
@@ -185,7 +188,7 @@ const Header: React.FC = () => {
                   setNavbarOpen(false);
                 }}
               >
-                Sign In
+                Connexion
               </Link>
               <Link
                 href="#"
@@ -195,7 +198,7 @@ const Header: React.FC = () => {
                   setNavbarOpen(false);
                 }}
               >
-                Sign Up
+                Inscription
               </Link>
             </div>
           </nav>
