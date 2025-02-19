@@ -34,7 +34,7 @@ export const IAData: {
     {
       heading: 'Intelligence Artificielle',
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas temporibus voluptates neque, laborum qui hic sunt adipisci rem dolorum consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, odio?",
-      imgSrc: '/images/courses/courseone.png',
+      imgSrc: '/images/img_IA/5.jpg',
       vues: 150,
     },
     {
@@ -46,7 +46,7 @@ export const IAData: {
     {
       heading: 'lorem ipsum, ita.',
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas temporibus voluptates neque, laborum qui hic sunt adipisci rem dolorum consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, odio?",
-      imgSrc: '/images/courses/courseone.png',
+      imgSrc: '/images/img_IA/2.jpg',
       vues: 150,
     },
     
@@ -88,43 +88,43 @@ export const MentorData: { profession: string; name: string; imgSrc: string }[] 
 export const TestimonialData: { profession: string; comment: string; imgSrc: string; name: string; rating: number; }[] = [
   {
     name: "Robert Fox",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+    profession: 'SEO',
+    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minus libero qui delectus ullam nemo quae, cum doloremque provident consequuntur!',
     imgSrc: '/images/testimonial/user.svg',
     rating: 5
   },
   {
     name: "Leslie Alexander",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+    profession: 'SEO',
+    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minus libero qui delectus ullam nemo quae, cum doloremque provident consequuntur!',
     imgSrc: '/images/mentor/user2.png',
     rating: 5
   },
   {
     name: "Cody Fisher",
-    profession: 'CEO, Parkview Int.Ltd',
+    profession: 'SEO',
     comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
     imgSrc: '/images/mentor/user3.png',
     rating: 5
   },
   {
     name: "Robert Fox",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+    profession: 'SEO',
+    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minus libero qui delectus ullam nemo quae, cum doloremque provident consequuntur!',
     imgSrc: '/images/mentor/user1.png',
     rating: 5
   },
   {
     name: "Leslie Alexander",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+    profession: 'SEO',
+    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minus libero qui delectus ullam nemo quae, cum doloremque provident consequuntur!',
     imgSrc: '/images/mentor/user2.png',
     rating: 5
   },
   {
     name: "Cody Fisher",
-    profession: 'CEO, Parkview Int.Ltd',
-    comment: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
+    profession: 'SEO',
+    comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minus libero qui delectus ullam nemo quae, cum doloremque provident consequuntur!',
     imgSrc: '/images/mentor/user3.png',
     rating: 5
   },

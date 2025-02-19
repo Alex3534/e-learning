@@ -7,7 +7,7 @@ import Testimonial from "@/components/Home/Testimonials";
 import Newsletter from "@/components/Home/Newsletter";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "eLearning",
+  title: "horizon écrits - acceuil",
 };
 
 export default function Home() {
@@ -16,7 +16,6 @@ export default function Home() {
       <Hero />
       <Companies />
       <Courses />
-      <Mentor />
       <Testimonial />
       <Newsletter />
     </main>

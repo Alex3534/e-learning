@@ -76,9 +76,9 @@ const Courses = () => {
                         <div key={i}>
                             <div className='bg-white m-3 mb-12 px-3 pt-3 pb-12 shadow-course-shadow rounded-2xl h-full'>
                                 <div className="relative rounded-3xl">
-                                    <Image src={items.imgSrc} alt="#" width={389} height={262} className="m-auto clipPath" />
-                                    <div className="absolute right-5 -bottom-2 bg-secondary rounded-full p-6">
-                                        <h3 className="text-white uppercase text-center text-sm font-medium">best <br /> seller</h3>
+                                    <img src={items.imgSrc} alt="#" className="w-full h-80 object-cover rounded-3xl" style={{ clipPath: "polygon(0 0, 100% 1%, 100% 88%, 0 99%, 0 100%, 0% 50%)" }}/>
+                                    <div className="absolute right-5 -bottom-2 bg-secondary rounded-full p-6 py-8">
+                                        <h3 className="text-white uppercase text-center text-sm font-medium">Voir</h3>
                                     </div>
                                 </div>
 

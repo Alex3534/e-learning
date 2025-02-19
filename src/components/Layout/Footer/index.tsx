@@ -8,7 +8,7 @@ const footer = () => {
   return (
     <footer className="bg-deepSlate py-10">
       <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
-        <div className="grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8">
+        <div className="grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8 ">
           <div className='col-span-4 md:col-span-12 lg:col-span-4'>
             <h2 className="text-4xl font-extrabold"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Horizon Ecrits</span></h2>
             <div className='flex items-center gap-4 mt-5'>
@@ -29,7 +29,7 @@ const footer = () => {
               </Link>
             </div>
           </div>
-          <div className="col-span-2">
+          <div className="col-span-4">
             <h3 className="mb-4 text-2xl font-medium">Liens</h3>
             <ul>
               {headerData.map((item, index) => (

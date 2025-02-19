@@ -6,6 +6,7 @@ import React from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { TestimonialData } from "@/app/api/data";
+import Link from "next/link";
 
 const Testimonial = () => {
 
@@ -66,6 +67,10 @@ const Testimonial = () => {
     return (
         <section id="testimonial">
             <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4'>
+                <div className="sm:flex justify-between items-center mb-20">
+                    <h2 className="text-midnight_text text-4xl lg:text-5xl font-semibold mb-5 sm:mb-0">Avis des clients.</h2>
+                    <Link href={'/'} className="text-primary text-lg font-medium hover:tracking-widest duration-500">Explorer&nbsp;&gt;&nbsp;</Link>
+                </div>
                 <Slider {...settings}>
                     {TestimonialData.map((items, i) => (
                         <div key={i}>
@@ -83,6 +88,7 @@ const Testimonial = () => {
                                         {renderStars(items.rating)}
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     ))}

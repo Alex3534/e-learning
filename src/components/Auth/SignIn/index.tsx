@@ -72,7 +72,7 @@ const Signin = () => {
         <div className="mb-[22px]">
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Mot de passe"
             onChange={(e) =>
               setLoginData({ ...loginData, password: e.target.value })
             }
