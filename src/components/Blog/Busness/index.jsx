@@ -22,7 +22,12 @@ const OnlineBusness = () => {
                 </button>
             </div>
             {isModalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center z-50">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="fixed inset-0 flex items-center justify-center z-50"
+                >
                     <div className="fixed inset-0 bg-black opacity-50" onClick={closeModal}></div>
                     <div className="rounded-lg p-8 z-10 w-11/12">
                         <div>
@@ -65,7 +70,7 @@ const OnlineBusness = () => {
                             Fermer
                         </button>
                     </div>
-                </div>
+                </motion.div>
             )}
             <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 mt-20'>
                 <div className="flex flex-col lg:flex-row md:justify-between w-full mx-auto px-0">
