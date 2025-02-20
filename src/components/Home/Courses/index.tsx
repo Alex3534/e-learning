@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { IAData } from "@/app/api/data";
 
@@ -83,7 +82,7 @@ const Courses = () => {
                                 </div>
 
                                 <div className="px-3 pt-6">
-                                    <Link href="#" className='text-2xl font-bold text-black max-w-75% inline-block'>{items.heading}</Link>
+                                    <Link href="./blog/busness" className='text-2xl font-bold text-black max-w-75% inline-block'>{items.heading}</Link>
                                     <h3 className='text-base font-normal pt-6 text-black/75'>{truncateText(items.desc, 15)}</h3>
                                     <div className="flex justify-between pt-6">
                                         <div className="flex gap-4">

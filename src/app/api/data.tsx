@@ -38,7 +38,7 @@ export const IAData: {
       vues: 150,
     },
     {
-      heading: 'Commerce en ligne',
+      heading: 'Comment se lancer dans l\’e-commerce en ligne ?',
       desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas temporibus voluptates neque, laborum qui hic sunt adipisci rem dolorum consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, odio?",
       imgSrc: '/images/courses/coursetwo.png',
       vues: 130,
