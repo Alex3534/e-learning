@@ -1,18 +1,72 @@
 "use client";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
-import Link from "next/link";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { IAData } from "@/app/api/data";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const OnlineBusness = () => {
 
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
     return (
         <section id="courses" className="bg-gray-100">
+            <div className="block lg:hidden">
+                <button onClick={openModal}
+                    id="toast-bottom-left"
+                    class="fixed flex items-center text-blue-500 divide-x rtl:divide-x-reverse divide-gray-200 rounded-full bottom-6 left-5 dark:text-gray-400 dark:divide-gray-700 dark:bg-gray-800"
+                    role="alert">
+                    <Icon icon="mdi:information" style={{ fontSize: "55px" }} />
+                </button>
+            </div>
+            {isModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center z-50">
+                    <div className="fixed inset-0 bg-black opacity-50" onClick={closeModal}></div>
+                    <div className="rounded-lg p-8 z-10 w-11/12">
+                        <div>
+                            <div className="bg-white rounded-3xl shadow-lg w-full">
+                                {/* Social Media Icons */}
+                                <div className="flex justify-center items-center py-4 space-x-2">
+                                    <a href="#" className="text-blue-500 flex justify-center">
+                                        <Icon icon="mdi:facebook" className="w-10 h-10" />
+                                    </a>
+                                    <a href="#" className="text-blue-500 flex justify-center">
+                                        <Icon icon="mdi:twitter" className="w-10 h-10" />
+                                    </a>
+                                    <a href="#" className="text-blue-500 flex justify-center">
+                                        <Icon icon="mdi:linkedin" className="w-10 h-10" />
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            {/* Sidebar Right */}
+                            <div className="w-full mt-4">
+                                <div
+                                    className="bg-white p-8 rounded-3xl shadow-lg"
+                                >
+                                    <h2 className="text-xl font-bold mb-2">Lancez votre activité</h2>
+                                    <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, excepturi?</p>
+                                    <button className="bg-blue-500 text-white px-4 py-2 rounded w-full rounded-full">valider</button>
+                                </div>
+                                <div
+                                    className="mt-4 bg-white rounded-3xl shadow-lg text-center p-8"
+                                >
+                                    <p className="mt-2">Abonnez-vous à la newsletter</p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onClick={closeModal} className="bg-red-500 text-white px-4 py-2 rounded-full mt-8">
+                            Fermer
+                        </button>
+                    </div>
+                </div>
+            )}
             <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 mt-20'>
                 <div className="flex flex-col lg:flex-row md:justify-between w-full mx-auto px-0">
                     {/* Sidebar */}
@@ -54,7 +108,11 @@ const OnlineBusness = () => {
                                 <span className="text-gray-500">• 200 vues</span>
                             </div>
                             <div className="mt-4 p-0">
-                                <img src="/images/busness/1.jpg" alt="#" style={{ width: "100%", height: "400px" }} className="rounded-xl border my-6" />
+                                <img
+                                    src="/images/busness/1.jpg"
+                                    alt="Business Image"
+                                    className="rounded-xl custom-image"
+                                />
                             </div>
                             <div>
                                 <h4 className="text-2xl font-bold">

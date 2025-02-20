@@ -12,7 +12,7 @@ html {
   box-sizing: border-box;
 }
 
-body{
+body {
   overflow-x: hidden
 }
 
@@ -31,4 +31,17 @@ section {
 
 .slick-dots li button:before {
   font-size: 11px !important;
+}
+
+
+.custom-image {
+  height: 400px;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .custom-image {
+    height: 300px;
+  }
 }
