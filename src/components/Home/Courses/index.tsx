@@ -72,20 +72,20 @@ const Courses = () => {
 
                 <Slider {...settings}>
                     {IAData.map((items, i) => (
-                        <div key={i}>
-                            <div className='bg-white m-3 mb-12 px-3 pt-3 pb-12 shadow-course-shadow rounded-2xl h-full'>
+                        <div key={i} aria-hidden="true">
+                            <div aria-hidden="true" className='bg-white m-3 mb-12 px-3 pt-3 pb-12 shadow-course-shadow rounded-2xl h-full'>
                                 <div className="relative rounded-3xl">
-                                    <img src={items.imgSrc} alt="#" className="w-full h-80 object-cover rounded-3xl" style={{ clipPath: "polygon(0 0, 100% 1%, 100% 88%, 0 99%, 0 100%, 0% 50%)" }}/>
-                                    <Link href="./blog/busness" className="absolute right-5 -bottom-2 bg-primary rounded-full p-6 py-8">
+                                    <img aria-hidden="true" src={items.imgSrc} alt="#" className="w-full h-80 object-cover rounded-3xl" style={{ clipPath: "polygon(0 0, 100% 1%, 100% 88%, 0 99%, 0 100%, 0% 50%)" }}/>
+                                    <Link aria-hidden="true" href="./blog/busness" className="absolute right-5 -bottom-2 bg-primary rounded-full p-6 py-8">
                                         <h3 className="text-white uppercase text-center text-sm font-medium">Voir</h3>
                                     </Link>
                                 </div>
 
-                                <div className="px-3 pt-6">
+                                <div className="px-3 pt-6" aria-hidden="true">
                                     <Link href="./blog/busness" className='text-2xl font-bold text-black max-w-75% inline-block'>{items.heading}</Link>
                                     <h3 className='text-base font-normal pt-6 text-black/75'>{truncateText(items.desc, 15)}</h3>
-                                    <div className="flex justify-between pt-6">
-                                        <div className="flex gap-4">
+                                    <div aria-hidden="true" className="flex justify-between pt-6">
+                                        <div className="flex gap-4" aria-hidden="true">
                                             <Icon
                                                 icon="solar:users-group-rounded-linear"
                                                 className="text-primary text-xl inline-block me-2"

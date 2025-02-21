@@ -1,3 +1,5 @@
+import { desc } from "framer-motion/client";
+
 export const TruestedCompanies: { imgSrc: string }[] = [
   {
     imgSrc: "/images/companies/airbnb.svg"
@@ -49,7 +51,7 @@ export const IAData: {
       imgSrc: '/images/img_IA/2.jpg',
       vues: 150,
     },
-    
+
   ]
 
 export const MentorData: { profession: string; name: string; imgSrc: string }[] = [
@@ -127,5 +129,28 @@ export const TestimonialData: { profession: string; comment: string; imgSrc: str
     comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem minus libero qui delectus ullam nemo quae, cum doloremque provident consequuntur!',
     imgSrc: '/images/mentor/user3.png',
     rating: 5
+  },
+]
+
+export const BlogData: { imgSrc: string; title: string; desc: string; }[] = [
+  {
+    imgSrc: '/images/busness/1.jpg',
+    title: 'Comment se lancer dans l’e-commerce en ligne ?',
+    desc: 'Découvrez comment créer et développer votre boutique en ligne : choix de plateforme, logistique, ......'
+  },
+  {
+    imgSrc: '/images/busness/1.jpg',
+    title: 'Comment se lancer dans l’e-commerce en ligne ?',
+    desc: 'Découvrez comment créer et développer votre boutique en ligne : choix de plateforme, logistique, ......'
+  },
+  {
+    imgSrc: '/images/busness/1.jpg',
+    title: 'Comment se lancer dans l’e-commerce en ligne ?',
+    desc: 'Découvrez comment créer et développer votre boutique en ligne : choix de plateforme, logistique, ......'
+  },
+  {
+    imgSrc: '/images/busness/1.jpg',
+    title: 'Comment se lancer dans l’e-commerce en ligne ?',
+    desc: 'Découvrez comment créer et développer votre boutique en ligne : choix de plateforme, logistique, ......'
   },
 ]
