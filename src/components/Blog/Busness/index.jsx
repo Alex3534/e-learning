@@ -52,16 +52,16 @@ const OnlineBusness = () => {
                                 <div
                                     className="bg-white p-8 rounded-3xl shadow-lg"
                                 >
-                                    <h2 className="text-xl font-bold mb-2">Lancez votre activité</h2>
-                                    <p className="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat, excepturi?</p>
-                                    <button className="bg-blue-500 text-white px-4 py-2 rounded w-full rounded-full">valider</button>
+                                    <h2 className="text-xl font-bold mb-2">Besoin d’un site e-commerce clé en main 🚀 ?</h2>
+                                    <p className="mb-4">Nous créons votre boutique en ligne professionnelle, optimisée et prête à vendre ! Faites le premier pas vers votre succès en ligne dès aujourd’hui.</p>
+                                    <button className="bg-blue-500 text-white px-4 py-4 rounded w-full rounded-full">Créer maintenant</button>
                                 </div>
                                 <div
                                     className="mt-4 bg-white rounded-3xl shadow-lg text-center p-8"
                                 >
-                                    <p className="mt-2">Abonnez-vous à la newsletter</p>
+                                    <h2 className="text-xl font-bold mb-2">Newsletter</h2>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Abonnez-vous à notre newsletter pour des réductions, des promotions et bien plus encore.
                                     </p>
                                 </div>
                             </div>
