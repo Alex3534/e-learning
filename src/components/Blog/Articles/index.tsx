@@ -25,7 +25,7 @@ const Articles = () => {
                 {/* Articles */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {BlogData.map((item, index) => (
-                        <div className="shadow-lg rounded-lg flex flex-col lg:flex-row p-4">
+                        <div className="shadow-lg rounded-lg bg-white flex flex-col lg:flex-row p-4">
                             <div className="p-0 lg:w-1/2 w-full">
                                 <img
                                     src={item.imgSrc}
