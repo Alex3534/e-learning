@@ -1,4 +1,3 @@
-import { desc } from "framer-motion/client";
 
 export const TruestedCompanies: { imgSrc: string }[] = [
   {
@@ -54,38 +53,6 @@ export const IAData: {
 
   ]
 
-export const MentorData: { profession: string; name: string; imgSrc: string }[] = [
-  {
-    profession: 'Senior UX Designer',
-    name: 'Shoo Thar Mien',
-    imgSrc: '/images/mentor/user3.png',
-  },
-  {
-    profession: 'Senior UX Designer',
-    name: 'Shoo Thar Mien',
-    imgSrc: '/images/mentor/user2.png',
-  },
-  {
-    profession: 'Senior UX Designer',
-    name: 'Shoo Thar Mien',
-    imgSrc: '/images/mentor/user1.png',
-  },
-  {
-    profession: 'Senior UX Designer',
-    name: 'Shoo Thar Mien',
-    imgSrc: '/images/mentor/user3.png',
-  },
-  {
-    profession: 'Senior UX Designer',
-    name: 'Shoo Thar Mien',
-    imgSrc: '/images/mentor/user2.png',
-  },
-  {
-    profession: 'Senior UX Designer',
-    name: 'Shoo Thar Mien',
-    imgSrc: '/images/mentor/user1.png',
-  },
-]
 
 export const TestimonialData: { profession: string; comment: string; imgSrc: string; name: string; rating: number; }[] = [
   {
@@ -135,22 +102,17 @@ export const TestimonialData: { profession: string; comment: string; imgSrc: str
 export const BlogData: { imgSrc: string; title: string; desc: string; }[] = [
   {
     imgSrc: '/images/busness/1.jpg',
-    title: 'Comment se lancer dans l’e-commerce en ligne ?',
+    title: 'Bisnesse en ligne',
     desc: 'Découvrez comment créer et développer votre boutique en ligne : choix de plateforme, logistique, ......'
   },
   {
     imgSrc: '/images/busness/1.jpg',
-    title: 'Comment se lancer dans l’e-commerce en ligne ?',
+    title: 'Trading',
     desc: 'Découvrez comment créer et développer votre boutique en ligne : choix de plateforme, logistique, ......'
   },
   {
     imgSrc: '/images/busness/1.jpg',
-    title: 'Comment se lancer dans l’e-commerce en ligne ?',
+    title: 'Intelligence Artificielle',
     desc: 'Découvrez comment créer et développer votre boutique en ligne : choix de plateforme, logistique, ......'
-  },
-  {
-    imgSrc: '/images/busness/1.jpg',
-    title: 'Comment se lancer dans l’e-commerce en ligne ?',
-    desc: 'Découvrez comment créer et développer votre boutique en ligne : choix de plateforme, logistique, ......'
-  },
+  }
 ]

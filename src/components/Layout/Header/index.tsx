@@ -12,8 +12,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
 
 const Header: React.FC = () => {
-  const pathUrl = usePathname();
-  const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
@@ -88,63 +87,11 @@ const Header: React.FC = () => {
           </nav>
           <div className="flex items-center gap-4">
             <Link
-              href="#"
-              className="hidden xl:block bg-primary text-white hover:bg-primary/15 hover:text-primary px-16 py-5 rounded-full text-lg font-medium"
-              onClick={() => {
-                setIsSignInOpen(true);
-              }}
+              href="/contact"
+              className={`hidden xl:block hover:bg-primary/15 hover:text-primary px-16 py-5 rounded-full text-lg font-medium ${pathname == "/contact" ? "text-primary bg-primary/15" : "bg-primary text-white"} `}
             >
-              Connexion
+              Contact
             </Link>
-            {isSignInOpen && (
-              <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
-                <div
-                  ref={signInRef}
-                  className="relative mx-auto w-full max-w-md overflow-hidden rounded-lg px-8 pt-14 pb-8 text-center bg-white"
-                >
-                  <button
-                    onClick={() => setIsSignInOpen(false)}
-                    className="absolute top-0 right-0 mr-8 mt-8 dark:invert"
-                    aria-label="Close Sign In Modal"
-                  >
-                    <Icon
-                      icon="tabler:currency-xrp"
-                      className="text-black hover:text-primary text-24 inline-block me-2"
-                    />
-                  </button>
-                  <Signin />
-                </div>
-              </div>
-            )}
-            <Link
-              href="#"
-              className="hidden xl:block bg-primary/15 hover:bg-primary text-primary hover:text-white px-16 py-5 rounded-full text-lg font-medium"
-              onClick={() => {
-                setIsSignUpOpen(true);
-              }}
-            >
-              Inscription
-            </Link>
-            {isSignUpOpen && (
-              <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
-                <div
-                  ref={signUpRef}
-                  className="relative mx-auto w-full max-w-md overflow-hidden rounded-lg bg-white backdrop-blur-md px-8 pt-14 pb-8 text-center"
-                >
-                  <button
-                    onClick={() => setIsSignUpOpen(false)}
-                    className="absolute top-0 right-0 mr-8 mt-8 dark:invert"
-                    aria-label="Close Sign Up Modal"
-                  >
-                    <Icon
-                      icon="tabler:currency-xrp"
-                      className="text-black hover:text-primary text-24 inline-block me-2"
-                    />
-                  </button>
-                  <SignUp />
-                </div>
-              </div>
-            )}
             <button
               onClick={() => setNavbarOpen(!navbarOpen)}
               className="block xl:hidden p-2 rounded-lg border"
