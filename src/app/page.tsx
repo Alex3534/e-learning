@@ -1,8 +1,8 @@
 import React from "react";
 import Hero from "@/components/Home/Hero";
 import Companies from "@/components/Home/Companies";
-import Courses from "@/components/Home/Courses";
-import Testimonial from "@/components/Home/Testimonials";
+import NewArticles from "@/components/Home/Articles";
+import Customers from "@/components/Home/Customers";
 import Newsletter from "@/components/Home/Newsletter";
 import { Metadata } from "next";
 export const metadata: Metadata = {
@@ -15,8 +15,8 @@ export default function Home() {
     <main>
       <Hero />
       <Companies />
-      <Courses />
-      <Testimonial />
+      <NewArticles />
+      <Customers />
       <Newsletter />
     </main>
   );

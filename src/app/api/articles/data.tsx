@@ -4,7 +4,7 @@ type SectionContent = {
 };
 
 type Section = {
-  image: string;
+  image?: string;
   title: string;
   content: SectionContent[];
 };
@@ -232,40 +232,137 @@ const articles: Article[] = [
   },
   // Fin Comment se lancer dans l’e-commerce en ligne ?s
 
+
   {
     id: 2,
-    title: "Développement sur mesure et éléments essentiels du site e-commerce",
+    title: "Les 8 erreurs à éviter dans le commerce en ligne",
     sections: [
       {
-        image: "/images/busness/1.jpg",
-        title: "Développement sur mesure",
+        image: "/images/busness/14.jpg",
+        title: "Introduction",
         content: [
           {
             type: 'paragraph',
-            content: "Pour les projets très spécifiques ou les grandes entreprises, un site e-commerce développé sur mesure peut être la meilleure option. En utilisant des technologies comme Laravel, Next.js ou d’autres frameworks, vous pouvez créer une plateforme entièrement adaptée à vos besoins. C’est l’idéal si vous avez des exigences uniques, mais cela demande un investissement en temps et en budget plus important."
+            content: "Le commerce en ligne est une aventure passionnante, pleine de promesses et d’opportunités. Imaginez : vous pouvez vendre vos produits à des clients du monde entier, créer une entreprise depuis votre salon, et réaliser vos rêves entrepreneuriaux sans les contraintes d’un magasin physique. Mais comme toute aventure, le chemin vers le succès est parsemé d’embûches."
+          },
+          {
+            type: 'paragraph',
+            content: "Beaucoup d’entrepreneurs se lancent dans l’e-commerce avec enthousiasme, mais sans toujours mesurer les défis qui les attendent. Et c’est normal : personne ne naît expert en commerce en ligne. Cependant, certaines erreurs peuvent coûter cher, non seulement en termes d’argent, mais aussi en temps et en énergie."
           }
         ]
       },
       {
-        image: "/images/busness/1.jpg",
-        title: "Éléments essentiels du site e-commerce",
+        title: ".Ignorer les besoins de votre public",
         content: [
+          {
+            type: 'paragraph',
+            content: "Se lancer dans l’e-commerce sans comprendre ce que veulent vos clients, c’est un peu comme préparer un dîner sans savoir ce que vos invités aiment manger. Vous pourriez passer des heures en cuisine, mais si personne n’aime le plat, tout ce travail sera vain."
+          },
+          {
+            type: 'paragraph',
+            content: "Vos clients sont au cœur de votre entreprise. Ce sont eux qui donnent vie à votre projet. Alors, prenez le temps de les écouter, de comprendre leurs besoins, leurs frustrations et leurs rêves. Posez-vous des questions comme :"
+          },
           {
             type: 'list',
             content: [
-              { title: "Un design professionnel", content: "Interface intuitive et responsive." },
-              { title: "Des fiches produits optimisées", content: "Descriptions claires, images de qualité, prix affiché." },
-              { title: "Des moyens de paiement sécurisés", content: "PayPal, Stripe, Mobile Money, virement bancaire." },
-              { title: "Une bonne gestion des stocks", content: "Outils d’automatisation pour éviter les ruptures." }
+              { title: "Quels problèmes cherchent-ils à résoudre ?" },
+              { title: "Qu’est-ce qui les motive à acheter ?" },
+              { title: "Quels sont leurs préférences et leurs habitudes ?" },
             ]
-          }
+          },
+          {
+            type: 'paragraph',
+            content: "Une étude de marché solide, des sondages ou même des conversations simples avec vos premiers clients peuvent vous donner des réponses précieuses. En adaptant votre offre à leurs attentes, vous ne vendez pas seulement un produit – vous proposez une solution qui améliore leur vie. Et c’est ça, la clé d’un commerce en ligne réussi : créer une connexion authentique avec ceux que vous servez."
+          },
         ]
-      }
+      },
+      {
+        title: ".Oublier de raconter une histoire",
+        content: [
+          {
+            type: 'paragraph',
+            content: "Votre boutique en ligne ne doit pas être une simple vitrine de produits – elle doit raconter une histoire. Pourquoi avez-vous créé cette marque ? Qu’est-ce qui vous passionne ? Quels sont les valeurs que vous souhaitez partager avec le monde ? Les clients ne veulent pas juste acheter un produit ; ils veulent faire partie d’une aventure, d’une communauté, d’un rêve. Racontez-leur comment votre marque est née, les défis que vous avez surmontés, ou même les petites anecdotes derrière chaque produit."
+          },
+          {
+            type: 'paragraph',
+            content: "En partageant votre histoire, vous ne vendez pas seulement un objet – vous offrez une expérience, une émotion, une connexion. Et c’est cette connexion qui transforme un client occasionnel en un ambassadeur de votre marque. Alors, n’ayez pas peur de montrer qui vous êtes. Votre histoire est votre superpouvoir."
+          },
+        ]
+      },
+      {
+        title: ".Utiliser des images de mauvaise qualité",
+        content: [
+          {
+            type: 'paragraph',
+            content: "Dans l’e-commerce, les images sont bien plus que de simples illustrations – elles sont les yeux de vos clients. Imaginez : vous entrez dans une boutique en ligne, et les photos des produits sont floues, mal éclairées ou peu engageantes. Que ressentez-vous ? Probablement de la déception, voire de la méfiance. Les images sont votre première opportunité de faire une bonne impression. Elles racontent l’histoire de votre produit, montrent ses détails, et donnent envie de l’acheter."
+          },
+          {
+            type: 'paragraph',
+            content: "Investissez dans des visuels professionnels, bien éclairés et qui mettent en valeur chaque détail de vos produits. Pensez à ces images comme à une invitation : elles doivent dire à vos clients : \"Voyez comme ce produit est beau, comme il est fait pour vous.\" Alors, prenez le temps de soigner vos visuels. Parce que dans l’e-commerce, une image vaut mille mots… et parfois, mille ventes. "
+          },
+        ]
+      },
+      {
+        image: "/images/busness/15.png",
+        title: "Ignorer les avis clients",
+        content: [
+          {
+            type: 'paragraph',
+            content: "Les avis clients sont des trésors cachés. Ils vous donnent un aperçu précieux de ce que vos clients pensent vraiment de vos produits et services. Imaginez : chaque commentaire est une conversation directe avec quelqu’un qui a pris le temps de partager son expérience. Ne pas écouter ces voix, c’est passer à côté d’une opportunité d’apprendre et de grandir. Encouragez vos clients à laisser des avis – éloges ou critiques – et utilisez ces retours pour améliorer votre offre."
+          },
+          {
+            type: 'paragraph',
+            content: "Répondre aux avis, qu’ils soient positifs ou négatifs, montre à vos clients que vous les écoutez et que vous vous souciez de leur expérience. Cela renforce la confiance et transforme les clients en ambassadeurs de votre marque. Alors, ouvrez grand les oreilles – chaque avis est une chance de faire mieux. "
+          },
+        ]
+      },
+      {
+        title: "Sous-estimer l’importance du service client",
+        content: [
+          {
+            type: 'paragraph',
+            content: "Le service client, c’est le visage humain de votre entreprise. Imaginez : un client rencontre un problème et se heurte à des réponses lentes ou impersonnelles. Résultat ? Frustration, déception, et une réputation en péril. À l’inverse, un service client exceptionnel peut transformer une mauvaise expérience en une histoire positive. Offrez un support réactif, des politiques de retour claires et des réponses personnalisées. Montrez à vos clients qu’ils comptent vraiment."
+          },
+          {
+            type: 'paragraph',
+            content: "Un simple geste, comme un mot d’excuse sincère ou une petite attention, peut faire toute la différence. Parce qu’au fond, le service client, c’est l’art de montrer à vos clients qu’ils sont importants. Et ça, ça n’a pas de prix."
+          },
+        ]
+      },
+      {
+        image: "/images/busness/16.jpeg" ,
+        title: "Négliger l’expérience de livraison",
+        content: [
+          {
+            type: 'paragraph',
+            content: "Dans l’e-commerce, la livraison est la dernière étape avant que votre client ne tienne enfin votre produit entre ses mains. Une livraison lente ou coûteuse peut gâcher cette expérience et entraîner l’abandon du panier. Imaginez : un client enthousiaste ajoute un article à son panier, mais au moment de passer commande, il découvre des frais de livraison exorbitants ou des délais interminables. Résultat ? Il part ailleurs."
+          },
+          {
+            type: 'paragraph',
+            content: "Pour éviter cela, offrez des options flexibles : livraison express, point relais, ou gratuité sous conditions. Communiquez clairement les délais et les coûts dès le début. Une expérience de livraison fluide et transparente montre à vos clients que vous vous souciez de leur satisfaction jusqu’au bout. Et ça, ça fait toute la différence."
+          },
+        ]
+      },
+      {
+        title: "Ne pas tester et optimiser",
+        content: [
+          {
+            type: 'paragraph',
+            content: "L’e-commerce est un domaine en constante évolution. Ce qui fonctionne aujourd’hui peut ne plus être efficace demain. Ne pas tester et optimiser régulièrement, c’est comme naviguer sans carte : vous risquez de vous perdre en chemin. Testez de nouvelles stratégies, que ce soit des campagnes publicitaires, des designs de site ou des offres promotionnelles. Chaque test est une opportunité d’apprendre et de progresser."
+          },
+          {
+            type: 'paragraph',
+            content: "Utilisez les données pour guider vos décisions. Par exemple, si une campagne publicitaire génère plus de conversions, doublez vos efforts dans cette direction. Si un design de page ne fonctionne pas, ajustez-le. L’optimisation continue est la clé pour rester compétitif et offrir la meilleure expérience possible à vos clients. Alors, testez, analysez, et améliorez – c’est le secret d’un e-commerce qui réussit."
+          },
+        ]
+      },
     ]
   },
+
+
   {
     id: 3,
-    title: "Attirer des clients et booster les ventes",
+    title: "Attirer des clients et booster les ventes dans les reseaux",
     sections: [
       {
         image: "/images/busness/1.jpg",

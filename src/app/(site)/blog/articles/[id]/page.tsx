@@ -125,11 +125,15 @@ const OnlineBusness = () => {
                                     return (
                                         <div className="mt-8">
                                             <div className="mt-4 p-0">
-                                                <img
-                                                    src={section.image}
-                                                    alt="Business Image"
-                                                    className="rounded-xl custom-image"
-                                                />
+                                                {
+                                                    section.image ? (
+                                                        <img
+                                                            src={section.image}
+                                                            alt="Business Image"
+                                                            className="rounded-xl custom-image"
+                                                        />
+                                                    ) : ""
+                                                }
                                             </div>
                                             <div className="mt-8">
                                                 <h4 className="text-2xl font-bold mt-8">
