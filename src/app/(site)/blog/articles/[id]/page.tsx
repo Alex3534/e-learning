@@ -142,9 +142,16 @@ const OnlineBusness = () => {
                                                 <div>
                                                     {section.content.map((item, idx) =>
                                                         item.type === "paragraph" ? (
-                                                            <p key={idx} className="mt-4">
-                                                                {item.content as string}
-                                                            </p>
+                                                            <div>
+                                                                {
+                                                                    item.title
+                                                                        ? <h6 className="text-lg font-bold mt-8">{item.title}</h6>
+                                                                        : ""
+                                                                }
+                                                                <p key={idx} className="mt-4">
+                                                                    {item.content as string}
+                                                                </p>
+                                                            </div>
                                                         ) : (
                                                             <div key={idx} className="mt-4 ml-8">
                                                                 <ul className="space-y-1 list-disc list-inside dark:text-gray-400">

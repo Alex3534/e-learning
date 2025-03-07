@@ -1,4 +1,5 @@
 type SectionContent = {
+  title?: string,
   type: 'paragraph' | 'list';
   content: string | { title: string, content?: string, contentStyle?: string | string[] }[];
 };
@@ -6,6 +7,7 @@ type SectionContent = {
 type Section = {
   image?: string;
   title: string;
+  subtitle?: string,
   content: SectionContent[];
 };
 
@@ -232,14 +234,14 @@ const articles: Article[] = [
   },
   // Fin Comment se lancer dans l’e-commerce en ligne ?s
 
-
+  // Les 8 erreurs à éviter dans le commerce en ligne
   {
     id: 2,
     title: "Les 8 erreurs à éviter dans le commerce en ligne",
     sections: [
       {
         image: "/images/busness/14.jpg",
-        title: "Introduction",
+        title: ".Introduction",
         content: [
           {
             type: 'paragraph',
@@ -330,7 +332,7 @@ const articles: Article[] = [
         ]
       },
       {
-        image: "/images/busness/16.jpeg" ,
+        image: "/images/busness/16.jpeg",
         title: "Négliger l’expérience de livraison",
         content: [
           {
@@ -358,34 +360,129 @@ const articles: Article[] = [
       },
     ]
   },
+  // Fin Les 8 erreurs à éviter dans le commerce en ligne
 
-
+  // Le Guide Ultime du Trading pour Débutants : Par Où Commencer ?"
   {
     id: 3,
-    title: "Attirer des clients et booster les ventes dans les reseaux",
+    title: "Le Guide Ultime du Trading pour Débutants : Par Où Commencer ?",
     sections: [
       {
-        image: "/images/busness/1.jpg",
-        title: "Référencement naturel (SEO)",
+        image: "/images/trading/01.webp",
+        title: ".Introduction",
         content: [
           {
             type: 'paragraph',
-            content: "Optimisez votre site pour les moteurs de recherche en utilisant des mots-clés pertinents dans vos descriptions de produits, titres et balises. Un bon SEO vous aide à apparaître dans les résultats de recherche et à attirer du trafic gratuitement."
-          }
+            content: "Le trading, c’est un mot qui fait rêver beaucoup de gens. On imagine souvent un trader devant plusieurs écrans, passant des ordres en quelques secondes et gagnant de l’argent à une vitesse folle. Mais derrière cette image un peu glamour, la réalité est bien différente."
+          },
+          {
+            type: 'paragraph',
+            content: "En fait, le trading, c’est avant tout un métier (ou une passion) qui demande du temps, de l’apprentissage et de la discipline. Il ne s’agit pas de \"devenir riche rapidement\", mais plutôt de comprendre comment fonctionnent les marchés financiers pour prendre des décisions intelligentes et rationnelles."
+          },
+          {
+            type: 'paragraph',
+            content: "Alors, pourquoi tant de personnes s’y intéressent ? Parce que le trading offre une grande liberté : on peut trader de chez soi, à son rythme, avec un simple ordinateur ou un smartphone. Certains en font une source de revenus complémentaires, d’autres en font leur activité principale."
+          },
+          {
+            type: 'paragraph',
+            content: "Mais attention : l’opportunité vient toujours avec le risque. Si certains réussissent à générer des profits, d’autres perdent leur capital en quelques semaines par manque de formation et de gestion des risques. C’est pourquoi avant de se lancer, il est essentiel de comprendre les bases, de s’exercer et d’adopter une approche prudente."
+          },
+          {
+            type: 'paragraph',
+            content: "Dans cet article, on va explorer ensemble tout ce qu’un débutant doit savoir pour commencer à trader en toute sérénité. Prêt ? Allons-y !"
+          },
         ]
       },
       {
         image: "/images/busness/1.jpg",
-        title: "Publicité en ligne",
+        title: ".Comprendre les Bases du Trading",
         content: [
           {
             type: 'paragraph',
-            content: "Utilisez des plateformes comme Google Ads, Facebook Ads ou TikTok Ads pour cibler un large public. Ces outils vous permettent de toucher des clients potentiels en fonction de leurs centres d'intérêt, de leur localisation ou de leur comportement."
-          }
+            title: "Les différents types de marchés financiers" ,
+            content: "Le trading peut se faire sur différents types de marchés financiers, et chacun d’entre eux a ses spécificités. Voici un aperçu des principaux :"
+          },
+          {
+            type: 'list',
+            content: [
+              {
+                title: "Forex (marché des changes) :",
+                content: "C’est le plus grand marché financier au monde, où les monnaies sont échangées. Par exemple, un trader pourrait acheter des euros et vendre des dollars américains (EUR/USD). Le marché Forex est très liquide, ce qui signifie qu’il y a toujours des acheteurs et des vendeurs, ce qui permet d’entrer et de sortir rapidement des positions."
+              },
+              {
+                title: "Actions :",
+                content: "Ce sont des parts de propriété dans une entreprise. Acheter des actions, c’est devenir actionnaire de l’entreprise. Les traders peuvent acheter des actions pour profiter de la hausse du prix ou les vendre (courte vente) pour profiter de la baisse. Les actions peuvent offrir de bons rendements, mais elles sont aussi plus sensibles aux nouvelles économiques et à la performance de l'entreprise."
+              },
+              {
+                title: "Crypto-monnaies :",
+                content: "Ces devises numériques, comme le Bitcoin ou l’Ethereum, sont devenues populaires ces dernières années. Les cryptos sont très volatiles, ce qui signifie qu’il est possible de réaliser des profits importants… mais aussi des pertes énormes. C’est un marché relativement jeune et encore en évolution."
+              },
+              {
+                title: "Indices boursiers :",
+                content: "Un indice est un regroupement d’actions d’entreprises, comme le CAC 40 en France, le Dow Jones aux États-Unis ou le Nikkei au Japon. Trader les indices permet d’investir dans un ensemble d’actions plutôt que dans une seule entreprise. Cela peut offrir un moyen plus sûr de diversifier ses investissements."
+              },
+              {
+                title: "Matières premières :",
+                content: "Ce marché permet de trader des produits physiques comme l’or, le pétrole, le café ou le blé. Ces marchés sont influencés par des événements mondiaux (comme des catastrophes naturelles ou des décisions politiques) qui peuvent affecter les prix des matières premières."
+              },
+            ]
+          },
+          {
+            type: 'paragraph',
+            title: "Les acteurs du marché" ,
+            content: "Les acteurs du marché sont ceux qui échangent des biens financiers, et ils peuvent être très différents les uns des autres. Voici quelques-uns des principaux :"
+          },
+          {
+            type: 'list',
+            content: [
+              {
+                title: "Traders particuliers :",
+                content: "Ce sont des individus, comme toi et moi, qui investissent leur propre argent. Ils peuvent opérer de manière autonome ou utiliser des courtiers en ligne pour exécuter leurs transactions."
+              },
+              {
+                title: "Institutions financières :",
+                content: "Les banques, les fonds d'investissement, les compagnies d'assurance et autres grandes institutions financières sont également des acteurs majeurs du marché. Leur influence est énorme, car elles manipulent des volumes beaucoup plus importants que les traders particuliers."
+              },
+              {
+                title: "Banques centrales :",
+                content: "Ce sont les autorités monétaires de chaque pays (comme la Banque centrale européenne ou la Réserve fédérale aux États-Unis). Elles interviennent dans le marché pour réguler l'économie, en ajustant par exemple les taux d’intérêt. Leur action peut fortement influencer les devises et les marchés en général."
+              },
+            ]
+          },
+          {
+            type: 'paragraph',
+            title: "Différence entre trading et investissement",
+            content: "Bien que le trading et l’investissement aient des points communs (acheter des actifs dans l’espoir de réaliser un profit), ce sont deux approches différentes :"
+          },
+          {
+            type: 'list',
+            content: [
+              {
+                title: 'Trading :',
+                content: "Le trading consiste à acheter et vendre des actifs (comme des actions, des devises, etc.) sur de courtes périodes (de quelques minutes à quelques mois). L’objectif est de profiter des fluctuations de prix à court terme. Les traders sont souvent plus actifs et prennent des décisions rapides. Le trading peut être plus risqué, mais il peut également offrir des gains rapides si les stratégies sont bien maîtrisées."
+              },
+              {
+                title: 'Investissement :',
+                content: "L'investissement, quant à lui, se fait généralement sur le long terme. L'investisseur achète des actifs dans l’espoir que leur valeur augmente progressivement au fil du temps (par exemple, acheter des actions d’une entreprise stable et attendre plusieurs années). L'investissement est généralement considéré comme moins risqué, mais il demande aussi de la patience."
+              },
+            ]
+          },
+          {
+            type: 'paragraph',
+            content: "En résumé, si le trading se concentre sur des profits à court terme en profitant des mouvements de prix rapides, l'investissement est un engagement à long terme, où la stratégie se base sur la croissance des actifs sur plusieurs années."
+          },
+        ]
+      },
+      {
+        image: "/images/busness/1.jpg",
+        title: ".Les Concepts Essentiels à Connaître" ,
+        content: [
+
         ]
       }
     ]
   }
+  // Fin Le Guide Ultime du Trading pour Débutants : Par Où Commencer ?"
 ];
 
 export default articles;
