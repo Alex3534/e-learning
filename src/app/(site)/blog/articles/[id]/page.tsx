@@ -153,45 +153,53 @@ const OnlineBusness = () => {
                                                                 </p>
                                                             </div>
                                                         ) : (
-                                                            <div key={idx} className="mt-4 ml-8">
-                                                                <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
-                                                                    {(item.content as { title: string; content?: string; contentStyle?: string | string[] }[]).map((listContent, index) => (
-                                                                        <li key={index}>
-                                                                            <span className="text-lg font-bold">{listContent.title}</span>
-                                                                            <p className="ml-6">
-                                                                                {
-                                                                                    listContent.content
-                                                                                        ? listContent.content
-                                                                                        : <ul className="space-y-2 mt-2 text-left text-gray-500 dark:text-gray-400 ml-10">
-                                                                                            {
-                                                                                                Array.isArray(listContent.contentStyle) && listContent.contentStyle.map((item: string, index: number) => (
-                                                                                                    <li key={index} className="flex items-center space-x-3 rtl:space-x-reverse">
-                                                                                                        <svg
-                                                                                                            className="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                                                                                                            aria-hidden="true"
-                                                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                                                            fill="none"
-                                                                                                            viewBox="0 0 16 12"
-                                                                                                        >
-                                                                                                            <path
-                                                                                                                stroke="currentColor"
-                                                                                                                strokeLinecap="round"
-                                                                                                                strokeLinejoin="round"
-                                                                                                                strokeWidth="2"
-                                                                                                                d="M1 5.917 5.724 10.5 15 1.5"
-                                                                                                            />
-                                                                                                        </svg>
-                                                                                                        <span>{item}</span>
-                                                                                                    </li>
-                                                                                                ))
-                                                                                            }
-                                                                                        </ul>
-                                                                                }
-                                                                            </p>
-                                                                        </li>
-                                                                    ))}
-                                                                </ul>
-                                                            </div>
+
+                                                            <React.Fragment>
+                                                                {
+                                                                    item.title
+                                                                        ? <h6 className="text-lg font-bold mt-8">{item.title}</h6>
+                                                                        : ""
+                                                                }
+                                                                < div key={idx} className="mt-4 ml-8" >
+                                                                    <ul className="space-y-1 list-disc list-inside dark:text-gray-400">
+                                                                        {(item.content as { title: string; content?: string; contentStyle?: string | string[] }[]).map((listContent, index) => (
+                                                                            <li key={index}>
+                                                                                <span className="text-lg font-bold">{listContent.title}</span>
+                                                                                <p className="ml-6">
+                                                                                    {
+                                                                                        listContent.content
+                                                                                            ? listContent.content
+                                                                                            : <ul className="space-y-2 mt-2 text-left text-gray-500 dark:text-gray-400 ml-10">
+                                                                                                {
+                                                                                                    Array.isArray(listContent.contentStyle) && listContent.contentStyle.map((item: string, index: number) => (
+                                                                                                        <li key={index} className="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                                                            <svg
+                                                                                                                className="shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                                                                                                aria-hidden="true"
+                                                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                                                fill="none"
+                                                                                                                viewBox="0 0 16 12"
+                                                                                                            >
+                                                                                                                <path
+                                                                                                                    stroke="currentColor"
+                                                                                                                    strokeLinecap="round"
+                                                                                                                    strokeLinejoin="round"
+                                                                                                                    strokeWidth="2"
+                                                                                                                    d="M1 5.917 5.724 10.5 15 1.5"
+                                                                                                                />
+                                                                                                            </svg>
+                                                                                                            <span>{item}</span>
+                                                                                                        </li>
+                                                                                                    ))
+                                                                                                }
+                                                                                            </ul>
+                                                                                    }
+                                                                                </p>
+                                                                            </li>
+                                                                        ))}
+                                                                    </ul>
+                                                                </div>
+                                                            </React.Fragment>
                                                         )
                                                     )}
                                                 </div>
@@ -231,7 +239,7 @@ const OnlineBusness = () => {
                     </div>
 
                 </div>
-            </div>
+            </div >
         </section >
     );
 }

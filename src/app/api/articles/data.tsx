@@ -394,12 +394,12 @@ const articles: Article[] = [
         ]
       },
       {
-        image: "/images/busness/1.jpg",
+        image: "/images/trading/02.png",
         title: ".Comprendre les Bases du Trading",
         content: [
           {
             type: 'paragraph',
-            title: "Les différents types de marchés financiers" ,
+            title: "Les différents types de marchés financiers",
             content: "Le trading peut se faire sur différents types de marchés financiers, et chacun d’entre eux a ses spécificités. Voici un aperçu des principaux :"
           },
           {
@@ -429,7 +429,7 @@ const articles: Article[] = [
           },
           {
             type: 'paragraph',
-            title: "Les acteurs du marché" ,
+            title: "Les acteurs du marché",
             content: "Les acteurs du marché sont ceux qui échangent des biens financiers, et ils peuvent être très différents les uns des autres. Voici quelques-uns des principaux :"
           },
           {
@@ -474,15 +474,326 @@ const articles: Article[] = [
         ]
       },
       {
-        image: "/images/busness/1.jpg",
-        title: ".Les Concepts Essentiels à Connaître" ,
+        image: "/images/trading/04.jpeg",
+        title: ".Les Concepts Essentiels à Connaître",
         content: [
+          {
+            type: "paragraph",
+            title: "L’effet de levier et le margin trading",
+            content: "L’effet de levier permet à un trader de contrôler une position plus grande avec un capital plus petit. C’est un peu comme si tu empruntais de l’argent à ton courtier pour augmenter la taille de ta position."
+          },
+          {
+            type: "paragraph",
+            content: "Imaginons que tu veuilles acheter des actions pour 10 000 €, mais tu n’as que 1 000 €. Avec un effet de levier de 10:1, tu peux contrôler ces 10 000 € avec seulement 1 000 € de capital initial. Cela peut sembler alléchant, car tu peux réaliser des gains plus importants avec moins d'argent, mais attention : l'effet de levier amplifie aussi les pertes. Si le marché va contre toi, tu risques de perdre rapidement ton capital."
+          },
+          {
+            type: "paragraph",
+            content: "Le margin trading est simplement l’utilisation de l’effet de levier. Le courtier te prête de l'argent pour te permettre de prendre des positions plus importantes que ce que ton capital initial permettrait normalement."
+          },
+          {
+            type: "list",
+            title: 'La volatilité et la liquidité',
+            content: [
+              {
+                title: 'Volatilité :',
+                content: "La volatilité mesure à quel point le prix d’un actif fluctue sur une période donnée. Par exemple, si le prix de l’action d’une entreprise passe de 100 € à 120 € en une journée, on dit que cette action est volatile. Les marchés volatils peuvent offrir des opportunités de gains rapides, mais aussi des risques plus élevés, car les prix peuvent changer rapidement dans les deux sens.En général, les marchés de crypto-monnaies sont beaucoup plus volatils que les marchés d’actions ou de devises."
+              },
+              {
+                title: 'Liquidité :',
+                content: "La liquidité fait référence à la facilité avec laquelle un actif peut être acheté ou vendu sans que cela n’affecte son prix de manière significative. Un marché liquide signifie qu'il y a beaucoup d’acheteurs et de vendeurs. Par exemple, les grands indices boursiers et le marché Forex sont très liquides, tandis que les actions de petites entreprises ou certains cryptos peuvent être moins liquides. Une bonne liquidité te permet d’entrer et de sortir des positions rapidement, tandis qu’une faible liquidité peut rendre ces opérations plus difficiles."
+              }
+            ]
+          },
+          {
+            type: "list",
+            title: 'L’analyse technique vs l’analyse fondamentale',
+            content: [
+              {
+                title: 'Analyse technique (Voir notre l\'article concernant notre analyse technique HLZ) :',
+                content: "La liquidité fait référence à la facilité avec laquelle un actif peut être acheté ou vendu sans que cela n’affecte son prix de manière significative. Un marché liquide signifie qu'il y a beaucoup d’acheteurs et de vendeurs. Par exemple, les grands indices boursiers et le marché Forex sont très liquides, tandis que les actions de petites entreprises ou certains cryptos peuvent être moins liquides. Une bonne liquidité te permet d’entrer et de sortir des positions rapidement, tandis qu’une faible liquidité peut rendre ces opérations plus difficiles."
+              },
+              {
+                title: 'Analyse fondamentale (Voir notre l\'article concernant le fondamentale) :',
+                content: "L’analyse fondamentale se concentre sur les facteurs économiques et financiers qui peuvent influencer la valeur d’un actif à long terme. Par exemple, un trader pourrait analyser les rapports financiers d’une entreprise, les décisions de politique monétaire des banques centrales ou les données économiques (comme le chômage ou la croissance du PIB). Les traders utilisant l’analyse fondamentale sont souvent plus intéressés par les investissements à long terme et essaient de prédire la direction d’un actif en fonction de l’économie globale."
+              },
+            ]
+          },
+        ]
+      },
+      {
+        image: "/images/trading/01.webp",
+        title: ".Le Matériel et les Outils du Trader Débutant",
+        content: [
+          {
+            type: 'paragraph',
+            title: 'Choisir une bonne plateforme de trading',
+            content: "Lorsque tu te lances dans le trading, choisir une plateforme de trading est une étape cruciale. Une bonne plateforme te permet non seulement d’exécuter tes ordres rapidement, mais elle t’offre aussi des outils d’analyse et de gestion des risques. Voici quelques-unes des plateformes les plus populaires pour les débutants :"
+          },
+          {
+            type: 'list',
+            content: [
+              {
+                title: 'MetaTrader 4 (MT4) et MetaTrader 5 (MT5) : ',
+                content: 'Ce sont des plateformes largement utilisées, en particulier pour le trading Forex. Elles sont gratuites et offrent une interface simple à comprendre, tout en étant assez puissantes pour les traders plus avancés. MT4 et MT5 permettent de suivre les graphiques, d\'utiliser des indicateurs techniques, et de créer des stratégies automatisées grâce à des robots de trading.'
+              },
+              {
+                title: 'TradingView :',
+                content: 'C\’est l\’une des plateformes les plus populaires pour l\’analyse technique, car elle offre des graphes interactifs très détaillés et un large choix d\’indicateurs. Même si TradingView n\’est pas une plateforme de trading à proprement parler, elle est idéale pour analyser les marchés avant d\’exécuter des ordres sur une autre plateforme. TradingView permet aussi de partager des analyses avec d\'autres traders, ce qui est parfait pour échanger des idées.'
+              },
+              {
+                title: 'Binance :',
+                content: 'Bien connue dans le monde des crypto-monnaies, Binance permet d\'acheter, de vendre et de trader des cryptos, mais aussi des actions, des indices, et même des contrats à terme. La plateforme offre un accès à des outils avancés, mais elle reste relativement accessible aux débutants.'
+              }
+            ]
+          },
+          {
+            type: 'paragraph',
+            content: "Choisir la bonne plateforme dépend de tes préférences personnelles, du marché que tu veux trader (Forex, actions, crypto, etc.) et des fonctionnalités dont tu as besoin."
+          },
+          {
+            type: 'paragraph',
+            title: 'L’importance du journal de trading',
+            content: "Un aspect souvent négligé mais essentiel pour réussir en trading est de tenir un journal de trading. Un journal te permet de suivre et d’analyser tes décisions, tes stratégies, et tes résultats."
+          },
+          {
+            type: 'list',
+            title: 'Voici pourquoi c’est important :',
+            content: [
+              {
+                title: 'Suivi des performances :',
+                content: 'Un journal te permet de suivre tes gains et pertes et de voir si tes stratégies fonctionnent sur le long terme. Cela t’aide à comprendre quelles approches sont efficaces et lesquelles ne le sont pas.'
+              },
+              {
+                title: 'Évaluation des erreurs :',
+                content: 'Un journal te permet de réfléchir à pourquoi tu as pris certaines décisions, qu\'elles aient été bonnes ou mauvaises. Cela peut t’aider à éviter de répéter les mêmes erreurs à l’avenir.'
+              },
+              {
+                title: 'Contrôle des émotions :',
+                content: 'Le trading peut être émotionnellement intense, surtout lorsqu’on perd de l’argent. Un journal t’aide à rester discipliné et à éviter de trader sur des impulsions ou sous l’effet de l’anxiété.'
+              },
+            ]
+          },
+          {
+            type: 'paragraph',
+            content: "Pour tenir ton journal de trading, tu peux noter des informations telles que :"
+          },
+          {
+            type: 'list',
+            content: [
+              {
+                title: 'La date et l\'heure de l\'opération'
+              },
+              {
+                title: 'Le montant investi'
+              },
+              {
+                title: 'Les raisons de l\'achat//vente'
+              },
+              {
+                title: 'Les résultats de l’opération'
+              },
+              {
+                title: 'Les émotions ressenties durant le trade'
+              },
+            ]
+          },
+          {
+            type: 'paragraph',
+            content: "Certains traders utilisent même des logiciels spécialisés qui leur permettent d’analyser les données de manière plus approfondie."
+          },
 
+        ]
+      },
+      {
+        image: "/images/trading/01.webp",
+        title: ".Les Premiers Pas pour Trader en Toute Sécurité",
+        content: [
+          {
+            type: "paragraph",
+            content: "Quand on débute en trading, il est tentant de vouloir passer immédiatement à l’action et de chercher à gagner rapidement. Mais le trading est un marathon, pas un sprint. Si tu veux éviter de perdre ton capital dès les premières semaines, il est essentiel de prendre le temps d’apprendre et de mettre en place de bonnes pratiques dès le début."
+          },
+          {
+            type: "paragraph",
+            title: "✅ Ouvrir un compte de trading : Démo ou Réel ?",
+            content: "Avant de risquer ton argent, tu as deux options :"
+          },
+          {
+            type: 'list',
+            content: [
+              {
+                title: "Le compte démo :",
+                contentStyle: [
+                  "C’est un compte fictif, où tu peux trader avec de l’argent virtuel.",
+                  "Il te permet de t’entraîner sans risque, d’apprendre à utiliser une plateforme et de tester tes stratégies.",
+                  "C’est une étape indispensable pour éviter les erreurs de débutant avec de l’argent réel."
+                ]
+              }
+            ]
+          },
+          {
+            type: 'list',
+            content: [
+              {
+                title: "Le compte réel :",
+                contentStyle: [
+                  "Ici, tu investis ton propre argent sur les marchés.",
+                  "Il faut être prêt mentalement, car les émotions entrent en jeu : la peur de perdre, l’excitation du gain, etc.",
+                  "Beaucoup de traders passent trop vite d’un compte démo à un compte réel, ce qui leur coûte cher. Prends ton temps !"
+                ]
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            title: "👉 Conseil",
+            content: "Si tu arrives à être rentable sur un compte démo pendant au moins 3 mois, alors tu peux envisager de passer en réel, en commençant avec un petit capital."
+          },
+          {
+            type: "paragraph",
+            title: "✅ Gérer son capital et son risque : les bases du Risk Management" ,
+            content: "Si tu veux survivre en trading, la gestion du risque est plus importante que la stratégie que tu utilises."
+          },
+          {
+            type: "paragraph",
+            title: "🔹 Règle n°1 : Ne jamais risquer plus que ce que tu peux te permettre de perdre" ,
+            content: "Beaucoup de débutants misent trop d’argent sur un seul trade. Résultat ? Une perte et une frustration énorme."
+          },
+          {
+            type: "list",
+            title: "👉 La règle des 1-2% :" ,
+            content: [
+              {title: "Ne risque jamais plus de 1 à 2% de ton capital sur un seul trade."},
+              {title: "Exemple :" ,content: "si ton compte de trading est de 1000$, ne risque pas plus de 10 à 20$ par trade."}
+            ]
+          },
+          {
+            type: "list",
+            title: "🔹 Stop Loss & Take Profit : tes meilleurs amis" ,
+            content: [
+              {title: "Stop Loss (SL) :" ,content: "Il s’agit d’un ordre qui ferme automatiquement ton trade si le marché va contre toi. Cela t’évite de perdre trop d’argent sur un mauvais trade."},
+              {title: "Take Profit (TP) :" ,content: "C’est le niveau où tu prends tes bénéfices automatiquement."}
+            ]
+          },
+          {
+            type: 'paragraph' ,
+            title: '👉 Conseil :' ,
+            content: 'Fixe toujours ton Stop Loss avant d’entrer en position ! Un bon trader ne pense pas seulement au profit, il pense d’abord à limiter ses pertes.'
+          },
+          {
+            type: 'paragraph' ,
+            title: '🔹 Le ratio Risque/Récompense (Risk/Reward Ratio)' ,
+            content: 'Un bon trader ne prend pas un trade au hasard. Il analyse si le potentiel de gain vaut le risque.'
+          },
+          {
+            type: 'list',
+            content: [
+              {
+                title: "La règle de base :",
+                contentStyle: [
+                  "Un ratio minimum de 1:2 (tu risques 10$, mais tu peux en gagner 20$).",
+                  "Un bon ratio 1:3 ou plus est encore mieux.",
+                ]
+              }
+            ]
+          },
+          {
+            type: 'paragraph' ,
+            content: 'Cela signifie que même si tu perds la moitié de tes trades, tu restes rentable sur le long terme.'
+          },
+          {
+            type: 'paragraph' ,
+            title: '✅ Éviter les erreurs classiques des débutants',
+            content: 'Lorsque l’on débute en trading, il est facile de tomber dans certains pièges qui peuvent coûter cher. Beaucoup de nouveaux traders perdent leur capital non pas à cause du marché, mais à cause de leurs propres erreurs : manque de discipline, mauvaise gestion du risque, trading émotionnel…'
+          },
+          {
+            type: 'paragraph' ,
+            content: 'Apprendre à identifier ces erreurs dès le début te permettra d’éviter les pertes inutiles et de progresser plus rapidement. Voici les erreurs les plus fréquentes et comment les éviter.'
+          },
+          {
+            type: 'paragraph',
+            title: '1️⃣ Trader sans stratégie' ,
+            content: 'Beaucoup de débutants entrent sur le marché au feeling ou en suivant les conseils des autres. Erreur !'
+          },
+          {
+            type: 'paragraph',
+            content: '👉 Toujours avoir un plan de trading avec des règles claires.'
+          },
+          {
+            type: 'paragraph',
+            title: '2️⃣ Utiliser un effet de levier trop élevé' ,
+            content: 'L’effet de levier permet d’amplifier tes gains, mais il amplifie aussi tes pertes.'
+          },
+          {
+            type: 'paragraph',
+            content: '👉 Ne jamais utiliser un levier trop grand au début (max 1:5 ou 1:10).'
+          },
+          {
+            type: 'paragraph',
+            title: '3️⃣ Laisser ses émotions prendre le contrôle' ,
+            content: 'Quand un trade tourne mal, certains traders ne coupent pas leurs pertes et espèrent que le marché va se retourner. D’autres, au contraire, ferment leurs positions trop tôt par peur de perdre.'
+          },
+          {
+            type: 'paragraph',
+            content: '👉 Discipline & patience sont les clés du succès.'
+          },
+          {
+            type: 'paragraph',
+            title: '4️⃣ Ne pas tenir de journal de trading' ,
+            content: 'Si tu ne notes pas tes erreurs, tu vas les répéter encore et encore.'
+          },
+          {
+            type: 'paragraph',
+            content: '👉 Note chaque trade : pourquoi tu l’as pris, le résultat, tes émotions, ce que tu aurais pu faire mieux.'
+          }
+        ]
+      },
+      {
+        title: '.Conclusion : Trader en sécurité, c’est durer dans le temps !' ,
+        content: [
+          {
+            type: 'paragraph' ,
+            content: 'Le trading n’est pas un jeu. Il faut une approche structurée, disciplinée et prudente pour réussir sur le long terme.'
+          },
+          {
+            type: 'list' ,
+            content: [
+              {title: 'Toujours commencer par un compte démo avant de passer en réel.'},
+              {title: 'Appliquer un bon risk management avec un Stop Loss et un Take Profit sur chaque trade.'},
+              {title: 'Ne pas trader avec ses émotions, mais avec une stratégie claire.'},
+            ]
+          },
+          {
+            type: 'paragraph' ,
+            content: 'Si tu respectes ces règles de base, tu éviteras les erreurs des 90% de traders qui perdent et tu poseras les fondations d’un trading rentable et durable. 🚀'
+          },
+        ]
+      }
+    ]
+  },
+  // Fin Le Guide Ultime du Trading pour Débutants : Par Où Commencer ?"
+
+  // Comprendre l’Analyse Fondamentale en Trading
+  {
+    id: 4,
+    title: "Comprendre l’Analyse Fondamentale en Trading",
+    sections: [
+      {
+        image: '/images/trading/05.png',
+        title: ".Introduction à l’Analyse Fondamentale",
+        content: [
+          {
+            type: "paragraph" ,
+            content: 'Le trading repose sur deux grandes approches : l’analyse technique et l’analyse fondamentale. Si l’analyse technique se concentre sur les graphiques et les tendances du prix, l’analyse fondamentale cherche à comprendre les causes profondes des mouvements du marché.'
+          },
+          {
+            type: "paragraph" ,
+            content: 'Elle permet d’identifier la vraie valeur d’un actif en étudiant des éléments comme l’économie, les entreprises, la politique monétaire et les événements mondiaux. En d’autres termes, elle répond à une question essentielle : le prix actuel reflète-t-il réellement la valeur de l’actif ?'
+          },
         ]
       }
     ]
   }
-  // Fin Le Guide Ultime du Trading pour Débutants : Par Où Commencer ?"
+  // Fin comprendre l’Analyse Fondamentale en Trading
 ];
 
 export default articles;
