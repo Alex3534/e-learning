@@ -1,8 +1,14 @@
 type SectionContent = {
   title?: string,
-  type: 'paragraph' | 'list';
-  content: string | { title: string, content?: string, contentStyle?: string | string[] }[];
+  type: 'paragraph' | 'list' | 'table'
+  content?: string | { title: string, content?: string, contentStyle?: string | string[] }[]
+  table?: Table;
 };
+
+type Table = {
+  headers: string[];
+  rows: string[][];
+}
 
 type Section = {
   image?: string;
@@ -650,38 +656,38 @@ const articles: Article[] = [
           },
           {
             type: "paragraph",
-            title: "✅ Gérer son capital et son risque : les bases du Risk Management" ,
+            title: "✅ Gérer son capital et son risque : les bases du Risk Management",
             content: "Si tu veux survivre en trading, la gestion du risque est plus importante que la stratégie que tu utilises."
           },
           {
             type: "paragraph",
-            title: "🔹 Règle n°1 : Ne jamais risquer plus que ce que tu peux te permettre de perdre" ,
+            title: "🔹 Règle n°1 : Ne jamais risquer plus que ce que tu peux te permettre de perdre",
             content: "Beaucoup de débutants misent trop d’argent sur un seul trade. Résultat ? Une perte et une frustration énorme."
           },
           {
             type: "list",
-            title: "👉 La règle des 1-2% :" ,
+            title: "👉 La règle des 1-2% :",
             content: [
-              {title: "Ne risque jamais plus de 1 à 2% de ton capital sur un seul trade."},
-              {title: "Exemple :" ,content: "si ton compte de trading est de 1000$, ne risque pas plus de 10 à 20$ par trade."}
+              { title: "Ne risque jamais plus de 1 à 2% de ton capital sur un seul trade." },
+              { title: "Exemple :", content: "si ton compte de trading est de 1000$, ne risque pas plus de 10 à 20$ par trade." }
             ]
           },
           {
             type: "list",
-            title: "🔹 Stop Loss & Take Profit : tes meilleurs amis" ,
+            title: "🔹 Stop Loss & Take Profit : tes meilleurs amis",
             content: [
-              {title: "Stop Loss (SL) :" ,content: "Il s’agit d’un ordre qui ferme automatiquement ton trade si le marché va contre toi. Cela t’évite de perdre trop d’argent sur un mauvais trade."},
-              {title: "Take Profit (TP) :" ,content: "C’est le niveau où tu prends tes bénéfices automatiquement."}
+              { title: "Stop Loss (SL) :", content: "Il s’agit d’un ordre qui ferme automatiquement ton trade si le marché va contre toi. Cela t’évite de perdre trop d’argent sur un mauvais trade." },
+              { title: "Take Profit (TP) :", content: "C’est le niveau où tu prends tes bénéfices automatiquement." }
             ]
           },
           {
-            type: 'paragraph' ,
-            title: '👉 Conseil :' ,
+            type: 'paragraph',
+            title: '👉 Conseil :',
             content: 'Fixe toujours ton Stop Loss avant d’entrer en position ! Un bon trader ne pense pas seulement au profit, il pense d’abord à limiter ses pertes.'
           },
           {
-            type: 'paragraph' ,
-            title: '🔹 Le ratio Risque/Récompense (Risk/Reward Ratio)' ,
+            type: 'paragraph',
+            title: '🔹 Le ratio Risque/Récompense (Risk/Reward Ratio)',
             content: 'Un bon trader ne prend pas un trade au hasard. Il analyse si le potentiel de gain vaut le risque.'
           },
           {
@@ -697,21 +703,21 @@ const articles: Article[] = [
             ]
           },
           {
-            type: 'paragraph' ,
+            type: 'paragraph',
             content: 'Cela signifie que même si tu perds la moitié de tes trades, tu restes rentable sur le long terme.'
           },
           {
-            type: 'paragraph' ,
+            type: 'paragraph',
             title: '✅ Éviter les erreurs classiques des débutants',
             content: 'Lorsque l’on débute en trading, il est facile de tomber dans certains pièges qui peuvent coûter cher. Beaucoup de nouveaux traders perdent leur capital non pas à cause du marché, mais à cause de leurs propres erreurs : manque de discipline, mauvaise gestion du risque, trading émotionnel…'
           },
           {
-            type: 'paragraph' ,
+            type: 'paragraph',
             content: 'Apprendre à identifier ces erreurs dès le début te permettra d’éviter les pertes inutiles et de progresser plus rapidement. Voici les erreurs les plus fréquentes et comment les éviter.'
           },
           {
             type: 'paragraph',
-            title: '1️⃣ Trader sans stratégie' ,
+            title: '1️⃣ Trader sans stratégie',
             content: 'Beaucoup de débutants entrent sur le marché au feeling ou en suivant les conseils des autres. Erreur !'
           },
           {
@@ -720,7 +726,7 @@ const articles: Article[] = [
           },
           {
             type: 'paragraph',
-            title: '2️⃣ Utiliser un effet de levier trop élevé' ,
+            title: '2️⃣ Utiliser un effet de levier trop élevé',
             content: 'L’effet de levier permet d’amplifier tes gains, mais il amplifie aussi tes pertes.'
           },
           {
@@ -729,7 +735,7 @@ const articles: Article[] = [
           },
           {
             type: 'paragraph',
-            title: '3️⃣ Laisser ses émotions prendre le contrôle' ,
+            title: '3️⃣ Laisser ses émotions prendre le contrôle',
             content: 'Quand un trade tourne mal, certains traders ne coupent pas leurs pertes et espèrent que le marché va se retourner. D’autres, au contraire, ferment leurs positions trop tôt par peur de perdre.'
           },
           {
@@ -738,7 +744,7 @@ const articles: Article[] = [
           },
           {
             type: 'paragraph',
-            title: '4️⃣ Ne pas tenir de journal de trading' ,
+            title: '4️⃣ Ne pas tenir de journal de trading',
             content: 'Si tu ne notes pas tes erreurs, tu vas les répéter encore et encore.'
           },
           {
@@ -748,22 +754,22 @@ const articles: Article[] = [
         ]
       },
       {
-        title: '.Conclusion : Trader en sécurité, c’est durer dans le temps !' ,
+        title: '.Conclusion : Trader en sécurité, c’est durer dans le temps !',
         content: [
           {
-            type: 'paragraph' ,
+            type: 'paragraph',
             content: 'Le trading n’est pas un jeu. Il faut une approche structurée, disciplinée et prudente pour réussir sur le long terme.'
           },
           {
-            type: 'list' ,
+            type: 'list',
             content: [
-              {title: 'Toujours commencer par un compte démo avant de passer en réel.'},
-              {title: 'Appliquer un bon risk management avec un Stop Loss et un Take Profit sur chaque trade.'},
-              {title: 'Ne pas trader avec ses émotions, mais avec une stratégie claire.'},
+              { title: 'Toujours commencer par un compte démo avant de passer en réel.' },
+              { title: 'Appliquer un bon risk management avec un Stop Loss et un Take Profit sur chaque trade.' },
+              { title: 'Ne pas trader avec ses émotions, mais avec une stratégie claire.' },
             ]
           },
           {
-            type: 'paragraph' ,
+            type: 'paragraph',
             content: 'Si tu respectes ces règles de base, tu éviteras les erreurs des 90% de traders qui perdent et tu poseras les fondations d’un trading rentable et durable. 🚀'
           },
         ]
@@ -782,15 +788,223 @@ const articles: Article[] = [
         title: ".Introduction à l’Analyse Fondamentale",
         content: [
           {
-            type: "paragraph" ,
-            content: 'Le trading repose sur deux grandes approches : l’analyse technique et l’analyse fondamentale. Si l’analyse technique se concentre sur les graphiques et les tendances du prix, l’analyse fondamentale cherche à comprendre les causes profondes des mouvements du marché.'
+            type: "paragraph",
+            content: 'Si tu as déjà entendu parler du trading, tu sais sûrement qu’il existe deux grandes approches pour analyser les marchés : l’analyse technique et l’analyse fondamentale.'
           },
           {
-            type: "paragraph" ,
-            content: 'Elle permet d’identifier la vraie valeur d’un actif en étudiant des éléments comme l’économie, les entreprises, la politique monétaire et les événements mondiaux. En d’autres termes, elle répond à une question essentielle : le prix actuel reflète-t-il réellement la valeur de l’actif ?'
+            type: "paragraph",
+            content: 'L’analyse technique se concentre sur les graphiques, les indicateurs et les tendances passées pour prévoir les mouvements futurs. Mais l’analyse fondamentale, elle, cherche à comprendre les raisons profondes qui font monter ou descendre les prix.'
           },
         ]
-      }
+      },
+      {
+        title: ".Qu'est-ce que l'analyse fondamentale ?",
+        content: [
+          {
+            type: "paragraph",
+            content: 'L’analyse fondamentale, c’est un peu comme si tu voulais acheter une entreprise et que tu prenais le temps d’analyser ses revenus, ses dettes, et son potentiel de croissance avant de prendre une décision.'
+          },
+          {
+            type: "paragraph",
+            content: 'En trading, c\'est pareil : on regarde l\’état économique global, les décisions des banques centrales, les nouvelles politiques et même les événements géopolitiques pour anticiper l\’évolution des marchés.'
+          },
+          {
+            type: "paragraph",
+            title: 'Pourquoi est-ce important ?',
+            content: 'Les prix ne bougent pas par hasard. Si l’euro chute face au dollar, il y a une raison derrière : peut-être une annonce de la Banque Centrale Européenne, une crise économique, ou une mauvaise statistique sur l’emploi.'
+          },
+          {
+            type: "paragraph",
+            content: 'Si tu ne comprends pas ce qui influence réellement le marché, tu risques de trader à l’aveugle. L’analyse fondamentale t’aide à :'
+          },
+          {
+            type: "list",
+            content: [
+              { title: "Comprendre pourquoi une tendance se forme" },
+              { title: "Prendre des décisions basées sur des faits et non des émotions" },
+              { title: "Mieux gérer les risques" }
+            ]
+          },
+          {
+            type: "table",
+            title: "Différence entre analyse fondamentale et analyse technique",
+            table: {
+              headers: ["Analyse Technique 🕵️", "	Analyse Fondamentale 📊"],
+              rows: [
+                ["Étudie les graphiques et les indicateurs", "Analyse les données économiques et financières"],
+                ["Cherche à prévoir les mouvements de prix grâce aux tendances passées", "Cherche à comprendre les causes profondes des mouvements"],
+                ["Idéale pour le court terme (scalping, day trading)", "Plutôt utilisée pour le moyen et long terme"],
+              ]
+            }
+
+          },
+          {
+            type: "paragraph",
+            content: '👉 En réalité, les deux analyses se complètent ! Un bon trader sait combiner les deux pour prendre les meilleures décisions.'
+          },
+        ]
+      },
+      {
+        image: '/images/trading/05.png',
+        title: ".Les Principaux Indicateurs Fondamentaux",
+        content: [
+          {
+            type: "paragraph",
+            content: 'L’analyse fondamentale repose sur des indicateurs économiques et politiques qui influencent directement les marchés financiers. Ces éléments permettent aux traders de comprendre l’état de santé d’un pays ou d’un actif et d’anticiper les mouvements des prix.'
+          },
+          {
+            type: "paragraph",
+            title: "1. Les Données Économiques : Le Thermomètre d’un Pays",
+            content: 'Les marchés financiers réagissent fortement aux chiffres économiques. Certains indicateurs sont particulièrement suivis :'
+          },
+          {
+            type: "paragraph",
+            title: "🔹 Le PIB (Produit Intérieur Brut)",
+            content: 'Le PIB mesure la richesse produite par un pays sur une période donnée. Un PIB en hausse signifie une économie en croissance 📈, ce qui booste la valeur de la monnaie et attire les investisseurs. À l’inverse, une baisse du PIB signale un ralentissement économique 📉, ce qui peut faire fuir les capitaux et affaiblir la monnaie.'
+          },
+          {
+            type: "paragraph",
+            content: '✅ Exemple : Si le PIB des États-Unis dépasse les attentes, le dollar américain (USD) risque de se renforcer.'
+          },
+          {
+            type: "paragraph",
+            title: "🔹 L’inflation (CPI - Indice des Prix à la Consommation)",
+            content: 'L’inflation représente l’augmentation des prix des biens et services. Une inflation modérée est un signe de bonne santé économique, mais une inflation trop forte fait perdre du pouvoir d’achat et crée de l’incertitude.'
+          },
+          {
+            type: "paragraph",
+            content: '✅✅ Exemple : Si l’inflation explose en Europe, la BCE (Banque Centrale Européenne) pourrait augmenter les taux d’intérêt, ce qui renforcerait l’euro.'
+          },
+          {
+            type: "paragraph",
+            title: "🔹 Les Taux d’Intérêt",
+            content: 'Les banques centrales fixent les taux d’intérêt, qui influencent le coût des emprunts et donc les dépenses des entreprises et des consommateurs.'
+          },
+          {
+            type: "list",
+            content: [
+              {
+                title: "Hausse des taux 📈 " , content: "→ Attire les investisseurs, renforce la monnaie"
+              },
+              {
+                title: "Baisse des taux 📉 " , content: "→ Stimule l’économie mais affaiblit la monnaie"
+              }
+            ]
+          },
+          {
+            type: "paragraph",
+            content: '✅ Exemple : Si la Fed (banque centrale américaine) augmente ses taux, les investisseurs chercheront à placer leur argent aux États-Unis, ce qui renforce le dollar.'
+          },
+          {
+            type: "paragraph",
+            title: "2. Les Politiques Monétaires : Le Pouvoir des Banques Centrales" ,
+            content: 'Les banques centrales (comme la Fed 🇺🇸, la BCE 🇪🇺, ou la BoE 🇬🇧) ont un rôle clé dans l’économie et le trading.'
+          },
+          {
+            type: "paragraph",
+            content: 'Elles prennent des décisions sur les taux d’intérêt, l’impression de monnaie et les interventions sur le marché.'
+          },
+          {
+            type: "paragraph",
+            title: "🔹 Les Décisions des Banques Centrales" ,
+            content: 'Lorsqu’une banque centrale annonce une hausse des taux d’intérêt, cela attire les capitaux étrangers et renforce la monnaie. À l’inverse, une baisse des taux rend l’emprunt plus facile, mais peut affaiblir la devise.'
+          },
+          {
+            type: "paragraph",
+            content: '✅ Exemple : Si la BCE baisse ses taux, l’euro pourrait perdre de la valeur par rapport au dollar.'
+          },
+          {
+            type: "paragraph",
+            title: "🔹 Les Discours et Conférences" ,
+            content: 'Les traders suivent avec attention les discours des présidents des banques centrales (comme Jerome Powell de la Fed ou Christine Lagarde de la BCE). Un seul mot mal interprété peut provoquer une forte volatilité sur les marchés !'
+          },
+          {
+            type: "paragraph",
+            content: '✅ Exemple : En 2023, un simple commentaire de la Fed sur un possible ralentissement des hausses de taux a fait chuter le dollar en quelques heures.'
+          },
+          {
+            type: "paragraph",
+            title: "3. L’Impact des Actualités Géopolitiques et Économiques" ,
+            content: 'Le marché réagit fortement aux événements mondiaux. Certains éléments peuvent provoquer de gros mouvements de prix.'
+          },
+          {
+            type: "paragraph",
+            title: "🔹 Crises et Récessions" ,
+            content: 'Une crise financière ou une récession pousse les investisseurs vers des valeurs refuges comme l’or et le dollar.'
+          },
+          {
+            type: "paragraph",
+            content: '✅ Exemple : Lors de la crise de 2008, les marchés boursiers se sont effondrés et l’or a explosé à la hausse.'
+          },
+          {
+            type: "paragraph",
+            title: "🔹 Conflits et Guerres",
+            content: 'Les guerres créent de l’incertitude et de la peur sur les marchés. Cela impacte notamment les matières premières comme le pétrole.'
+          },
+          {
+            type: "paragraph",
+            title: "🔹 Tensions Commerciales et Sanctions",
+            content: 'Quand des pays imposent des sanctions économiques ou entrent en guerre commerciale, cela peut avoir des conséquences énormes sur les devises et les actions.'
+          },
+          {
+            type: "paragraph",
+            content: '✅ Exemple : La guerre commerciale entre les États-Unis et la Chine a fait fluctuer le yuan et le dollar pendant plusieurs années.'
+          },
+          {
+            type: "paragraph",
+            content: 'Les indicateurs fondamentaux sont la clé pour comprendre le mouvement des marchés. Un bon trader ne se contente pas de regarder des graphiques : il suit aussi les décisions économiques et politiques qui influencent les prix.'
+          },
+          {
+            type: "paragraph",
+            content: '💡 Conseil : Pour ne rien rater, utilise un calendrier économique.'
+          },
+          {
+            type: "paragraph",
+            title: '4. 🌍 Où Suivre les News Économiques et Financières ?' ,
+            content: 'Un bon trader doit toujours être informé des actualités économiques et politiques qui influencent les marchés. Pour cela, il existe des sites fiables et des outils pratiques pour suivre les annonces en temps réel.'
+          },
+          {
+            type: "table",
+            title: '📰 Les Meilleurs Sites d’Actualités Économiques' ,
+            table: {
+              headers: ["🏆 Site" , "📌 Pourquoi l’utiliser ?"],
+              rows: [
+                ["Investing.com", "Un calendrier économique précis et des analyses sur les marchés."],
+                ["Forex Factory", "Calendrier économique détaillé et discussions entre traders."],
+                ["Bloomberg", "Informations en temps réel sur l’économie et la finance mondiale."],
+                ["CNBC", "News économiques et boursières mises à jour en continu."],
+                ["Reuters", "Une des sources les plus rapides pour les nouvelles financières."],
+                ["TradingView", "Graphiques + news de marché directement intégrés."],
+                ["Mataf.net", "Outils avancés pour le Forex, taux de change en temps réel et indicateurs économiques."],
+                ["DailyFX", "Analyses et stratégies de trading sur le Forex et les indices."],
+                ["Boursorama", "Idéal pour suivre les actions, indices et actualités financières."],
+                ["Le Journal du Coin", "Idéal pour suivre les actions, indices et actualités financières."],
+              ]
+            }
+          },
+          {
+            type: "paragraph",
+            content: '✅ Astuce : Mets ces sites en favoris et consulte-les chaque jour avant d’ouvrir tes trades.'
+          },
+          {
+            type: "list",
+            title: '📌 Les meilleurs calendriers économiques :' ,
+            content: [
+              {title: '🔥 Investing.com (Complet et en français)'},
+              {title: '📊 Forex Factory (Très détaillé pour les traders Forex)'},
+              {title: '📅 DailyFX (Infos sur l’impact des annonces)'},
+            ]
+          },
+          {
+            type: "paragraph",
+            content: '🚀 Conseil : Regarde chaque matin les annonces importantes du jour (chiffres du chômage, taux d’intérêt, PIB…) pour éviter les mauvaises surprises.'
+          },
+          {
+            type: "paragraph",
+            content: '💡 Évite de trader pendant les annonces majeures si tu ne maîtrises pas encore leur impact.'
+          },
+        ]
+      },
     ]
   }
   // Fin comprendre l’Analyse Fondamentale en Trading
