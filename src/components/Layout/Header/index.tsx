@@ -5,9 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { headerData } from "../Header/Navigation/menuData";
 import HeaderLink from "../Header/Navigation/HeaderLink";
 import MobileHeaderLink from "../Header/Navigation/MobileHeaderLink";
-import Signin from "@/components/Auth/SignIn";
-import SignUp from "@/components/Auth/SignUp";
-import { useTheme } from "next-themes";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
 
@@ -19,7 +16,6 @@ const Header: React.FC = () => {
   const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
-  const navbarRef = useRef<HTMLDivElement>(null);
   const signInRef = useRef<HTMLDivElement>(null);
   const signUpRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -88,7 +84,7 @@ const Header: React.FC = () => {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className={`hidden xl:block hover:bg-primary/15 hover:text-primary px-16 py-5 rounded-full text-lg font-medium ${pathname == "/contact" ? "text-primary bg-primary/15" : "bg-primary text-white"} `}
+              className={`hidden xl:block transition duration-300 px-16 py-5 rounded-full text-lg font-medium ${pathname == "/contact" ? "text-primary bg-white border-primary border-2 hover:bg-primary hover:text-white" : "bg-primary border-2 border-transparent text-white hover:border-primary hover:text-primary hover:bg-white"} `}
             >
               Contact
             </Link>
@@ -132,24 +128,14 @@ const Header: React.FC = () => {
             ))}
             <div className="mt-4 flex flex-col space-y-4 w-full">
               <Link
-                href="#"
-                className="bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white"
-                onClick={() => {
-                  setIsSignInOpen(true);
-                  setNavbarOpen(false);
-                }}
-              >
-                Connexion
-              </Link>
-              <Link
-                href="#"
-                className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                href="/contact"
+                className={`border px-4 py-2 rounded-lg transition duration-300 ${pathname == "/contact" ? "text-primary border-primary hover:bg-primary hover:text-white" : "hover:text-primary hover:border-primary hover:bg-white bg-primary text-white hover:white border-transparent"}`}
                 onClick={() => {
                   setIsSignUpOpen(true);
                   setNavbarOpen(false);
                 }}
               >
-                Inscription
+                Contact
               </Link>
             </div>
           </nav>

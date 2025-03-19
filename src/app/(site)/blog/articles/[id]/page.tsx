@@ -31,55 +31,59 @@ const OnlineBusness = () => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="fixed inset-0 flex items-center justify-center z-50 overflow-y-auto"
+                    className="fixed inset-0 flex items-center justify-center z-50"
                 >
                     <div className="fixed inset-0 bg-black opacity-50" onClick={closeModal}></div>
-                    <div className="rounded-lg p-8 z-10 w-11/12">
-                        <div>
-                            <div className="bg-white rounded-3xl shadow-lg w-full">
-                                {/* Social Media Icons */}
-                                <div className="flex justify-center items-center py-4 space-x-2">
-                                    <a href="#" className="text-blue-500 flex justify-center">
-                                        <Icon icon="mdi:facebook" className="w-10 h-10" />
-                                    </a>
-                                    <a href="#" className="text-blue-500 flex justify-center">
-                                        <Icon icon="mdi:twitter" className="w-10 h-10" />
-                                    </a>
-                                    <a href="#" className="text-blue-500 flex justify-center">
-                                        <Icon icon="mdi:linkedin" className="w-10 h-10" />
-                                    </a>
-                                </div>
+                    <div
+                        className="absolute bg-white rounded-3xl px-3 py-1 font-bold z-20 top-5 bg-red-400 cursor-pointer text-white right-10"
+                        onClick={closeModal}
+                    >
+                        <span className="text-xl">x</span>
+                    </div>
+                    <div className="rounded-lg p-8 z-10 w-11/12 overflow-y-auto max-h-[95vh]">
+                        <div className="bg-white rounded-3xl shadow-lg w-full">
+                            {/* Social Media Icons */}
+                            <div className="flex justify-center items-center py-4 space-x-2">
+                                <a href="#" className="text-blue-500 flex justify-center">
+                                    <Icon icon="mdi:facebook" className="w-10 h-10" />
+                                </a>
+                                <a href="#" className="text-blue-500 flex justify-center">
+                                    <Icon icon="mdi:twitter" className="w-10 h-10" />
+                                </a>
+                                <a href="#" className="text-blue-500 flex justify-center">
+                                    <Icon icon="mdi:linkedin" className="w-10 h-10" />
+                                </a>
+                            </div>
+                        </div>
+
+
+                        {/* Sidebar Right */}
+                        <div className="w-full mt-4">
+                            <div
+                                className="bg-white p-8 rounded-3xl shadow-lg"
+                            >
+                                <h2 className="text-xl font-bold mb-2">Besoin d’un site e-commerce clé en main 🚀 ?</h2>
+                                <p className="mb-4">Nous créons votre boutique en ligne professionnelle, optimisée et prête à vendre ! Faites le premier pas vers votre succès en ligne dès aujourd’hui.</p>
+                                <button className="bg-blue-500 text-white px-4 py-4 rounded w-full rounded-full">Créer maintenant</button>
+                            </div>
+                            <div
+                                className="mt-4 bg-white rounded-3xl shadow-lg text-center p-8"
+                            >
+                                <h2 className="text-xl font-bold mb-2">Newsletter</h2>
+                                <p>
+                                    Abonnez-vous à notre newsletter pour des réductions, des promotions et bien plus encore.
+                                </p>
                             </div>
 
-
-                            {/* Sidebar Right */}
-                            <div className="w-full mt-4">
-                                <div
-                                    className="bg-white p-8 rounded-3xl shadow-lg"
-                                >
-                                    <h2 className="text-xl font-bold mb-2">Besoin d’un site e-commerce clé en main 🚀 ?</h2>
-                                    <p className="mb-4">Nous créons votre boutique en ligne professionnelle, optimisée et prête à vendre ! Faites le premier pas vers votre succès en ligne dès aujourd’hui.</p>
-                                    <button className="bg-blue-500 text-white px-4 py-4 rounded w-full rounded-full">Créer maintenant</button>
-                                </div>
-                                <div
-                                    className="mt-4 bg-white rounded-3xl shadow-lg text-center p-8"
-                                >
-                                    <h2 className="text-xl font-bold mb-2">Newsletter</h2>
-                                    <p>
-                                        Abonnez-vous à notre newsletter pour des réductions, des promotions et bien plus encore.
-                                    </p>
-                                </div>
-
-                                <div
-                                    className="bg-white p-8 rounded-3xl shadow-lg space-y-4 mt-4"
-                                >
-                                    <h2 className="text-xl font-bold mb-2">Sections de l'article</h2>
-                                    {article?.sections.map((section, index) => (
-                                        <div key={index} className="flex items-center">
-                                            <a onClick={closeModal} href={`#${section.title}`} className="text-lg font-medium">{index + 1}) {section.title}</a>
-                                        </div>
-                                    ))}
-                                </div>
+                            <div
+                                className="bg-white p-8 rounded-3xl shadow-lg space-y-4 mt-4"
+                            >
+                                <h2 className="text-xl font-bold mb-2">Sections de l'article</h2>
+                                {article?.sections.map((section, index) => (
+                                    <div key={index} className="flex items-center">
+                                        <a onClick={closeModal} href={`#${section.title}`} className="text-lg font-medium">{index + 1}) {section.title}</a>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                         <button onClick={closeModal} className="bg-red-500 text-white px-4 py-2 rounded-full mt-8">

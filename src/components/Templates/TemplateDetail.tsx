@@ -12,7 +12,6 @@ interface TemplateDetailProps {
 }
 
 export default function TemplateDetail({ template }: TemplateDetailProps) {
-    const [selectedImage, setSelectedImage] = useState(template.image);
     const [activeTab, setActiveTab] = useState('animations');
 
     // Liste des animations disponibles
@@ -104,7 +103,7 @@ export default function TemplateDetail({ template }: TemplateDetailProps) {
                         >
                             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
                                 <Image
-                                    src={selectedImage}
+                                    src={template.image}
                                     alt={template.title}
                                     fill
                                     className="object-cover"
@@ -165,7 +164,7 @@ export default function TemplateDetail({ template }: TemplateDetailProps) {
                             <div className="flex flex-col sm:flex-row gap-4 pt-6">
                                 <Link
                                     href={template.demoUrl}
-                                    className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white transition duration-300 ease-in-out transform bg-primary rounded-lg hover:bg-opacity-90 hover:shadow-lg"
+                                    className="inline-flex items-center justify-center px-8 py-3 border-2 border-transparent text-base font-medium text-white transition duration-300 ease-in-out transform bg-primary rounded-full hover:bg-white hover:border-primary hover:text-primary"
                                 >
                                     Voir la démo
                                     <Icon
@@ -174,7 +173,7 @@ export default function TemplateDetail({ template }: TemplateDetailProps) {
                                     />
                                 </Link>
                                 <button
-                                    className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-primary transition duration-300 ease-in-out transform bg-white border-2 border-primary rounded-lg hover:bg-primary hover:text-white"
+                                    className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-primary transition duration-300 ease-in-out transform border-2 border-primary rounded-full hover:bg-primary hover:text-white"
                                 >
                                     Acheter maintenant
                                     <Icon

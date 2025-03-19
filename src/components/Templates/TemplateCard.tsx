@@ -61,13 +61,13 @@ const TemplateCard = ({ template }: TemplateCardProps) => {
                 <div className="flex space-x-3">
                     <Link
                         href={template.demoUrl}
-                        className="flex-1 bg-primary text-white text-center py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                        className="flex-1 bg-primary text-white text-center py-2 rounded-full hover:bg-white hover:text-primary border border-transaparent hover:border-primary transition-colors"
                     >
                         Voir la démo
                     </Link>
                     <Link
                         href={`/templates/${template.id}`}
-                        className="flex-1 border border-primary text-primary text-center py-2 rounded-lg hover:bg-primary/10 transition-colors"
+                        className="flex-1 border border-primary text-primary text-center py-2 rounded-full hover:bg-primary hover:text-white transition-colors"
                     >
                         Détails
                     </Link>

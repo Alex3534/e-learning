@@ -46,16 +46,9 @@ const Hero = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.8 }}
                         >
-                            {/* <input type="Email address" name="q" className="py-6 lg:py-8 pl-8 pr-20 text-lg w-full text-black rounded-full focus:outline-none shadow-input-shadow" placeholder="Rechercher ..." autoComplete="off" />
-                            <button className="bg-secondary p-5 rounded-full absolute right-2 top-2 ">
-                                <Icon
-                                    icon="solar:magnifer-linear"
-                                    className="text-white text-4xl inline-block"
-                                />
-                            </button> */}
                             <Link
-                                href="#"
-                                className="bg-primary hover:bg-primary/15 text-white hover:text-primary px-16 py-5 rounded-full text-lg font-medium"
+                                href="/contact"
+                                className="bg-primary hover:bg-white text-white hover:border-primary border-2 border-transparent transition duration-300 hover:text-primary px-16 py-5 rounded-full text-lg font-medium"
                             >
                                 Commencer
                             </Link>
