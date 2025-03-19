@@ -38,4 +38,12 @@ section {
   .custom-image {
     height: 270px;
   }
+  .aspect-w-16 {
+    aspect-ratio: 1 / 1; /* Changez le ratio pour les petits écrans */
+  }
+}
+
+.aspect-w-16 {
+  min-height: 200px; /* Ajustez cette valeur selon vos besoins */
+  display: block;
 }

@@ -101,13 +101,12 @@ export default function TemplateDetail({ template }: TemplateDetailProps) {
                             transition={{ duration: 0.5 }}
                             className="relative"
                         >
-                            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+                            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-gray-100">
                                 <Image
                                     src={template.image}
                                     alt={template.title}
                                     fill
                                     className="object-cover"
-                                    priority
                                 />
                             </div>
 
