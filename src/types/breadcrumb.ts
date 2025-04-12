@@ -1,9 +1,14 @@
-export interface BreadcrumbProps {
-  pageName: string;
-  pageDescription?: string;
+export interface BreadcrumbItem {
+  label: string;
+  path: string;
+  isActive?: boolean;
 }
 
-export interface BreadcrumbLink {
-  href: string;
-  text: string;
+export interface BreadcrumbProps {
+  items?: BreadcrumbItem[];
+  pageName: string;
+  description?: string;
+  showBackground?: boolean;
+  textWhite?: boolean;
+  className?: string;
 }

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Breadcrumb from '@/components/Common/Breadcrumb';
+import Breadcrumb from '@/components/Breadcrumb';
 import TemplateCard from '@/components/Templates/TemplateCard';
 import TemplateFilters from '@/components/Templates/TemplateFilters';
 import { templates } from '@/data/templatesData';
@@ -29,7 +29,7 @@ const TemplatesPage = () => {
 
                     <div className="max-w-2xl mx-auto text-center mb-12">
                         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                            Nos Templates Premium
+                            Nos Templates
                         </h1>
                         <p className="text-gray-600 dark:text-gray-300">
                             Des templates modernes et professionnels pour donner vie à votre projet rapidement
