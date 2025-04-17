@@ -17,6 +17,7 @@ const componentCategories: ComponentCategory[] = [
     items: [
       { name: "Boutons", path: "/component/button", status: "stable" },
       { name: "Navigation", path: "/component/navigation", status: "stable" },
+      { name: "Input", path: "/component/input", status: "stable" },
       // Ajoutez d'autres composants ici
     ]
   },
@@ -25,7 +26,7 @@ const componentCategories: ComponentCategory[] = [
 
 export const ComponentNavigation = () => {
   return (
-    <div className="w-64 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+    <div className="lg:w-full border bg-white p-4 rounded-lg shadow-lg">
       <div className="mb-6">
         <input
           type="search"

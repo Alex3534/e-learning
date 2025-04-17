@@ -7,31 +7,13 @@ import { DefaultButtonBlack, DefaultButtonBlue, DefaultButtonGray, DefaultButton
 import { DefaultButtonOutlineBlack, DefaultButtonOutlineBlue, DefaultButtonOutlineGray, DefaultButtonOutlineGreen, DefaultButtonOutlineOrange, DefaultButtonOutlinePurple, DefaultButtonOutlineRed, DefaultButtonOutlineYellow } from '@/components/ui/Button/defaultButtonOutline';
 import { DuotoneButtonCyanToBlue, DuotoneButtonGreenToBlue, DuotoneButtonPinkToOrange, DuotoneButtonPurpleToBlue, DuotoneButtonPurpleToPink, DuotoneButtonRedToYellow, DuotoneButtonTealToLime } from '@/components/ui/Button/duotoneButton';
 import { GradientButtonBlack, GradientButtonBlue, GradientButtonGray, GradientButtonGreen, GradientButtonOrange, GradientButtonPurple, GradientButtonRed, GradientButtonYellow } from '@/components/ui/Button/gradientButton';
+import { ConnectWithMetaMask, DownloadButton, EditButton, SignInWithApple, SignInWithFacebook, SignInWithGitHub, SignInWithGoogle, SignInWithTwiter } from '@/components/ui/Button/buttonWithIcon';
 import React from 'react';
+import { ButtonDuotoneCode, ButtonDuotoneOutlineCode } from '@/components/ui/Button/buttonGradientCode';
+import { ComponentItem } from '@/types/component';
 
-export interface ComponentProperty {
-  name: string;
-  type: string;
-  default?: string | boolean;
-  description: string;
-  required?: boolean;
-  values?: string[];
-}
 
-export interface ComponentItem {
-  id: Number;
-  title: string;
-  description: string;
-  category: string;
-  tags?: string[];
-  component: React.ReactNode;
-  code?: string;
-  previewClassName?: string;
-  properties?: ComponentProperty[];
-  usage?: string;
-}
-
-export const components: ComponentItem[] = [
+export const ButtonComponents: ComponentItem[] = [
   {
     id: 1,
     title: 'Boutons Pilule - Variantes Couleurs',
@@ -161,7 +143,7 @@ export const components: ComponentItem[] = [
         <DuotoneButtonRedToYellow label="Red to Yellow" />
       </div>
     ),
-    code: '',
+    code: ButtonDuotoneCode,
     usage: 'Utilisez ces boutons pour des actions importantes nécessitant un impact visuel fort, souvent utilisés dans des interfaces modernes et dynamiques.',
   },
 
@@ -182,8 +164,38 @@ export const components: ComponentItem[] = [
         <ButtonOutlineGradientRedToYellow label="Red to Yellow" />
       </div>
     ),
-    code: '',  // Tu peux ajouter le code ici plus tard si nécessaire
+    code: ButtonDuotoneOutlineCode,  // Tu peux ajouter le code ici plus tard si nécessaire
     usage: 'Utilisez ces boutons avec dégradé pour les actions principales dans vos interfaces modernes et visuellement impactantes, tout en ajoutant un contour élégant.',
+  },
+  
+  {
+    id: 8,
+    title: 'Boutons avec icône',
+    description: "Un ensemble de boutons incorporant des icônes représentatives pour différentes actions (connexion, téléchargement, édition, suppression, etc.). Ces boutons combinent texte et icône pour améliorer la clarté de l'action et offrir une meilleure expérience utilisateur.",
+    category: 'UI',
+    tags: ['interaction', 'clickable', 'button', 'icon', 'action', 'social', 'functional', 'modern'],
+    component: (
+      <div className="flex gap-4 flex-wrap">
+        {/* Boutons sociaux */}
+        <SignInWithFacebook label="Facebook" />
+        <SignInWithTwiter label="Twitter" />
+        <SignInWithGitHub label="GitHub" />
+        <SignInWithGoogle label="Google" />
+        <SignInWithApple label="Apple" />
+        <ConnectWithMetaMask label="MetaMask" />
+        <EditButton label="Edit" />
+        <DownloadButton label="Download" />
+
+        {/* Boutons fonctionnels */}
+        {/*
+        <DeleteButton label="Supprimer" />
+        <AddButton label="Ajouter" />
+        <SearchButton label="Rechercher" /> */}
+      </div>
+    ),
+    code: '', // Tu pourras ajouter le code ici si nécessaire
+    usage: 'Utilisez ces boutons pour les actions principales accompagnées d’icônes afin d’améliorer la compréhension visuelle des fonctionnalités dans votre interface.',
   }
+
 
 ];

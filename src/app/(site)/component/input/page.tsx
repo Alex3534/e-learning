@@ -6,7 +6,7 @@ import { ComponentDemo } from '@/components/Components/componentDemo';
 import { ComponentSearch } from '@/components/Components/ComponentSearch';
 import { Breadcrumb } from '@/components/Common/Breadcrumb';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ButtonComponents } from '@/data/componentButtonData';
+import { InputFormComponents } from '@/data/componnentInputFormData';
 
 export default function ComponentButtonPage() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -23,7 +23,7 @@ export default function ComponentButtonPage() {
         },
     ];
 
-    const filteredComponents = ButtonComponents.filter((component) => {
+    const filteredComponents = InputFormComponents.filter((component) => {
         const matchesSearch = component.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             component.description.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = selectedCategory === 'Tous' || component.category === selectedCategory;
@@ -43,11 +43,6 @@ export default function ComponentButtonPage() {
 
             <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 py-10">
                 <div className="flex flex-col lg:flex-row gap-8">
-                    <div className="lg:w-1/4 w-full">
-                        <div className="sticky top-24 w-full">
-                            <ComponentNavigation />
-                        </div>
-                    </div>
 
                     <div className="lg:w-full">
                         <div className="prose dark:prose-invert max-w-none mb-8">
@@ -77,6 +72,7 @@ export default function ComponentButtonPage() {
                                         exit={{ opacity: 0, y: -20 }}
                                     >
                                         <ComponentDemo
+                                            componentClassname=''
                                             title={component.title}
                                             description={component.description}
                                             component={component.component}

@@ -8,6 +8,7 @@ interface ComponentDemoProps {
     description: string;
     component: React.ReactNode;
     code: string;
+    componentClassname?: string;
     properties?: {
         name: string;
         type: string;
@@ -21,7 +22,8 @@ export const ComponentDemo = ({
     description,
     component,
     code,
-    properties
+    properties,
+    componentClassname = "p-6"
 }: ComponentDemoProps) => {
     const [showCode, setShowCode] = useState(false);
     const [copied, setCopied] = useState(false);
@@ -36,7 +38,7 @@ export const ComponentDemo = ({
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden mb-8"
+            className="bg-white rounded-lg shadow-lg overflow-hidden mb-8"
         >
             {/* En-tête */}
             <div className="border-b border-gray-200 dark:border-gray-700 p-6">
@@ -49,8 +51,8 @@ export const ComponentDemo = ({
             </div>
 
             {/* Zone de prévisualisation */}
-            <div className="p-6 bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
-                <div className="w-full max-w-2xl">
+            <div className={`${componentClassname} bg-gray-50 flex items-center justify-center}`}>
+                <div className="w-full">
                     {component}
                 </div>
             </div>
@@ -76,10 +78,10 @@ export const ComponentDemo = ({
             {/* Code source */}
             {showCode && (
                 <div className="border-t border-gray-200 dark:border-gray-700">
-                    <div className="relative" style={{ height: '600px' }}>
+                    <div className="relative w-full max-w-screen-xl mx-auto" style={{ height: '600px' }}>
                         <SyntaxHighlighter
                             style={atomDark}
-                            language="tsx"
+                            language="jsx"
                             customStyle={{
                                 margin: 0,
                                 padding: '1.5rem',
@@ -90,9 +92,9 @@ export const ComponentDemo = ({
                             }}
                             wrapLines={true}
                             showLineNumbers={true}
-                            lineNumberStyle={{ 
+                            lineNumberStyle={{
                                 color: '#888',
-                                minWidth: '2.5em' 
+                                minWidth: '2.5em'
                             }}
                             lineProps={{ style: { whiteSpace: 'pre-wrap' } }}
                         >
@@ -101,6 +103,7 @@ export const ComponentDemo = ({
                     </div>
                 </div>
             )}
+
         </motion.div>
     );
 };

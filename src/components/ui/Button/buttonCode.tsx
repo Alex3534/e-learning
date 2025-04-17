@@ -1,5 +1,4 @@
-export const ButtonFullRadiusCode = 
-(`
+export const ButtonFullRadiusCode = (`
 // Component/ui/button.jsx
 import React from "react";
 
@@ -135,8 +134,7 @@ export  function Page () {
 
 `).trim()
 
-export const ButtonFullRadiusOutlineCode = 
-(`
+export const ButtonFullRadiusOutlineCode = (`
 // Component/ui/button.jsx
 import React from "react";
 
@@ -441,7 +439,7 @@ export const ButtonRed = ({ label, ...props }) => {
     )
 }
 
-export const ButtonYellow = ({ , ...props }) => {
+export const ButtonYellow = ({ label , ...props }) => {
     return (
         <React.Fragment>
             <button
@@ -670,4 +668,4 @@ export  function Page () {
     )
 }
 `    
-)
+).trim()
