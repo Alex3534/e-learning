@@ -1,5 +1,5 @@
 import { LoginFromInput04 } from "@/components/ui/InputForm/loginFormInput";
-import { Navigation01, Navigation02, Navigation03, Navigation04, Navigation05 } from "@/components/ui/Navigation/navigation";
+import { Navigation01, Navigation02, Navigation03, Navigation04, Navigation05, Navigation06 } from "@/components/ui/Navigation/navigation";
 import { Navigation01Code } from "@/components/ui/Navigation/navigationCode";
 
 export const NavigationComponent = [
@@ -72,6 +72,21 @@ export const NavigationComponent = [
         component: (
             <div className="">
                 <Navigation05 />
+            </div>
+        ),
+        code: '',
+        usage: '',
+    },
+    
+    {
+        id: 4,
+        title: 'Navigation 06',
+        description: '',
+        category: 'UI',
+        tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
+        component: (
+            <div className="">
+                <Navigation06 />
             </div>
         ),
         code: '',

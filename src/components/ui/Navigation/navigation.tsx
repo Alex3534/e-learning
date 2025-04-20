@@ -239,8 +239,8 @@ export const Navigation02 = () => {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex-shrink-0">
                         <img
-                            className="h-16 w-auto"
-                            src="/images/logo/Horizon ecrits.png"
+                            className="h-14 w-auto"
+                            src="/images/logo/black-logo.png"
                             alt="Logo"
                         />
                     </div>
@@ -362,11 +362,11 @@ export const Navigation03 = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const categories = ["Women", "Men", "Kids", "Accessories", "Brands", "Sale"];
+    const categories = ["Home", "Women", "Men", "Accessories", "Sale"];
 
     return (
         <div className={`w-full z-50 transition-all duration-300 ${isScrolled ? "shadow-lg" : ""}`}>
-            <div className="bg-gray-100 text-secondary-foreground py-2 text-sm">
+            <div className="bg-gray-50 text-secondary-foreground py-2 text-sm">
                 <div className="container mx-auto px-4 flex justify-between items-center">
                     <div className="hidden md:flex items-center space-x-6">
                         <div className="flex items-center">
@@ -400,34 +400,36 @@ export const Navigation03 = () => {
 
             <nav className="bg-white shadow-md">
                 <div className="container mx-auto px-4">
-                    <div className="flex items-center justify-between h-20">
+                    <div className="flex items-center justify-between h-24">
                         <div className="flex items-center">
                             <button
-                                className="md:hidden p-2"
+                                className="xl:hidden p-2"
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                                 aria-label="Toggle menu"
                             >
-                                <FiMenu className="h-6 w-6" />
+                                <FaBars className="h-8 w-8" />
                             </button>
                             <img
-                                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9"
+                                src="/images/logo/logo.png"
                                 alt="Logo"
-                                className="h-10 w-auto cursor-pointer"
+                                className="h-12 xl:h-14 w-auto cursor-pointer"
                             />
                         </div>
 
-                        <div className="hidden md:flex items-center space-x-8">
+                        <div className="hidden xl:flex items-center space-x-8">
                             {categories.map((category) => (
                                 <div key={category} className="relative group">
                                     <button className="flex items-center space-x-1 py-2 text-foreground hover:text-blue-600 transition-colors">
                                         <span>{category}</span>
-                                        <FiAngleDown className="h-4 w-4" />
+                                        {category == "Home" ? '' : (<FiAngleDown className="h-4 w-4" />)}
                                     </button>
-                                    <div className="absolute z-4 left-0 hidden group-hover:block w-48 border bg-white shadow-lg rounded-md py-2">
-                                        <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 1</a>
-                                        <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 2</a>
-                                        <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 3</a>
-                                    </div>
+                                    {category == "Home" ? '' : (
+                                        <div className="absolute z-4 left-0 hidden group-hover:block w-48 border bg-white shadow-lg rounded-md py-2">
+                                            <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 1</a>
+                                            <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 2</a>
+                                            <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 3</a>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -461,7 +463,7 @@ export const Navigation03 = () => {
                 </div>
 
                 {/* Mobile Menu */}
-                <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"} px-4`}>
+                <div className={`xl:hidden ${isMenuOpen ? "block" : "hidden"} px-4`}>
                     <div className="relative border rounded-full flex-1 max-w-lg block md:hidden my-6">
                         <input
                             type="text"
@@ -504,15 +506,13 @@ export const Navigation04 = () => {
             <React.Fragment>
                 <div className="flex min-h-screen bg-gray-50">
                     {/* Sidebar */}
-                    <aside className={`relative ${open ? 'w-64' : 'w-20'} transition-all duration-300 bg-white border-r border-gray-200 flex-col hidden md:flex`}>
+                    <aside className={`relative ${open ? 'w-64' : 'w-24'} transition-all duration-300 bg-white border-r border-gray-200 flex-col hidden md:flex`}>
                         <span className="absolute right-0 top-0 cursor-pointer border border-gray-400 text-gray-400 w-6 h-6 flex justify-center items-center" onClick={handleOpenNavigation}>{open ? 'x' : '>'}</span>
                         {/* Logo */}
-                        <div className="py-4 border-b border-gray-200">
-                            <div className="flex items-center justify-center">
-                                <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clipRule="evenodd" />
-                                </svg>
-                                <span className={`ml-2 text-xl font-semibold text-gray-800 ${open ? '' : 'hidden'}`}>HORIZON</span>
+                        <div className="py-4 border-b border-gray-200 flex items-center">
+                            <div className="flex items-center justify-center w-full">
+                                <img src="/images/logo/logo.png" alt="logo" className="h-14 w-auto" />
+                                <span className={`ml-1 text-xl font-semibold  text-gray-800 ${open ? '' : 'hidden'}`}>HORIZON Ecrits</span>
                             </div>
                         </div>
 
@@ -573,12 +573,10 @@ export const Navigation04 = () => {
                     {/* Main content */}
                     <main className="w-full">
                         <nav className="w-full shadow-sm">
-                            <div className="w-full py-4 bg-white flex  justify-between md:justify-end items-center px-4">
+                            <div className="w-full py-4 md:py-6 bg-white flex  justify-between md:justify-end items-center px-4">
                                 <div className="flex md:hidden border-gray-200">
                                     <div className="flex items-center justify-center">
-                                        <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clipRule="evenodd" />
-                                        </svg>
+                                        <img src="/images/logo/logo.png" alt="" className="h-10 w-auto"/>
                                     </div>
                                 </div>
                                 <div className="hidden md:flex items-center space-x-4">
@@ -654,7 +652,7 @@ export const Navigation04 = () => {
                                             </a>
                                         </li>
                                     </ul>
-                                    <hr className="mt-3"/>
+                                    <hr className="mt-3" />
                                     <div className="flex md:hidden items-center space-x-4 mt-3">
                                         <button
                                             onClick={() => setIsDarkMode(!isDarkMode)}
@@ -714,7 +712,7 @@ export const Navigation05: React.FC = () => {
                         <div className="flex-shrink-0">
                             <h1 className="text-2xl font-bold text-white lg:text-black lg:px-10 font-montserrat tracking-wider transform hover:scale-105 transition-transform duration-200 cursor-pointer">HORIZON</h1>
                         </div>
-                        <div className="hidden lg:block bg-gradient-to-r from-blue-800 to-emerald-500 py-4 w-6/12" style={{clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)"}}>
+                        <div className="hidden lg:block bg-gradient-to-r from-blue-800 to-emerald-500 py-4 w-6/12" style={{ clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)" }}>
                             <div className="ml-10 flex items-center justify-center space-x-8">
                                 {navItems.map((item) => (
                                     <a
@@ -754,6 +752,165 @@ export const Navigation05: React.FC = () => {
                     )}
                 </div>
             </div>
+        </nav>
+    );
+};
+
+export const Navigation06 = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+    const menuItems = [
+        { title: "Home", href: "#" },
+        { title: "About", href: "#" },
+        {
+            title: "Services",
+            href: "#",
+            submenu: ["Consulting", "Development", "Design"]
+        },
+        { title: "Contact", href: "#" }
+    ];
+
+    const NavLink: React.FC<{ item: { title: string; href: string; submenu?: string[] } }> = ({ item }) => (
+        <div className="relative group">
+            <a
+                href={item.href}
+                className="py-2 flex items-center text-white transition-colors duration-300"
+            >
+                {item.title}
+                {item.submenu && (
+                    <span className="ml-1"><FiAngleDown className="h-4 w-4" /></span>
+                )}
+            </a>
+            {item.submenu && (
+                <div className="absolute left-0 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
+                    {item.submenu.map((subItem, index) => (
+                        <a
+                            key={index}
+                            href="#"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                            {subItem}
+                        </a>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+
+    return (
+        <nav
+            className="w-full z-50 transition-all duration-300 bg-gradient-to-r from-blue-800 to-emerald-500"
+        >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
+                    <div className="flex-shrink-0">
+                        <img
+                            className="h-14 w-auto"
+                            src="/images/logo/white-logo.png"
+                            alt="Logo"
+                        />
+                    </div>
+
+                    <div className="hidden md:flex items-center space-x-8">
+                        {menuItems.map((item, index) => (
+                            <NavLink key={index} item={item} />
+                        ))}
+                    </div>
+
+                    <div className="hidden md:flex items-center space-x-4 text-white">
+                        <button
+                            onClick={() => setIsSearchOpen(!isSearchOpen)}
+                            className="p-2 rounded-full hover:bg-gray-100 hover:text-black"
+                            aria-label="Search"
+                        >
+                            <FiSearch className="h-5 w-5" />
+                        </button>
+                        <button
+                            onClick={() => setIsDarkMode(!isDarkMode)}
+                            className="p-2 rounded-full hover:bg-gray-100 hover:text-black"
+                            aria-label="Toggle dark mode"
+                        >
+                            {isDarkMode ? (
+                                <FiSun className="h-5 w-5" />
+                            ) : (
+                                <FiMoon className="h-5 w-5" />
+                            )}
+                        </button>
+                        <button
+                            className="p-2 rounded-full hover:bg-gray-100 hover:text-black"
+                            aria-label="Language"
+                        >
+                            <FiCog className="h-5 w-5" />
+                        </button>
+                        <button
+                            className="p-2 rounded-full hover:bg-gray-100 hover:text-black"
+                            aria-label="User account"
+                        >
+                            <FiUser className="h-5 w-5" />
+                        </button>
+                    </div>
+
+                    <div className="md:hidden flex items-center">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="p-2 rounded-md text-white hover:bg-gray-100 hover:text-black transition duration-300"
+                            aria-label="Toggle menu"
+                        >
+                            {isOpen ? (
+                                <FaClose className="h-6 w-6" />
+                            ) : (
+                                <FiMenu className="h-6 w-6" />
+                            )}
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Mobile menu */}
+            <div
+                className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
+                    }`}
+            >
+                <div className="px-2 pt-2 pb-3 space-y-1">
+                    {menuItems.map((item, index) => (
+                        <a
+                            key={index}
+                            href={item.href}
+                            className="block text-white px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                        >
+                            {item.title}
+                        </a>
+                    ))}
+                    <div className="flex items-center space-x-2 px-3 py-2 text-white">
+                        <FiSearch className="h-5 w-5" />
+                        {isDarkMode ? (
+                            <FiSun className="h-5 w-5" />
+                        ) : (
+                            <FiMoon className="h-5 w-5" />
+                        )}
+                        <FiCog className="h-5 w-5" />
+                        <FiUser className="h-5 w-5" />
+                    </div>
+                </div>
+            </div>
+
+            {/* Search overlay */}
+            {isSearchOpen && (
+                <div className="w-full shadow-lg p-4 transition-all duration-300 ease-in-out">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="relative">
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <FiSearch className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
+                        </div>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
