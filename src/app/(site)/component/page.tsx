@@ -18,13 +18,25 @@ const components = [
     href: '/component/navigation',
     category: 'Navigation'
   },
+  {
+    title: 'Input Forms',
+    description: 'Composants de formulaires d\'entrée avec validation et styles personnalisés.',
+    href: '/component/input',
+    category: 'Form'
+  },
+  {
+    title: 'Cards',
+    description: 'Cartes d\'information avec des images, du texte et des actions.',
+    href: '/component/card',
+    category: 'Layout'
+  }
 ];
 
 const categories = ['Basic', 'Navigation', 'Form', 'Layout', 'Data Display'];
 
 export default function ComponentPage() {
   const [filteredComponents, setFilteredComponents] = useState(components);
-  
+
   const handleSearch = (query: string) => {
     const filtered = components.filter(component =>
       component.title.toLowerCase().includes(query.toLowerCase()) ||

@@ -5,7 +5,7 @@ import { ComponentDemo } from '@/components/Components/componentDemo';
 import { ComponentSearch } from '@/components/Components/ComponentSearch';
 import { Breadcrumb } from '@/components/Common/Breadcrumb';
 import { motion, AnimatePresence } from 'framer-motion';
-import { InputFormComponents } from '@/data/componnentInputFormData';
+import { ComponentCardData } from '@/data/componentCardData';
 
 export default function ComponentButtonPage() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -22,7 +22,7 @@ export default function ComponentButtonPage() {
         },
     ];
 
-    const filteredComponents = InputFormComponents.filter((component) => {
+    const filteredComponents = ComponentCardData.filter((component) => {
         const matchesSearch = component.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             component.description.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = selectedCategory === 'Tous' || component.category === selectedCategory;
