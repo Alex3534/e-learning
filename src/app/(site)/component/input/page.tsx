@@ -6,6 +6,7 @@ import { ComponentSearch } from '@/components/Components/ComponentSearch';
 import { Breadcrumb } from '@/components/Common/Breadcrumb';
 import { motion, AnimatePresence } from 'framer-motion';
 import { InputFormComponents } from '@/data/componnentInputFormData';
+import { ComponentNavigation } from '@/components/Components/ComponentNavigation';
 
 export default function ComponentButtonPage() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -32,7 +33,7 @@ export default function ComponentButtonPage() {
     return (
         <>
             <Breadcrumb
-                className= {"mt-20"}
+                className={"mt-20"}
                 items={breadcrumbItems}
                 pageName="Bibliothèque de composants"
                 description="Explorez notre collection de composants réutilisables pour construire des interfaces modernes."
@@ -56,6 +57,8 @@ export default function ComponentButtonPage() {
                             onSearch={setSearchQuery}
                             onFilter={setSelectedCategory}
                         />
+
+                        <ComponentNavigation />
 
                         <AnimatePresence>
                             <motion.div

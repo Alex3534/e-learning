@@ -105,7 +105,7 @@ export const ProductCard = ({
     );
 };
 
-export const Card: React.FC<{title?: string; subtitle?: string; imageUrl?: string; content?: string; tags?: string[]; variant?: 'default' | 'bordered' | 'minimal'}> = ({
+export const Card: React.FC<{ title?: string; subtitle?: string; imageUrl?: string; content?: string; tags?: string[]; variant?: 'default' | 'bordered' | 'minimal' }> = ({
     title,
     subtitle,
     imageUrl = "https://images.unsplash.com/photo-1612144431180-2d672779556c",

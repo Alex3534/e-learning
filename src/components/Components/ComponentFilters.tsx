@@ -21,7 +21,7 @@ const ComponentFilters = ({ categories, onCategoryChange, onSearch }: ComponentF
           type="text"
           placeholder="Rechercher un composant..."
           onChange={(e) => onSearch(e.target.value)}
-          className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <svg
           className="absolute right-3 top-2.5 h-5 w-5 text-gray-400"

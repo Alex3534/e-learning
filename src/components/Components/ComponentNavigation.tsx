@@ -17,7 +17,8 @@ const componentCategories: ComponentCategory[] = [
     items: [
       { name: "Boutons", path: "/component/button", status: "stable" },
       { name: "Navigation", path: "/component/navigation", status: "stable" },
-      { name: "Input", path: "/component/input", status: "stable" },
+      { name: "Forms", path: "/component/input", status: "stable" },
+      { name: "Cards", path: "/component/card", status: "stable" },
       // Ajoutez d'autres composants ici
     ]
   },
@@ -27,14 +28,6 @@ const componentCategories: ComponentCategory[] = [
 export const ComponentNavigation = () => {
   return (
     <div className="lg:w-full border bg-white p-4 rounded-lg shadow-lg">
-      <div className="mb-6">
-        <input
-          type="search"
-          placeholder="Rechercher un composant..."
-          className="w-full px-4 py-2 rounded-md border border-gray-200 dark:border-gray-700 
-                     dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
 
       {componentCategories.map((category, index) => (
         <div key={index} className="mb-6">
