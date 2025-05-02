@@ -19,6 +19,7 @@ const componentCategories: ComponentCategory[] = [
       { name: "Navigation", path: "/component/navigation", status: "stable" },
       { name: "Forms", path: "/component/input", status: "stable" },
       { name: "Cards", path: "/component/card", status: "stable" },
+      { name: "Hero", path: "/component/hero", status: "stable" },
       // Ajoutez d'autres composants ici
     ]
   },

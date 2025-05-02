@@ -29,6 +29,12 @@ const components = [
     description: 'Cartes d\'information avec des images, du texte et des actions.',
     href: '/component/card',
     category: 'Layout'
+  },
+  {
+    title: 'Hero Section',
+    description: 'Section héro avec image de fond, titre et bouton d\'appel à l\'action.',
+    href: '/component/hero',
+    category: 'Layout'
   }
 ];
 
