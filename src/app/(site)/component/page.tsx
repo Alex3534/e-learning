@@ -35,7 +35,31 @@ const components = [
     description: 'Section héro avec image de fond, titre et bouton d\'appel à l\'action.',
     href: '/component/hero',
     category: 'Layout'
-  }
+  },
+  {
+    title: 'Contact Form',
+    description: 'Formulaire de contact avec validation et envoi d\'email.',
+    href: '/component/contact',
+    category: 'Form'
+  },
+  {
+    title: 'Modals',
+    description: 'Fenêtres modales pour afficher des informations supplémentaires ou des formulaires.',
+    href: '/component/modal',
+    category: 'Layout'
+  },
+  {
+    title: 'Alerts',
+    description: 'Alertes pour informer les utilisateurs d\'événements importants.',
+    href: '/component/alert',
+    category: 'Data Display'
+  },
+  {
+    title: 'Tooltips',
+    description: 'Infobulles pour fournir des informations supplémentaires sur les éléments.',
+    href: '/component/tooltip',
+    category: 'Data Display'
+  },
 ];
 
 const categories = ['Basic', 'Navigation', 'Form', 'Layout', 'Data Display'];
