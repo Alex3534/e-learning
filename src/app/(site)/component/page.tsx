@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ComponentCard from '@/components/Components/ComponentCard';
 import ComponentFilters from '@/components/Components/ComponentFilters';
 import { motion } from 'framer-motion';
+import { title } from 'process';
 
 const components = [
   {
@@ -58,6 +59,49 @@ const components = [
     title: 'Tooltips',
     description: 'Infobulles pour fournir des informations supplémentaires sur les éléments.',
     href: '/component/tooltip',
+    category: 'Data Display'
+  },
+  
+  {
+    title: 'Galerie',
+    description: 'Galerie d\'images avec options de filtrage et de tri.',
+    href: '/component/gallery',
+    category: 'Data Display'
+  },
+  {
+    title: 'Progress Bar',
+    description: 'Barre de progression pour indiquer l\'état d\'une tâche.',
+    href: '/component/progress',
+    category: 'Data Display'
+  },
+  {
+    title: 'Breadcrumbs',
+    description: 'Fil d\'Ariane pour montrer la hiérarchie de navigation.',
+    href: '/component/breadcrumbs',
+    category: 'Navigation'
+  },
+  {
+    title: 'Footer',
+    description: 'Pied de page avec des liens et des informations de contact.',
+    href: '/component/footer',
+    category: 'Layout'
+  },
+  {
+    title: 'Pagination',
+    description: 'Composant de pagination pour naviguer entre les pages de contenu.',
+    href: '/component/pagination',
+    category: 'Data Display'
+  },
+  {
+    title: 'Tabs',
+    description: 'Composant d\'onglets pour organiser le contenu en sections.',
+    href: '/component/tabs',
+    category: 'Data Display'
+  },
+  {
+    title: 'Accordion',
+    description: 'Composant d\'accordéon pour afficher ou masquer du contenu.',
+    href: '/component/accordion',
     category: 'Data Display'
   },
 ];
