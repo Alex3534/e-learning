@@ -54,7 +54,6 @@ export default function ComponentGalleryPage() {
 
                         <ComponentSearch
                             onSearch={setSearchQuery}
-                            onFilter={setSelectedCategory}
                         />
 
                         <ComponentNavigation />

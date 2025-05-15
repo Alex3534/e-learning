@@ -55,9 +55,7 @@ export default function ComponentAlertPage() {
 
                         <ComponentSearch
                             onSearch={setSearchQuery}
-                            onFilter={setSelectedCategory}
                         />
-                        <ComponentNavigation />
                         <AnimatePresence>
                             <motion.div
                                 layout

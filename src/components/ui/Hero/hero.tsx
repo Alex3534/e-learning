@@ -46,37 +46,6 @@ export const Hero01 = () => {
                             Learn More
                         </button>
                     </div>
-
-                    <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-                        <div className="p-4 bg-white/5 backdrop-blur-sm rounded-lg">
-                            <img
-                                src="https://images.unsplash.com/photo-1529465230221-a0d10e46fcbb"
-                                alt="Client Logo 1"
-                                className="h-12 w-auto mx-auto filter brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300"
-                            />
-                        </div>
-                        <div className="p-4 bg-white/5 backdrop-blur-sm rounded-lg">
-                            <img
-                                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9"
-                                alt="Client Logo 2"
-                                className="h-12 w-auto mx-auto filter brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300"
-                            />
-                        </div>
-                        <div className="p-4 bg-white/5 backdrop-blur-sm rounded-lg">
-                            <img
-                                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9"
-                                alt="Client Logo 3"
-                                className="h-12 w-auto mx-auto filter brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300"
-                            />
-                        </div>
-                        <div className="p-4 bg-white/5 backdrop-blur-sm rounded-lg">
-                            <img
-                                src="https://images.unsplash.com/photo-1529465230221-a0d10e46fcbb"
-                                alt="Client Logo 4"
-                                className="h-12 w-auto mx-auto filter brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300"
-                            />
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -380,11 +349,7 @@ export const Hero05 = () => {
 
                 {/* Image Hero */}
                 <div className="md:w-1/2 mt-8 md:mt-0">
-                    <img
-                        src="https://via.placeholder.com/600x400"
-                        alt="Produit phare en promotion"
-                        className="w-full rounded-xl shadow-xl"
-                    />
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Nouveautés" className="w-full h-auto rounded-xl shadow-lg" />
                 </div>
             </div>
         </section>

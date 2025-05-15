@@ -6,17 +6,12 @@ import { ComponentSearch } from '@/components/Components/ComponentSearch';
 import { Breadcrumb } from '@/components/Common/Breadcrumb';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ComponentCardData } from '@/data/componentCardData';
-import { ComponentNavigation } from '@/components/Components/ComponentNavigation';
 
 export default function ComponentButtonPage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('Tous');
 
     const breadcrumbItems = [
-        {
-            label: 'Documentation',
-            path: '/documentation',
-        },
         {
             label: 'Composants',
             path: '/component',
@@ -25,7 +20,7 @@ export default function ComponentButtonPage() {
 
     const filteredComponents = ComponentCardData.filter((component) => {
         const matchesSearch = component.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            component.description.toLowerCase().includes(searchQuery.toLowerCase());
+            (component.description ?? '').toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = selectedCategory === 'Tous' || component.category === selectedCategory;
         return matchesSearch && matchesCategory;
     });
@@ -33,7 +28,7 @@ export default function ComponentButtonPage() {
     return (
         <>
             <Breadcrumb
-                className={"mt-20"}
+                className={"mt-[150px]"}
                 items={breadcrumbItems}
                 pageName="Bibliothèque de composants"
                 description="Explorez notre collection de composants réutilisables pour construire des interfaces modernes."
@@ -54,10 +49,7 @@ export default function ComponentButtonPage() {
 
                         <ComponentSearch
                             onSearch={setSearchQuery}
-                            onFilter={setSelectedCategory}
                         />
-
-                        <ComponentNavigation />
 
                         <AnimatePresence>
                             <motion.div
@@ -75,7 +67,7 @@ export default function ComponentButtonPage() {
                                         <ComponentDemo
                                             componentClassname=''
                                             title={component.title}
-                                            description={component.description}
+                                            description={component.description || ''}
                                             component={component.component}
                                             code={component.code || ''}
                                         />

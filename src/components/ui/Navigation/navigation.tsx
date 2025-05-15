@@ -1,129 +1,8 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
-
-export const FaClose: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FaBars: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M5 7h14M5 12h14M5 17h10" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FiMoon: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5V3m0 18v-2M7.05 7.05 5.636 5.636m12.728 12.728L16.95 16.95M5 12H3m18 0h-2M7.05 16.95l-1.414 1.414M18.364 5.636 16.95 7.05M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FiCog: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z" />
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FiUser: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FiMenu: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FiSearch: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FiPhone: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.427 14.768 17.2 13.542a1.733 1.733 0 0 0-2.45 0l-.613.613a1.732 1.732 0 0 1-2.45 0l-1.838-1.84a1.735 1.735 0 0 1 0-2.452l.612-.613a1.735 1.735 0 0 0 0-2.452L9.237 5.572a1.6 1.6 0 0 0-2.45 0c-3.223 3.2-1.702 6.896 1.519 10.117 3.22 3.221 6.914 4.745 10.12 1.535a1.601 1.601 0 0 0 0-2.456Z" />
-            </svg>
-
-        </React.Fragment>
-    )
-}
-
-export const FiAngleDown: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FiSun: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21a9 9 0 0 1-.5-17.986V3c-.354.966-.5 1.911-.5 3a9 9 0 0 0 9 9c.239 0 .254.018.488 0A9.004 9.004 0 0 1 12 21Z" />
-            </svg>
-        </React.Fragment>
-    )
-}
-
-export const FiHeart: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
-            </svg>
-
-        </React.Fragment>
-    )
-}
-
-export const FiShoppingCart: React.FC<{ className: string }> = ({ className }) => {
-    return (
-        <React.Fragment>
-            <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z" />
-            </svg>
-        </React.Fragment>
-    )
-}
+import { FaAngleDown, FaBars } from "react-icons/fa";
+import { FiX, FiFlag, FiHeart, FiMenu, FiMoon, FiPhone, FiSearch, FiShoppingCart, FiSun, FiUser, FiSettings } from "react-icons/fi";
 
 export const Navigation01: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -163,7 +42,7 @@ export const Navigation01: React.FC = () => {
                                 className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none"
                                 aria-label="Toggle menu"
                             >
-                                {isOpen ? <FaClose className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+                                {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
                             </button>
                         </div>
                     </div>
@@ -192,6 +71,11 @@ export const Navigation02 = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isSubmenu, setIsSubmenu] = useState("");
+
+    const handleClickSubmenu = (title: string) => {
+        setIsSubmenu((prev) => (prev == title ? "" : title))
+    }
 
     const menuItems = [
         { title: "Home", href: "#" },
@@ -212,7 +96,7 @@ export const Navigation02 = () => {
             >
                 {item.title}
                 {item.submenu && (
-                    <span className="ml-1"><FiAngleDown className="h-4 w-4" /></span>
+                    <span className="ml-1"><FaAngleDown className="h-4 w-4" /></span>
                 )}
             </a>
             {item.submenu && (
@@ -233,7 +117,7 @@ export const Navigation02 = () => {
 
     return (
         <nav
-            className="w-full z-50 transition-all duration-300"
+            className="w-full border-b border-gray-300 z-50 transition-all duration-300"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
@@ -274,7 +158,7 @@ export const Navigation02 = () => {
                             className="p-2 rounded-full hover:bg-gray-100"
                             aria-label="Language"
                         >
-                            <FiCog className="h-5 w-5" />
+                            <FiSettings className="h-5 w-5" />
                         </button>
                         <button
                             className="p-2 rounded-full hover:bg-gray-100"
@@ -291,7 +175,7 @@ export const Navigation02 = () => {
                             aria-label="Toggle menu"
                         >
                             {isOpen ? (
-                                <FaClose className="h-6 w-6" />
+                                <FiX className="h-6 w-6" />
                             ) : (
                                 <FiMenu className="h-6 w-6" />
                             )}
@@ -307,22 +191,45 @@ export const Navigation02 = () => {
             >
                 <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
                     {menuItems.map((item, index) => (
-                        <a
-                            key={index}
-                            href={item.href}
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                        >
-                            {item.title}
-                        </a>
+                        <div>
+                            <button
+                                key={index}
+                                onClick={() => handleClickSubmenu(item.title)}
+                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between"
+                            >
+                                {item.title}
+                                {item.submenu && (
+                                    <span className="ml-1"><FaAngleDown className="h-4 w-4" /></span>
+                                )}
+                            </button>
+                            {
+                                isSubmenu === item.title && (
+                                    <div className="ml-4">
+                                        {
+                                            item.submenu && item.submenu.map((submenu, index) => (
+                                                <a
+                                                    key={index}
+                                                    href="#"
+                                                    className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                                >
+                                                    {submenu}
+                                                </a>
+                                            ))
+                                        }
+                                    </div>
+                                )
+                            }
+
+                        </div>
                     ))}
-                    <div className="flex items-center space-x-2 px-3 py-2">
+                    <div className="flex items-center space-x-4 px-3 py-2">
                         <FiSearch className="h-5 w-5" />
                         {isDarkMode ? (
                             <FiSun className="h-5 w-5" />
                         ) : (
                             <FiMoon className="h-5 w-5" />
                         )}
-                        <FiCog className="h-5 w-5" />
+                        <FiSettings className="h-5 w-5" />
                         <FiUser className="h-5 w-5" />
                     </div>
                 </div>
@@ -353,6 +260,11 @@ export const Navigation03 = () => {
     const [cartCount, setCartCount] = useState(3);
     const [currency, setCurrency] = useState("USD");
     const [language, setLanguage] = useState("EN");
+    const [isSubcategoryOpen, setIsSubcategoryOpen] = useState("");
+
+    const handleClickSubcategory = (title: string) => {
+        setIsSubcategoryOpen((prev) => (prev == title ? "" : title))
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -362,7 +274,13 @@ export const Navigation03 = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const categories = ["Home", "Women", "Men", "Accessories", "Sale"];
+    const categories = [
+        { title: "Home" },
+        { title: "Women", subcategory: ["Dresses", "Tops", "Bottoms"] },
+        { title: "Men", subcategory: ["Shirts", "Pants", "Shoes"] },
+        { title: "Accessories", subcategory: ["Bags", "Watches", "Jewelry"] },
+        { title: "Sale" }
+    ]
 
     return (
         <div className={`w-full z-50 transition-all duration-300 ${isScrolled ? "shadow-lg" : ""}`}>
@@ -407,7 +325,7 @@ export const Navigation03 = () => {
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                                 aria-label="Toggle menu"
                             >
-                                <FaBars className="h-8 w-8" />
+                                <FaBars className="h-6 w-6 text-gray-600" />
                             </button>
                             <img
                                 src="/images/logo/logo.png"
@@ -417,17 +335,19 @@ export const Navigation03 = () => {
                         </div>
 
                         <div className="hidden xl:flex items-center space-x-8">
-                            {categories.map((category) => (
-                                <div key={category} className="relative group">
+                            {categories.map((category, index) => (
+                                <div key={index} className="relative group">
                                     <button className="flex items-center space-x-1 py-2 text-foreground hover:text-blue-600 transition-colors">
-                                        <span>{category}</span>
-                                        {category == "Home" ? '' : (<FiAngleDown className="h-4 w-4" />)}
+                                        <span>{category.title}</span>
+                                        {category.subcategory && (<FaAngleDown className="h-4 w-4" />)}
                                     </button>
-                                    {category == "Home" ? '' : (
+                                    {category.subcategory && (
                                         <div className="absolute z-4 left-0 hidden group-hover:block w-48 border bg-white shadow-lg rounded-md py-2">
-                                            <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 1</a>
-                                            <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 2</a>
-                                            <a href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">Subcategory 3</a>
+                                            {category.subcategory.map((subcat, subIndex) => (
+                                                <a key={subIndex} href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">
+                                                    {subcat}
+                                                </a>
+                                            ))}
                                         </div>
                                     )}
                                 </div>
@@ -472,14 +392,28 @@ export const Navigation03 = () => {
                         />
                         <FiSearch className="absolute text-gray-400 left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
                     </div>
-                    {categories.map((category) => (
-                        <a
-                            key={category}
-                            href="#"
-                            className="block py-2 transition-colors"
-                        >
-                            {category}
-                        </a>
+                    {categories.map((category, index) => (
+                        <div key={index}>
+                            <button
+                                key={index}
+                                className="block py-2 transition-colors flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600"
+                                onClick={() => handleClickSubcategory(category.title)}
+                            >
+                                {category.title}
+                                {category.subcategory && (<FaAngleDown className="h-4 w-4" />)}
+                            </button>
+                            <div>
+                                {category.subcategory && (
+                                    <div className={`ml-4 ${isSubcategoryOpen === category.title ? "block" : "hidden"}`}>
+                                        {category.subcategory.map((subcat, subIndex) => (
+                                            <a key={subIndex} href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">
+                                                {subcat}
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
                     ))}
                 </div>
             </nav>
@@ -576,7 +510,7 @@ export const Navigation04 = () => {
                             <div className="w-full py-4 md:py-6 bg-white flex  justify-between md:justify-end items-center px-4">
                                 <div className="flex md:hidden border-gray-200">
                                     <div className="flex items-center justify-center">
-                                        <img src="/images/logo/logo.png" alt="" className="h-10 w-auto"/>
+                                        <img src="/images/logo/logo.png" alt="" className="h-10 w-auto" />
                                     </div>
                                 </div>
                                 <div className="hidden md:flex items-center space-x-4">
@@ -595,7 +529,7 @@ export const Navigation04 = () => {
                                         className="p-2 rounded-full hover:bg-gray-100"
                                         aria-label="Language"
                                     >
-                                        <FiCog className="h-5 w-5" />
+                                        <FiFlag className="h-5 w-5" />
                                     </button>
                                     <button
                                         className="p-2 rounded-full hover:bg-gray-100"
@@ -610,7 +544,7 @@ export const Navigation04 = () => {
                                         aria-label="Search"
                                         onClick={handleOpenMobilNavigationBar}
                                     >
-                                        {isOpenMobileNavigationBar ? <FaClose className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+                                        {isOpenMobileNavigationBar ? <FiX className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
                                     </button>
                                 </div>
                             </div>
@@ -669,7 +603,7 @@ export const Navigation04 = () => {
                                             className="p-2 rounded-full hover:bg-gray-100"
                                             aria-label="Language"
                                         >
-                                            <FiCog className="h-5 w-5" />
+                                            <FiSettings className="h-5 w-5" />
                                         </button>
                                         <button
                                             className="p-2 rounded-full hover:bg-gray-100"
@@ -705,7 +639,7 @@ export const Navigation05: React.FC = () => {
     ];
 
     return (
-        <nav className="w-full bg-gradient-to-r p-4 lg:p-0 from-blue-800 to-emerald-500 z-50 lg:from-white lg:to-white transition-all duration-300">
+        <nav className="w-full border-b border-gray-300 bg-gradient-to-r p-4 lg:p-0 from-blue-800 to-emerald-500 z-50 lg:from-white lg:to-white transition-all duration-300">
             <div className="relative">
                 <div className="relative max-w-7xl">
                     <div className="flex items-center justify-between">
@@ -731,7 +665,7 @@ export const Navigation05: React.FC = () => {
                                 className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none"
                                 aria-label="Toggle menu"
                             >
-                                {isOpen ? <FaClose className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+                                {isOpen ? <FiX className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
                             </button>
                         </div>
                     </div>
@@ -780,7 +714,7 @@ export const Navigation06 = () => {
             >
                 {item.title}
                 {item.submenu && (
-                    <span className="ml-1"><FiAngleDown className="h-4 w-4" /></span>
+                    <span className="ml-1"><FaAngleDown className="h-4 w-4" /></span>
                 )}
             </a>
             {item.submenu && (
@@ -842,7 +776,7 @@ export const Navigation06 = () => {
                             className="p-2 rounded-full hover:bg-gray-100 hover:text-black"
                             aria-label="Language"
                         >
-                            <FiCog className="h-5 w-5" />
+                            <FiSettings className="h-5 w-5" />
                         </button>
                         <button
                             className="p-2 rounded-full hover:bg-gray-100 hover:text-black"
@@ -859,7 +793,7 @@ export const Navigation06 = () => {
                             aria-label="Toggle menu"
                         >
                             {isOpen ? (
-                                <FaClose className="h-6 w-6" />
+                                <FiX className="h-6 w-6" />
                             ) : (
                                 <FiMenu className="h-6 w-6" />
                             )}
@@ -883,14 +817,14 @@ export const Navigation06 = () => {
                             {item.title}
                         </a>
                     ))}
-                    <div className="flex items-center space-x-2 px-3 py-2 text-white">
+                    <div className="flex items-center space-x-4 px-3 py-2 text-white">
                         <FiSearch className="h-5 w-5" />
                         {isDarkMode ? (
-                            <FiSun className="h-5 w-5" />
+                            <FiSun className="h-5 w-5" onClick={() => setIsDarkMode(false)} />
                         ) : (
-                            <FiMoon className="h-5 w-5" />
+                            <FiMoon className="h-5 w-5" onClick={() => setIsDarkMode(true)} />
                         )}
-                        <FiCog className="h-5 w-5" />
+                        <FiSettings className="h-5 w-5" />
                         <FiUser className="h-5 w-5" />
                     </div>
                 </div>

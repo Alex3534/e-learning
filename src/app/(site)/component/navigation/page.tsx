@@ -24,8 +24,7 @@ export default function ComponentButtonPage() {
     ];
 
     const filteredComponents = NavigationComponent.filter((component) => {
-        const matchesSearch = component.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            component.description.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesSearch = component.title.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = selectedCategory === 'Tous' || component.category === selectedCategory;
         return matchesSearch && matchesCategory;
     });
@@ -55,9 +54,7 @@ export default function ComponentButtonPage() {
 
                         <ComponentSearch
                             onSearch={setSearchQuery}
-                            onFilter={setSelectedCategory}
                         />
-                        <ComponentNavigation />
                         <AnimatePresence>
                             <motion.div
                                 layout
@@ -74,7 +71,7 @@ export default function ComponentButtonPage() {
                                         <ComponentDemo
                                             componentClassname=''
                                             title={component.title}
-                                            description={component.description}
+                                            description={component.description || ''}
                                             component={component.component}
                                             code={component.code || ''}
                                         />

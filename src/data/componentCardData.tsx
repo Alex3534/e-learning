@@ -1,10 +1,21 @@
-import { Card, ProductCard } from "@/components/ui/Card/card";
+import { Card, HorizontalProductCard, HorizontalProductCardFullWidth, ProductCard } from "@/components/ui/Card/card";
+import { CardCode, HorizontalProductCardCode, HorizontalProductCardCode02, ProductCardCode } from "@/components/ui/Card/cardCode";
 
-export const ComponentCardData = [
+type ComponentCardDataType = {
+  id: number;
+  title: string;
+  category: string;
+  description?: string;
+  tags: string[];
+  component: JSX.Element;
+  code: string;
+  usage: string;
+}
+
+export const ComponentCardData: ComponentCardDataType[] = [
   {
     id: 1,
     title: 'Product Card',
-    description: 'Une carte de produit avec une image, un titre, une description et un bouton d\'action.',
     category: 'UI',
     tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
     component: (
@@ -12,13 +23,38 @@ export const ComponentCardData = [
         <ProductCard />
       </div>
     ),
-    code: '',
+    code: ProductCardCode,
+    usage: '',
+  },
+  {
+    id: 3,
+    title: 'Card en layout horizontal',
+    category: 'UI',
+    tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
+    component: (
+      <div className="flex justify-center items-center p-4">
+        <HorizontalProductCardFullWidth />
+      </div>
+    ),
+    code: HorizontalProductCardCode,
+    usage: '',
+  },
+  {
+    id: 4,
+    title: 'Mini card en layout horizontal',
+    category: 'UI',
+    tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
+    component: (
+      <div className="flex justify-center items-center p-4">
+        <HorizontalProductCard />
+      </div>
+    ),
+    code: HorizontalProductCardCode02,
     usage: '',
   },
   {
     id: 2,
-    title: 'Product Card',
-    description: 'Une carte de produit avec une image, un titre, une description et un bouton d\'action.',
+    title: 'Simple card',
     category: 'UI',
     tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
     component: (
@@ -26,7 +62,7 @@ export const ComponentCardData = [
         <Card />
       </div>
     ),
-    code: '',
+    code: CardCode,
     usage: '',
   },
 

@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { FaShoppingCart, FaHeart, FaStar, FaStarHalf, FaEye, FaShare, FaBookmark } from "react-icons/fa";
+export const ProductCardCode = (`
+// Component/ui/cards.jsx
+// npm install react-icons 
 
-interface RenderStarsProps {
-    rating: number;
-}
+import React from "react";
+import React, { useState } from "react";
+import { FaStar, FaStarHalf, FaHeart, FaShoppingCart, FaEye } from "react-icons/fa";
 
 export const ProductCard = ({
-    productImage = "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    productImage = "images/shoe.png",
     productName = "Premium Sport Shoes",
     price = 199.99,
     originalPrice = 249.99,
@@ -25,7 +26,7 @@ export const ProductCard = ({
         const hasHalfStar: boolean = rating % 1 !== 0;
 
         for (let i = 0; i < fullStars; i++) {
-            stars.push(<FaStar key={`star-${i}`} className="text-yellow-400" />);
+            stars.push(<FaStar key={\`star-\${i}\`} className="text-yellow-400" />);
         }
         if (hasHalfStar) {
             stars.push(<FaStarHalf key="half-star" className="text-yellow-400" />);
@@ -43,7 +44,7 @@ export const ProductCard = ({
                 <img
                     src={productImage}
                     alt={productName}
-                    className={`w-full h-64 object-cover transition-transform duration-300 ${isHovered ? "scale-110" : ""}`}
+                    className={\`w-full h-64 object-cover transition-transform duration-300 \${isHovered ? "scale-110" : ""}\`}
                     onError={(e) => {
                         (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1604147495798-57beb5d6af73";
                     }}
@@ -73,13 +74,13 @@ export const ProductCard = ({
 
                 <div className="flex justify-between items-center mb-4">
                     <div className="flex items-center space-x-2">
-                        <span className="text-2xl font-bold text-gray-900">${price}</span>
+                        <span className="text-2xl font-bold text-gray-900">\${price}</span>
                         {originalPrice && (
-                            <span className="text-sm text-gray-500 line-through">${originalPrice}</span>
+                            <span className="text-sm text-gray-500 line-through">\${originalPrice}</span>
                         )}
                     </div>
                     <span
-                        className={`text-sm font-medium ${stockStatus === "In Stock" ? "text-green-500" : "text-red-500"}`}
+                        className={\`text-sm font-medium \${stockStatus === "In Stock" ? "text-green-500" : "text-red-500"}\`}
                     >
                         {stockStatus}
                     </span>
@@ -105,7 +106,33 @@ export const ProductCard = ({
     );
 };
 
-export const HorizontalProductCardFullWidth = ({
+// page.jsx
+import React from "react";
+import ProductCard from "@/components/ui/cards"
+
+
+export  function Page () {
+    return (
+        <React.Fragment>
+            <div>
+                <ProductCard productName='Name of product'/>
+            </div>
+        </React.Fragment>
+    )
+}
+
+`).trim()
+
+export const HorizontalProductCardCode = (`
+// Component/ui/cards.jsx
+// npm install react-icons 
+
+import React from "react";
+import React, { useState } from "react";
+import { FaStar, FaStarHalf, FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
+
+
+export const ProductCard = ({
     productImage = "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
     productName = "Premium Sport Shoes",
     price = 199.99,
@@ -125,7 +152,7 @@ export const HorizontalProductCardFullWidth = ({
         const hasHalfStar: boolean = rating % 1 !== 0;
 
         for (let i = 0; i < fullStars; i++) {
-            stars.push(<FaStar key={`star-${i}`} className="text-yellow-400" />);
+            stars.push(<FaStar key={\`star-\${i}\`} className="text-yellow-400" />);
         }
         if (hasHalfStar) {
             stars.push(<FaStarHalf key="half-star" className="text-yellow-400" />);
@@ -143,10 +170,10 @@ export const HorizontalProductCardFullWidth = ({
                 <img
                     src={productImage}
                     alt={productName}
-                    className={`w-full h-full object-cover transition-transform duration-300 ${isHovered ? "scale-105" : "scale-100"}`}
+                    className={\`w-full h-full object-cover transition-transform duration-300 \${isHovered ? "scale-105" : "scale-100"}\`}
                     onError={(e) => {
-                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1604147495798-57beb5d6af73";
-                        (e.target as HTMLImageElement).className = "w-full h-full object-cover";
+                        e.target.src = "https://images.unsplash.com/photo-1604147495798-57beb5d6af73";
+                        e.target.className = "w-full h-full object-cover";
                     }}
                     loading="lazy"
                 />
@@ -175,13 +202,13 @@ export const HorizontalProductCardFullWidth = ({
                 <div className="mt-auto">
                     <div className="flex justify-between items-center mb-4">
                         <div className="flex items-center space-x-2">
-                            <span className="text-xl sm:text-2xl font-bold text-gray-900">${price}</span>
+                            <span className="text-xl sm:text-2xl font-bold text-gray-900">\${price}</span>
                             {originalPrice && (
-                                <span className="text-sm text-gray-500 line-through">${originalPrice}</span>
+                                <span className="text-sm text-gray-500 line-through">\${originalPrice}</span>
                             )}
                         </div>
                         <span
-                            className={`text-xs sm:text-sm font-medium ${stockStatus === "In Stock" ? "text-green-600" : "text-red-600"}`}
+                            className={\`text-xs sm:text-sm font-medium \${stockStatus === "In Stock" ? "text-green-600" : "text-red-600"}\`}
                         >
                             {stockStatus}
                         </span>
@@ -208,8 +235,35 @@ export const HorizontalProductCardFullWidth = ({
     );
 };
 
-export const HorizontalProductCard = ({
-    productImage = "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+
+// page.jsx
+import React from "react";
+import ProductCard from "@/components/ui/cards"
+
+
+export  function Page () {
+    return (
+        <React.Fragment>
+            <div>
+                <ProductCard productName="Name of product" .../>
+            </div>
+        </React.Fragment>
+    )
+}
+
+`).trim()
+
+export const HorizontalProductCardCode02 = (`
+// Component/ui/cards.jsx
+// npm install react-icons 
+
+import React from "react";
+import React, { useState } from "react";
+import { FaStar, FaShoppingCart, FaStarHalf, FaEye } from "react-icons/fa";
+
+
+export const ProductCard = ({
+    productImage = "images/shoe.png",
     productName = "Premium Sport Shoes",
     price = 199.99,
     originalPrice = 249.99,
@@ -226,7 +280,7 @@ export const HorizontalProductCard = ({
         const hasHalfStar: boolean = rating % 1 !== 0;
 
         for (let i = 0; i < fullStars; i++) {
-            stars.push(<FaStar key={`star-${i}`} className="text-yellow-400" />);
+            stars.push(<FaStar key={\`star-\${i}\`} className="text-yellow-400" />);
         }
         if (hasHalfStar) {
             stars.push(<FaStarHalf key="half-star" className="text-yellow-400" />);
@@ -244,9 +298,9 @@ export const HorizontalProductCard = ({
                 <img
                     src={productImage}
                     alt={productName}
-                    className={`w-full h-full object-cover transition-transform duration-300 ${isHovered ? "scale-110" : ""}`}
+                    className={\`w-full h-full object-cover transition-transform duration-300 \${isHovered ? "scale-110" : ""}\`}
                     onError={(e) => {
-                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1604147495798-57beb5d6af73";
+                        e.target.src = "https://images.unsplash.com/photo-1604147495798-57beb5d6af73";
                     }}
                     loading="lazy"
                 />
@@ -266,13 +320,13 @@ export const HorizontalProductCard = ({
 
                     <div className="flex justify-between items-center mb-4">
                         <div className="flex items-center space-x-2">
-                            <span className="text-2xl font-bold text-gray-900">${price}</span>
+                            <span className="text-2xl font-bold text-gray-900">\${price}</span>
                             {originalPrice && (
-                                <span className="text-sm text-gray-500 line-through">${originalPrice}</span>
+                                <span className="text-sm text-gray-500 line-through">$\{originalPrice}</span>
                             )}
                         </div>
                         <span
-                            className={`text-sm font-medium ${stockStatus === "In Stock" ? "text-green-500" : "text-red-500"}`}
+                            className={\`text-sm font-medium \${stockStatus === "In Stock" ? "text-green-500" : "text-red-500"}\`}
                         >
                             {stockStatus}
                         </span>
@@ -299,31 +353,57 @@ export const HorizontalProductCard = ({
     );
 };
 
-export const Card: React.FC<{ title?: string; subtitle?: string; imageUrl?: string; content?: string; tags?: string[]; variant?: 'default' | 'bordered' | 'minimal' }> = ({
+
+// page.jsx
+import React from "react";
+import ProductCard from "@/components/ui/cards"
+
+
+export function Page () {
+    return (
+        <React.Fragment>
+            <div>
+                <ProductCard />
+            </div>
+        </React.Fragment>
+    )
+}
+
+`).trim()
+
+export const CardCode = (`
+// Component/ui/cards.jsx
+// npm install react-icons 
+
+import React from "react";
+import React, { useState } from "react";
+import { FaStar, FaHeart, FaEye, FaShare } from "react-icons/fa";
+
+export const Card = ({
     title,
     subtitle,
-    imageUrl = "https://images.unsplash.com/photo-1612144431180-2d672779556c",
+    imageUrl = "images/nature.png",
     content,
     tags = ["Design", "UI/UX", "Development"],
     variant = "default",
 }) => {
     const baseStyles = "transform transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500";
     const cardStyles = {
-        default: `${baseStyles} bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden`,
-        bordered: `${baseStyles} bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700`,
-        minimal: `${baseStyles} bg-gray-50 dark:bg-gray-900 rounded-lg`
+        default: \`\${baseStyles} bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden\`,
+        bordered: \`\${baseStyles} bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700\`,
+        minimal: \`\${baseStyles} bg-gray-50 dark:bg-gray-900 rounded-lg\`
     };
 
     return (
-        <div className={`${cardStyles[variant]} max-w-sm mx-auto`}>
+        <div className={\`\${cardStyles[variant]} max-w-sm mx-auto\`}>
             <div className="relative">
                 <img
                     src={imageUrl}
                     alt={title}
                     className="w-full h-48 object-cover"
                     onError={(e) => {
-                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe";
-                        (e.target as HTMLImageElement).alt = "Fallback Image";
+                        e.target.src = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe";
+                        e.target.alt = "Fallback Image";
                     }}
                 />
                 <div className="absolute top-4 right-4 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md">
@@ -383,3 +463,21 @@ export const Card: React.FC<{ title?: string; subtitle?: string; imageUrl?: stri
         </div>
     );
 };
+
+
+// page.jsx
+import React from "react";
+import Card from "@/components/ui/cards"
+
+
+export function Page () {
+    return (
+        <React.Fragment>
+            <div>
+                <Card />
+            </div>
+        </React.Fragment>
+    )
+}
+
+`).trim()

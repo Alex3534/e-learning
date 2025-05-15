@@ -55,10 +55,7 @@ export default function ComponentButtonPage() {
 
                         <ComponentSearch
                             onSearch={setSearchQuery}
-                            onFilter={setSelectedCategory}
                         />
-
-                        <ComponentNavigation />
 
                         <AnimatePresence>
                             <motion.div

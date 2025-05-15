@@ -55,9 +55,7 @@ export default function ComponentHeroPage() {
 
                         <ComponentSearch
                             onSearch={setSearchQuery}
-                            onFilter={setSelectedCategory}
                         />
-                        <ComponentNavigation />
                         <AnimatePresence>
                             <motion.div
                                 layout

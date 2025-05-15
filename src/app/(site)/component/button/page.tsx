@@ -60,7 +60,6 @@ export default function ComponentButtonPage() {
 
                         <ComponentSearch
                             onSearch={setSearchQuery}
-                            onFilter={setSelectedCategory}
                         />
 
                         <AnimatePresence>

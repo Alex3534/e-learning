@@ -55,10 +55,7 @@ export default function ComponentTooltipPage() {
 
                         <ComponentSearch
                             onSearch={setSearchQuery}
-                            onFilter={setSelectedCategory}
                         />
-
-                        <ComponentNavigation />
 
                         <AnimatePresence>
                             <motion.div

@@ -1,12 +1,12 @@
 import { Navigation01, Navigation02, Navigation03, Navigation04, Navigation05, Navigation06 } from "@/components/ui/Navigation/navigation";
-import { Navigation01Code } from "@/components/ui/Navigation/navigationCode";
+import { Navigation01Code, Navigation02Code, Navigation03Code, Navigation04Code, Navigation05Code, Navigation06Code } from "@/components/ui/Navigation/navigationCode";
 
 export const NavigationComponent = [
 
     {
         id: 1,
         title: 'Navigation 01',
-        description: 'Une barre de navigation réactive et élégante, dotée d\'un fond en dégradé bleu et émeraude. Elle propose des liens de menu cliquables avec des effets de hover animés. Sur les petits écrans, elle se transforme en menu hamburger mobile avec une animation fluide pour afficher les liens.',
+        description: '',
         category: 'Navigation',
         tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
         component: (
@@ -20,7 +20,7 @@ export const NavigationComponent = [
     {
         id: 2,
         title: 'Navigation 02',
-        description: "Barre de navigation moderne avec menu déroulant, mode sombre, recherche intégrée et responsive design. Convient parfaitement pour des sites d'entreprise ou des applications web avancées.",
+        description: '',
         category: 'Navigation',
         tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
         component: (
@@ -28,14 +28,14 @@ export const NavigationComponent = [
                 <Navigation02 />
             </div>
         ),
-        code: '',
+        code: Navigation02Code,
         usage: '',
     },
     
     {
         id: 3,
         title: 'Navigation 03',
-        description: 'Composant de barre de navigation principale pour une boutique en ligne.Il gère à la fois l\'affichage desktop et mobile avec une navigation responsive.',
+        description: '',
         category: 'Navigation',
         tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
         component: (
@@ -43,7 +43,7 @@ export const NavigationComponent = [
                 <Navigation03 />
             </div>
         ),
-        code: '',
+        code: Navigation03Code,
         usage: '',
     },
     
@@ -58,37 +58,37 @@ export const NavigationComponent = [
                 <Navigation04 />
             </div>
         ),
-        code: '',
+        code: Navigation04Code,
         usage: '',
     },
     
     {
         id: 5,
         title: 'Navigation 05',
-        description: '',
         category: 'Navigation',
+        description: '',
         tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
         component: (
             <div className="">
                 <Navigation05 />
             </div>
         ),
-        code: '',
+        code: Navigation05Code,
         usage: '',
     },
     
     {
         id: 6,
         title: 'Navigation 06',
-        description: '',
         category: 'Navigation',
+        description: '',
         tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
         component: (
             <div className="">
                 <Navigation06 />
             </div>
         ),
-        code: '',
+        code: Navigation06Code,
         usage: '',
     },
 ]
