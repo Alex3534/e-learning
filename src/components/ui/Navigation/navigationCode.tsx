@@ -1,6 +1,7 @@
 export const Navigation01Code = (`
-// components/Navigation/navigation.tsx
+// components/Navigation/navigation.jsx
 // npm install react-icons
+// "use client"
 
 
 import { FiX, FiMenu } from "react-icons/fi";
@@ -71,10 +72,10 @@ export const NavigationBar = () => {
 
 // page.jsx
 import React from "react";
-import NavigationBar from "@components/Navigation/navigation.tsx"
+import NavigationBar from "@components/Navigation/navigation.jsx"
 
 
-export  function Page () {
+export default function Page () {
     return (
         <React.Fragment>
             <header>
@@ -83,12 +84,12 @@ export  function Page () {
         </React.Fragment>
     )
 }
-`
-).trim()
+`).trim()
 
 export const Navigation02Code = (`
-// components/Navigation/navigation.tsx
+// components/Navigation/navigation.jsx
 // npm install react-icons
+// "use client"
 
 import { FaAngleDown } from "react-icons/fa";
 import { FiX, FiMenu, FiMoon, FiSearch, FiSun, FiUser, FiSettings } from "react-icons/fi";
@@ -109,8 +110,11 @@ export const NavigationBar = () => {
         { title: "About", href: "#" },
         {
             title: "Services",
-            href: "#",
-            submenu: ["Consulting", "Development", "Design"]
+            submenu: [
+                { title: "Consulting", href: "#" },
+                { title: "Development", href: "#" },
+                { title: "Design", href: "#" }
+            ]
         },
         { title: "Contact", href: "#" }
     ];
@@ -131,10 +135,10 @@ export const NavigationBar = () => {
                     {item.submenu.map((subItem, index) => (
                         <a
                             key={index}
-                            href="#"
+                            href={subItem.href}
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         >
-                            {subItem}
+                            {subItem.title}
                         </a>
                     ))}
                 </div>
@@ -213,44 +217,61 @@ export const NavigationBar = () => {
 
             {/* Mobile menu */}
             <div
-                className={\`md:hidden transition-all duration-300 ease-in-out \${isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
+                className={\`md:hidden transition-all duration-300 pb-2 ease-in-out \${isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
                     }\`}
             >
-                <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
-                    {menuItems.map((item, index) => (
-                        <div>
-                            <button
-                                key={index}
-                                onClick={() => handleClickSubmenu(item.title)}
-                                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between"
-                            >
-                                {item.title}
-                                {item.submenu && (
-                                    <span className="ml-1"><FaAngleDown className="h-4 w-4" /></span>
-                                )}
-                            </button>
-                            {
-                                isSubmenu === item.title && (
-                                    <div className="ml-4">
-                                        {
-                                            item.submenu && item.submenu.map((submenu, index) => (
-                                                <a
-                                                    key={index}
-                                                    href="#"
-                                                    className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                                >
-                                                    {submenu}
-                                                </a>
-                                            ))
-                                        }
-                                    </div>
-                                )
-                            }
-
+                <div>
+                    <div className="w-full bg-white py-4 px-2 transition-all duration-300 ease-in-out">
+                        <div className="max-w-3xl mx-auto">
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    placeholder="Search..."
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                                <FiSearch className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
+                            </div>
                         </div>
+                    </div>
+                    {menuItems.map((item, index) => (
+                        item.submenu ? (
+                            <div key={index} className="relative">
+                                <button
+                                    onClick={() => handleClickSubmenu(item.title)}
+                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between"
+                                >
+                                    {item.title}
+                                    {item.submenu && (
+                                        <span className="ml-1"><FaAngleDown className="h-4 w-4" /></span>
+                                    )}
+                                </button>
+                                {isSubmenu === item.title && (
+                                    <div className="ml-4">
+                                        {item.submenu && item.submenu.map((submenu, subIndex) => (
+                                            <a
+                                                key={subIndex}
+                                                href={submenu.href}
+                                                className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                            >
+                                                {submenu.title}
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <div key={index} className="relative">
+                                <a
+                                    href={item.href}
+                                    onClick={() => handleClickSubmenu(item.title)}
+                                    className="cursor-pointer px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between "
+                                >
+                                    {item.title}
+                                </a>
+                            </div>
+                        )
                     ))}
                     <div className="flex items-center space-x-4 px-3 py-2">
-                        <FiSearch className="h-5 w-5" />
                         {isDarkMode ? (
                             <FiSun className="h-5 w-5" />
                         ) : (
@@ -270,7 +291,7 @@ export const NavigationBar = () => {
                             <input
                                 type="text"
                                 placeholder="Search..."
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                             <FiSearch className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
                         </div>
@@ -281,31 +302,34 @@ export const NavigationBar = () => {
     );
 };
 
+
 // page.jsx
 import React from "react";
-import NavigationBar from "@components/Navigation/navigation.tsx"
+import NavigationBar from "@components/Navigation/navigation.jsx"
 
-
-export  function Page () {
+export default function Page() {
     return (
         <React.Fragment>
             <header>
                 <NavigationBar />
             </header>
+            // ...
         </React.Fragment>
     )
 }
 `).trim()
 
 export const Navigation03Code = (`
-// components/Navigation/navigation.tsx
+// components/Navigation/navigation.jsx
 // npm install react-icons
+// "use client"
 
 import { useState } from "react";
 import { FaAngleDown, FaBars } from "react-icons/fa";
 import { FiHeart, FiMenu, FiPhone, FiSearch, FiShoppingCart, FiUser } from "react-icons/fi";
+import React from "react";
 
-export const Navigation03 = () => {
+export const NavigationBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [cartCount, setCartCount] = useState(3);
     const [currency, setCurrency] = useState("USD");
@@ -317,11 +341,30 @@ export const Navigation03 = () => {
     }
 
     const categories = [
-        { title: "Home" },
-        { title: "Women", subcategory: ["Dresses", "Tops", "Bottoms"] },
-        { title: "Men", subcategory: ["Shirts", "Pants", "Shoes"] },
-        { title: "Accessories", subcategory: ["Bags", "Watches", "Jewelry"] },
-        { title: "Sale" }
+        { title: "Home", href: "#" },
+        {
+            title: "Women",
+            subcategory: [
+                { title: "Dresses", href: "#" },
+                { title: "Tops", href: "#" },
+                { title: "Bottoms", href: "#" }
+            ]
+        },
+        {
+            title: "Men", subcategory: [
+                { title: "Shirts", href: "#" },
+                { title: "Pants", href: "#" },
+                { title: "Shoes", href: "#" }
+            ]
+        },
+        {
+            title: "Accessories", subcategory: [
+                { title: "Bags", href: "#" },
+                { title: "Watches", href: "#" },
+                { title: "Jewelry", href: "#" }
+            ]
+        },
+        { title: "Sale", href: "#" }
     ]
 
     return (
@@ -379,15 +422,18 @@ export const Navigation03 = () => {
                         <div className="hidden xl:flex items-center space-x-8">
                             {categories.map((category, index) => (
                                 <div key={index} className="relative group">
-                                    <button className="flex items-center space-x-1 py-2 text-foreground hover:text-blue-600 transition-colors">
+                                    <a
+                                        href={category.href}
+                                        className="flex items-center space-x-1 py-2 text-foreground hover:text-blue-600 transition-colors"
+                                    >
                                         <span>{category.title}</span>
                                         {category.subcategory && (<FaAngleDown className="h-4 w-4" />)}
-                                    </button>
+                                    </a>
                                     {category.subcategory && (
-                                        <div className="absolute z-4 left-0 hidden group-hover:block w-48 border bg-white shadow-lg rounded-md py-2">
+                                        <div className="absolute z-4 left-0 hidden group-hover:block w-48 border border-gray-200 bg-white shadow-lg rounded-md py-2">
                                             {category.subcategory.map((subcat, subIndex) => (
-                                                <a key={subIndex} href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">
-                                                    {subcat}
+                                                <a key={subIndex} href={subcat.href} className="block px-4 py-2 hover:text-blue-600 transition-colors">
+                                                    {subcat.title}
                                                 </a>
                                             ))}
                                         </div>
@@ -397,11 +443,11 @@ export const Navigation03 = () => {
                         </div>
 
                         <div className="flex items-center space-x-4">
-                            <div className="relative border rounded-full flex-1 max-w-lg hidden md:block">
+                            <div className="relative border border-gray-300 rounded-full flex-1 max-w-lg hidden md:block">
                                 <input
                                     type="text"
                                     placeholder="Search brands, products..."
-                                    className="w-full pl-10 pr-4 py-2 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary"
+                                    className="w-full pl-10 pr-4 py-2 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600"
                                 />
                                 <FiSearch className="absolute text-gray-400 left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
                             </div>
@@ -426,36 +472,46 @@ export const Navigation03 = () => {
 
                 {/* Mobile Menu */}
                 <div className={\`xl:hidden \${isMenuOpen ? "block" : "hidden"} px-4\`}>
-                    <div className="relative border rounded-full flex-1 max-w-lg block md:hidden my-6">
+                    <div className="relative border w-full border-gray-300 rounded-full flex-1 block md:hidden my-6">
                         <input
                             type="text"
                             placeholder="Search brands, products..."
-                            className="w-full pl-10 pr-4 py-2 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary"
+                            className="w-full pl-10 pr-4 py-2 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600"
                         />
                         <FiSearch className="absolute text-gray-400 left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
                     </div>
                     {categories.map((category, index) => (
-                        <div key={index}>
-                            <button 
-                                key={index}
-                                className="block py-2 transition-colors flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600"
-                                onClick={() => handleClickSubcategory(category.title)}
-                            >
-                                {category.title}
-                                {category.subcategory && (<FaAngleDown className="h-4 w-4" />)}
-                            </button>
-                            <div>
-                                {category.subcategory && (
-                                    <div className={\`ml-4 \${isSubcategoryOpen === category.title ? "block" : "hidden"}\`}>
-                                        {category.subcategory.map((subcat, subIndex) => (
-                                            <a key={subIndex} href="#" className="block px-4 py-2 hover:text-blue-600 transition-colors">
-                                                {subcat}
-                                            </a>
-                                        ))}
-                                    </div>
-                                )}
+                        category.subcategory ? (
+                            <div key={index}>
+                                <button
+                                    className="block py-2 transition-colors flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600"
+                                    onClick={() => handleClickSubcategory(category.title)}
+                                >
+                                    {category.title}
+                                    {category.subcategory && (<FaAngleDown className="h-4 w-4" />)}
+                                </button>
+                                <div>
+                                    {category.subcategory && (
+                                        <div className={\`ml-4 \${isSubcategoryOpen === category.title ? "block" : "hidden"}\`}>
+                                            {category.subcategory.map((subcat, subIndex) => (
+                                                <a key={subIndex} href={subcat.href} className="block px-4 py-2 hover:text-blue-600 transition-colors">
+                                                    {subcat.title}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            <div key={index}>
+                                <a
+                                    href={category.href}
+                                    className="block py-2 transition-colors flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600"
+                                >
+                                    {category.title}
+                                </a>
+                            </div>
+                        )
                     ))}
                 </div>
             </nav>
@@ -465,13 +521,14 @@ export const Navigation03 = () => {
 
 // page.jsx
 import React from "react";
-import NavigationBar from "@components/Navigation/navigation.tsx"
+import NavigationBar from "@components/Navigation/navigation.jsx"
 
-export  function Page () {
+export default function Page() {
     return (
         <React.Fragment>
             <header>
                 <NavigationBar />
+                // ...
             </header>
         </React.Fragment>
     )
@@ -479,15 +536,15 @@ export  function Page () {
 `).trim()
 
 export const Navigation04Code = (`
-// components/Navigation/navigation.tsx
+// components/Navigation/navigation.jsx
 // npm install react-icons
-
+// "use client"
 
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FiX, FiMenu, FiMoon, FiSun, FiUser, FiSettings } from "react-icons/fi";
 
-export const NavigationBar = () => {
+export default function NavigationBar() {
 
     const [open, isOpen] = useState(false)
     const [isDarkMode, setIsDarkMode] = useState(false)
@@ -595,7 +652,7 @@ export const NavigationBar = () => {
                                         className="p-2 rounded-full hover:bg-gray-100"
                                         aria-label="Language"
                                     >
-                                        <FiFlag className="h-5 w-5" />
+                                        <FiSettings className="h-5 w-5" />
                                     </button>
                                     <button
                                         className="p-2 rounded-full hover:bg-gray-100"
@@ -696,9 +753,9 @@ export const NavigationBar = () => {
 `).trim()
 
 export const Navigation05Code = (`
-// components/Navigation/navigation.tsx
+// components/Navigation/navigation.jsx
 // npm install react-icons
-
+// "use client"
 
 import { FaBars } from "react-icons/fa";
 import { FiX } from "react-icons/fi";
@@ -723,7 +780,7 @@ export const NavigationBar = () => {
                             <h1 className="text-2xl font-bold text-white lg:text-black lg:px-10 font-montserrat tracking-wider transform hover:scale-105 transition-transform duration-200 cursor-pointer">HORIZON</h1>
                         </div>
                         <div className="hidden lg:block bg-gradient-to-r from-blue-800 to-emerald-500 py-4 w-6/12" style={{ clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)" }}>
-                            <div className="ml-10 flex items-center justify-center space-x-8">
+                            <div className="ml-10 flex items-center justify-end pr-10 space-x-8">
                                 {navItems.map((item) => (
                                     <a
                                         key={item.id}
@@ -768,13 +825,14 @@ export const NavigationBar = () => {
 
 // page.jsx
 import React from "react";
-import NavigationBar from "@components/Navigation/navigation.tsx"
+import NavigationBar from "@components/Navigation/navigation.jsx"
 
-export  function Page () {
+export default function Page () {
     return (
         <React.Fragment>
             <header>
                 <NavigationBar />
+                // ...
             </header>
         </React.Fragment>
     )
@@ -782,14 +840,16 @@ export  function Page () {
 `).trim()
 
 export const Navigation06Code = (`
-// components/Navigation/navigation.tsx
+// components/Navigation/navigation.jsx
 // npm install react-icons
+// "use client"
 
 
 import { FiX, FiMenu, FiMoon, FiSearch, FiSun, FiUser, FiSettings } from "react-icons/fi";
 import React, { useState } from 'react';
+import { FaAngleDown } from "react-icons/fa";
 
-export const Navigation06 = () => {
+export const NavigationBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -805,7 +865,7 @@ export const Navigation06 = () => {
         { title: "Contact", href: "#" }
     ];
 
-    const NavLink=> (
+    const NavLink = ({ item }) => (
         <div className="relative group">
             <a
                 href={item.href}
@@ -817,7 +877,7 @@ export const Navigation06 = () => {
                 )}
             </a>
             {item.submenu && (
-                <div className="absolute left-0 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
+                <div className="absolute z-10 left-0 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
                     {item.submenu.map((subItem, index) => (
                         <a
                             key={index}
@@ -906,18 +966,52 @@ export const Navigation06 = () => {
                 className={\`md:hidden transition-all duration-300 ease-in-out \${isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
                     }\`}
             >
+                <div className="w-full block md:hidden px-4 transition-all duration-300 ease-in-out">
+                    <div className="w-full mx-auto">
+                        <div className="relative">
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                className="w-full px-4 py-2 text-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                            <FiSearch className="absolute right-3 top-3 h-5 w-5 text-gray-300" />
+                        </div>
+                    </div>
+                </div>
                 <div className="px-2 pt-2 pb-3 space-y-1">
                     {menuItems.map((item, index) => (
-                        <a
-                            key={index}
-                            href={item.href}
-                            className="block text-white px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                        >
-                            {item.title}
-                        </a>
+                        item.submenu ? (
+                            <div key={index} className="relative group">
+                                <a
+                                    href={item.href}
+                                    className="flex items-center text-white px-3 py-2 rounded-md text-base font-medium"
+                                >
+                                    {item.title}
+                                    <span className="ml-1"><FaAngleDown className="h-4 w-4" /></span>
+                                </a>
+                                <div className="absolute z-10 left-0 w-full bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
+                                    {item.submenu.map((subItem, subIndex) => (
+                                        <a
+                                            key={subIndex}
+                                            href="#"
+                                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                        >
+                                            {subItem}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <a
+                                key={index}
+                                href={item.href}
+                                className="block text-white px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                            >
+                                {item.title}
+                            </a>
+                        )
                     ))}
                     <div className="flex items-center space-x-4 px-3 py-2 text-white">
-                        <FiSearch className="h-5 w-5" />
                         {isDarkMode ? (
                             <FiSun className="h-5 w-5" onClick={() => setIsDarkMode(false)} />
                         ) : (
@@ -930,21 +1024,38 @@ export const Navigation06 = () => {
             </div>
 
             {/* Search overlay */}
-            {isSearchOpen && (
-                <div className="w-full shadow-lg p-4 transition-all duration-300 ease-in-out">
-                    <div className="max-w-3xl mx-auto">
-                        <div className="relative">
-                            <input
-                                type="text"
-                                placeholder="Search..."
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            />
-                            <FiSearch className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
+            {
+                isSearchOpen && (
+                    <div className="w-full hidden md:block shadow-lg p-4 transition-all duration-300 ease-in-out">
+                        <div className="max-w-3xl mx-auto">
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    placeholder="Search..."
+                                    className="w-full px-4 py-2 text-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                                <FiSearch className="absolute right-3 top-3 h-5 w-5 text-gray-300" />
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </nav>
+                )
+            }
+        </nav >
     );
 };
+
+// page.jsx
+import React from "react";
+import NavigationBar from "@components/Navigation/navigation.jsx"
+
+export default function Page() {
+    return (
+        <React.Fragment>
+            <header>
+                <NavigationBar />
+                // ...
+            </header>
+        </React.Fragment>
+    )
+}
 `).trim()

@@ -1,14 +1,17 @@
-'use client'
-import React, { useState } from "react"
+export const RegisterFormCode = (
+`
+// 'use client'
+// components/Forms/register.jsx
+// import React, { useState } from 'react'
 
-export const RegisterFromInput01: React.FC = () => {
+export const RegisterForm = () => {
     const [form, setForm] = useState({
         username: '',
         email: '',
         password: '',
     })
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e) => {
         const { name, value } = e.target
         setForm({
             ...form,
@@ -16,7 +19,7 @@ export const RegisterFromInput01: React.FC = () => {
         })
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         alert(form.username + ', ' + form.email + ", " + form.password)
         // ...
@@ -99,3 +102,17 @@ export const RegisterFromInput01: React.FC = () => {
         </React.Fragment>
     )
 }
+
+// page.jsx
+// import React from "react";
+// import RegisterForm from "@components/Forms/register.jsx"
+
+export default function Page() {
+    return (
+        <div>
+            <RegisterForm />
+        </div>
+    )
+}
+`
+).trim()

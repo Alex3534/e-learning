@@ -1,10 +1,11 @@
 export const LoginForm01Code = (
-    `
-'use client'
+`
+// 'use client'
+// components/Forms/login.jsx
 
 import React, { useState } from "react";
 
-export const LoginFrom = () => {
+export const LoginForm = () => {
     const [form, setForm] = useState({
         email: '',
         password: '',
@@ -33,17 +34,17 @@ export const LoginFrom = () => {
 
     return (
         <React.Fragment>
-            <form onSubmit={handleSubmit} className="w-full py-20 flex justify-center bg-gradient-to-br from-green-300 to-blue-500">
-                <div className="bg-white w-7/12 p-20 m-8 space-y-8">
+            <form onSubmit={handleSubmit} className="w-full h-full py-20 flex justify-center bg-gradient-to-br from-green-300 to-blue-500">
+                <div className="bg-white w-full max-w-2xl p-10 md:p-20 m-8 space-y-8 rounded-lg shadow-lg">
                     <h1 className="text-2xl font-bold text-green-600 text-center">Login</h1>
-                    {form.error && <p className="text-red-600 text-center text-sm">{form.error}</p>}
+                    {form.error && <p className="text-red-600 text-center text-sm font-bold">{form.error}</p>}
                     <div>
                         <input
                             type="text"
                             name='email'
                             placeholder='Email'
                             onChange={handleChange}
-                            className="w-full py-4 text-sm border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            className="w-full py-4 text-sm border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-md"
                         />
                     </div>
                     <div>
@@ -52,7 +53,7 @@ export const LoginFrom = () => {
                             name='password'
                             placeholder='Password'
                             onChange={handleChange}
-                            className="w-full py-4 text-sm border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            className="w-full py-4 text-sm border rounded-lg px-3 border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                         <div className="flex mt-4">
                             <input
@@ -67,7 +68,7 @@ export const LoginFrom = () => {
                     <div className="flex justify-center w-full">
                         <button
                             type="submit"
-                            className="bg-green-600 py-3 px-8 mt-10 text-white border border-transparent hover:bg-white hover:text-green-600 hover:border-green-600 transition duration-300"
+                            className="rounded-lg cursor-pointer bg-green-600 py-3 px-8 mt-10 text-white border border-transparent hover:bg-white hover:text-green-600 hover:border-green-600 transition duration-300"
                         >
                             Sign in
                         </button>
@@ -81,12 +82,30 @@ export const LoginFrom = () => {
         </React.Fragment>
     )
 }
+
+// page.jsx
+import React from "react";
+import LoginForm from "@components/Forms/login.jsx"
+
+
+export default function Page() {
+    return (
+        <div>
+            <LoginForm />
+        </div>
+    )
+}
 `
 ).trim()
 
 export const LoginForm02Code = (
-    `
-export const LoginFromInput02 = () => {
+`
+// 'use client'
+// components/Forms/login.jsx
+
+import React, { useState } from "react";
+
+export const LoginForm = () => {
     const [form, setForm] = useState({
         email: '',
         password: '',
@@ -115,10 +134,10 @@ export const LoginFromInput02 = () => {
 
     return (
         <React.Fragment>
-            <form onSubmit={handleSubmit} className="w-full flex justify-center bg-gradient-to-br from-purple-600 to-blue-500">
-                <div className="bg-white w-6/12 px-10 py-20 m-20 space-y-8">
+            <form onSubmit={handleSubmit} className="w-full h-full flex justify-center bg-gradient-to-br from-purple-600 to-blue-500">
+                <div className="bg-white w-full max-w-xl p-20 m-20 space-y-8">
                     <h1 className="text-2xl font-bold text-blue-600 text-center">Login</h1>
-                    {form.error && <p className="text-red-600 text-center text-sm">{form.error}</p>}
+                    {form.error && <p className="text-red-600 text-center font-bold text-sm">{form.error}</p>}
                     <div>
                         <input
                             type="text"
@@ -149,7 +168,7 @@ export const LoginFromInput02 = () => {
                     <div className="flex justify-center w-full">
                         <button
                             type="submit"
-                            className="w-full mt-10 inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm text-black group bg-gradient-to-br from-purple-600 to-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-100"
+                            className="w-full mt-10 inline-flex items-center cursor-pointer justify-center p-0.5 mb-2 overflow-hidden text-sm text-black group bg-gradient-to-br from-purple-600 to-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-100"
                         >
                             <span
                                 className="px-5 py-2.5 transition-all duration-300 bg-transparent hover:text-black text-white group-hover:bg-white font-medium w-full"
@@ -167,12 +186,29 @@ export const LoginFromInput02 = () => {
         </React.Fragment>
     )
 }
+
+// page.jsx
+// import React from "react";
+// import LoginForm from "@components/Forms/login.jsx"
+
+export default function Page() {
+    return (
+        <div>
+            <LoginForm />
+        </div>
+    )
+}
 `
 ).trim()
 
 export const LoginForm03Code = (
 `
-export const LoginFromInput03 = () => {
+// 'use client'
+// components/Forms/login.jsx
+
+import React, { useState } from 'react';
+
+export const LoginForm = () => {
     const [form, setForm] = useState({
         email: '',
         password: '',
@@ -200,18 +236,18 @@ export const LoginFromInput03 = () => {
 
     return (
         <React.Fragment>
-            <div className="w-full py-20 px-4 flex justify-center bg-gray-100">
-                <div className="flex  max-w-6xl flex-col-reverse lg:flex-row shadow-lg rounded-lg">
+            <div className="w-full py-20 px-4 flex justify-center items-center bg-gray-100">
+                <div className="flex max-w-6xl flex-col-reverse lg:flex-row shadow-lg rounded-lg overflow-hidden">
                     <form onSubmit={handleSubmit} className="bg-white lg:w-6/12 w-full space-y-6 p-10 py-20">
                         <h1 className="text-2xl font-bold text-green-600 text-center">Login</h1>
-                        {form.error && <p className="text-red-600 text-center text-sm">{form.error}</p>}
+                        {form.error && <p className="text-red-600 text-center font-bold text-sm">{form.error}</p>}
                         <div>
                             <input
                                 type="text"
                                 name='email'
                                 placeholder='Email'
                                 onChange={handleChange}
-                                className="w-full py-4 text-sm border bg-gray-200 px-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                className="w-full py-4 rounded-lg border-gray-300 text-sm border bg-gray-100 px-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                             />
                         </div>
                         <div>
@@ -220,21 +256,21 @@ export const LoginFromInput03 = () => {
                                 name='password'
                                 placeholder='Password'
                                 onChange={handleChange}
-                                className="w-full py-4 text-sm border bg-gray-200 px-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                className="w-full py-4 rounded-lg text-sm border border-gray-300 bg-gray-100 px-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                             />
                         </div>
                         <div className="flex justify-center w-full">
                             <button
                                 type="submit"
-                                className="bg-green-600 w-full py-3 px-8 mt-6 text-white border border-transparent hover:bg-white hover:text-green-600 hover:border-green-600 transition duration-300"
+                                className="bg-green-600 w-full py-3 rounded-lg cursor-pointer px-8 mt-6 text-white border border-transparent hover:bg-white hover:text-green-600 hover:border-green-600 transition duration-300"
                             >
                                 Sign in
                             </button>
                         </div>
-                        <hr />
+                        <hr className='my-6 border-gray-300' />
                         <div className="space-y-4 text-center">
                             <span>Or sign in with</span>
-                            <div className="flex justify-center text-sm text-center space-x-4">
+                            <div className="flex mt-4 justify-center text-sm text-center space-x-4">
                                 <button className="rounded-full border border-transparent bg-blue-600 text-white p-2 w-12 h-12 flex justify-center items-center hover:text-blue-600 hover:bg-white hover:border-blue-700 transition duration-300 cursor-pointer">
                                     <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" />
@@ -263,8 +299,19 @@ export const LoginFromInput03 = () => {
                     </div>
                 </div>
             </div>
-
         </React.Fragment>
+    )
+}
+
+// page.jsx
+// import React from "react";
+// import LoginForm from "@components/Forms/login.jsx"
+
+export default function Page() {
+    return (
+        <div>
+            <LoginForm />
+        </div>
     )
 }
 `
@@ -272,7 +319,11 @@ export const LoginFromInput03 = () => {
 
 export const LoginForm04Code = (
 `
-export const LoginFromInput04 = () => {
+// 'use client'
+// components/Forms/login.jsx
+// import React, { useState } from 'react'
+
+export const LoginForm = () => {
     const [form, setForm] = useState({
         email: '',
         password: '',
@@ -300,8 +351,8 @@ export const LoginFromInput04 = () => {
 
     return (
         <React.Fragment>
-            <div className="w-full flex p-10 justify-center bg-gray-100">
-                <div className="flex max-w-6xl flex-col-reverse lg:flex-row shadow-lg rounded-lg">
+            <div className="w-full h-full flex p-10 justify-center bg-gray-100">
+                <div className="flex max-w-7xl w-full flex-col-reverse lg:flex-row shadow-lg rounded-lg">
                     <form onSubmit={handleSubmit} className="bg-white lg:w-6/12 w-full sm:p-20 p-10">
                         <h1 className="text-2xl font-bold text-center">Sign Up</h1>
                         {form.error && <p className="text-red-600 text-center text-sm">{form.error}</p>}
@@ -335,7 +386,7 @@ export const LoginFromInput04 = () => {
                             </div>
                         </div>
                         <div className="text-center my-14 h-10 relative flex justify-center items-center">
-                            <div className="border w-full"></div>
+                            <div className="border border-gray-200 w-full"></div>
                             <div className="absolute  flex items-center justify-center h-full bg-white transform  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                 <span className="px-4">Or Sign Up with Email</span>
                             </div>
@@ -348,7 +399,7 @@ export const LoginFromInput04 = () => {
                                     name='email'
                                     placeholder='Email'
                                     onChange={handleChange}
-                                    className="w-full py-4 text-sm border bg-gray-100 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    className="w-full py-4 text-sm border border-gray-300 bg-gray-200 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 />
                             </div>
                             <div>
@@ -357,13 +408,13 @@ export const LoginFromInput04 = () => {
                                     name='password'
                                     placeholder='Password'
                                     onChange={handleChange}
-                                    className="w-full py-4 text-sm border bg-gray-100 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    className="w-full py-4 text-sm border border-gray-300 bg-gray-200 rounded-lg px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 />
                             </div>
                             <div className="flex justify-center w-full">
                                 <button
                                     type="submit"
-                                    className="bg-blue-500 w-full py-3 px-8 mt-6 text-white border border-transparent hover:bg-white hover:text-blue-400 hover:border-blue-400 transition duration-300 rounded-lg"
+                                    className="bg-blue-500 w-full py-3 px-8 mt-6 text-white border border-transparent hover:bg-white hover:text-blue-400 hover:border-blue-400 transition duration-300 rounded-lg cursor-pointer"
                                 >
                                     Sign in
                                 </button>
@@ -378,6 +429,18 @@ export const LoginFromInput04 = () => {
             </div>
 
         </React.Fragment>
+    )
+}
+
+// page.jsx
+// import React from "react";
+// import LoginForm from "@components/Forms/login.jsx"
+
+export default function Page() {
+    return (
+        <div>
+            <LoginForm />
+        </div>
     )
 }
 `

@@ -14,10 +14,6 @@ export default function ComponentButtonPage() {
 
     const breadcrumbItems = [
         {
-            label: 'Documentation',
-            path: '/documentation',
-        },
-        {
             label: 'Composants',
             path: '/component',
         },
@@ -43,11 +39,6 @@ export default function ComponentButtonPage() {
 
             <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 py-10">
                 <div className="flex flex-col lg:flex-row gap-8">
-                    <div className="lg:w-1/4 w-full">
-                        <div className="sticky top-24 w-full">
-                            <ComponentNavigation />
-                        </div>
-                    </div>
 
                     <div className="lg:w-full">
                         <div className="prose dark:prose-invert max-w-none mb-8">
