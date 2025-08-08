@@ -1,10 +1,11 @@
 import {Hero01, Hero02, Hero03, Hero04, Hero05 } from "@/components/ui/Hero/hero";
+import { Hero01Code, Hero02Code, Hero03Code, Hero04Code, Hero05Code } from "@/components/ui/Hero/heroCode";
 
 export const ComponentHeroData = [
   {
     id: 1,
-    title: 'Product Card',
-    description: 'Une carte de produit avec une image, un titre, une description et un bouton d\'action.',
+    title: 'Section Hero 01',
+    description: '',
     category: 'UI',
     tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
     component: (
@@ -12,13 +13,13 @@ export const ComponentHeroData = [
         <Hero01 />
       </div>
     ),
-    code: '',
+    code: Hero01Code,
     usage: '',
   },
   {
     id: 2,
-    title: 'Product Card',
-    description: 'Une carte de produit avec une image, un titre, une description et un bouton d\'action.',
+    title: 'Section Hero 02',
+    description: '',
     category: 'UI',
     tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
     component: (
@@ -26,13 +27,13 @@ export const ComponentHeroData = [
         <Hero02 />
       </div>
     ),
-    code: '',
+    code: Hero02Code,
     usage: '',
   },
   {
     id: 3,
-    title: 'Product Card',
-    description: 'Une carte de produit avec une image, un titre, une description et un bouton d\'action.',
+    title: 'Section Hero 03',
+    description: '',
     category: 'UI',
     tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
     component: (
@@ -40,13 +41,13 @@ export const ComponentHeroData = [
         <Hero03 />
       </div>
     ),
-    code: '',
+    code: Hero03Code,
     usage: '',
   },
   {
     id: 4,
-    title: 'Product Card',
-    description: 'Une carte de produit avec une image, un titre, une description et un bouton d\'action.',
+    title: 'Section Hero 04',
+    description: '',
     category: 'UI',
     tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
     component: (
@@ -54,13 +55,13 @@ export const ComponentHeroData = [
         <Hero04 />
       </div>
     ),
-    code: '',
+    code: Hero04Code,
     usage: '',
   },
   {
-    id: 3,
-    title: 'Product Card',
-    description: 'Une carte de produit avec une image, un titre, une description et un bouton d\'action.',
+    id: 5,
+    title: 'Section Hero 05',
+    description: '',
     category: 'UI',
     tags: ['interaction', 'clickable', 'primary', 'button', 'rounded', 'colors'],
     component: (
@@ -68,7 +69,7 @@ export const ComponentHeroData = [
         <Hero05 />
       </div>
     ),
-    code: '',
+    code: Hero05Code,
     usage: '',
   },
 

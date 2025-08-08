@@ -133,7 +133,7 @@ const ContactPage = () => {
                                             id="firstName"
                                             value={formData.firstName}
                                             onChange={handleChange}
-                                            className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.firstName ? 'border-red-500' : ''}`}
+                                            className={`mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.firstName ? 'border-red-500' : ''}`}
                                         />
                                         {errors.firstName && <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>}
                                     </div>
@@ -145,7 +145,7 @@ const ContactPage = () => {
                                             id="lastName"
                                             value={formData.lastName}
                                             onChange={handleChange}
-                                            className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.lastName ? 'border-red-500' : ''}`}
+                                            className={`mt-1 block w-full rounded-md border border-gray-200 bg-gray-50 p-2 focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.lastName ? 'border-red-500' : ''}`}
                                         />
                                         {errors.lastName && <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>}
                                     </div>
@@ -159,7 +159,7 @@ const ContactPage = () => {
                                         id="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.email ? 'border-red-500' : ''}`}
+                                        className={`mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 p-2 focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.email ? 'border-red-500' : ''}`}
                                     />
                                     {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                                 </div>
@@ -172,7 +172,7 @@ const ContactPage = () => {
                                         id="company"
                                         value={formData.company}
                                         onChange={handleChange}
-                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                                        className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 p-2 focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                                     />
                                 </div>
 
@@ -184,7 +184,7 @@ const ContactPage = () => {
                                         id="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.phone ? 'border-red-500' : ''}`}
+                                        className={`mt-1 block w-full border rounded-md border-gray-300 bg-gray-50 p-2 focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.phone ? 'border-red-500' : ''}`}
                                     />
                                     {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
                                 </div>
@@ -196,7 +196,7 @@ const ContactPage = () => {
                                         id="subject"
                                         value={formData.subject}
                                         onChange={handleChange}
-                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                                        className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 p-2 focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                                     >
                                         <option value="general">General Inquiry</option>
                                         <option value="support">Technical Support</option>
@@ -213,7 +213,7 @@ const ContactPage = () => {
                                         rows={4}
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className={`mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.message ? 'border-red-500' : ''}`}
+                                        className={`mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 p-2 focus:outline-none focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${errors.message ? 'border-red-500' : ''}`}
                                     ></textarea>
                                     {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
                                 </div>
