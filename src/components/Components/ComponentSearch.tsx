@@ -1,11 +1,95 @@
 "use client"
 
 import React, { useState } from 'react';
-import { FaArrowDown } from 'react-icons/fa';
+import { FaArrowDown, FaChevronDown } from 'react-icons/fa';
 
 interface ComponentSearchProps {
   onSearch: (query: string) => void;
 }
+
+const components = [
+  {
+    category: 'Basic',
+    link: [
+      {
+        title: 'Buttons',
+        description: 'Collection de boutons personnalisables avec différents styles et variantes.',
+        href: '/component/button',
+      }
+    ]
+
+  },
+  {
+    category: 'Navigation',
+    link: [
+      {
+        title: 'Navigation',
+        description: 'Composants de navigation responsive et accessibles.',
+        href: '/component/navigation',
+      },
+    ]
+  },
+  {
+    category: 'Form',
+    link: [
+      {
+        title: 'Input Forms',
+        description: 'Composants de formulaires d\'entrée avec validation et styles personnalisés.',
+        href: '/component/input',
+      },
+      {
+        title: 'Contact Form',
+        description: 'Formulaire de contact avec validation et envoi d\'email.',
+        href: '/component/contact',
+        category: 'Form'
+      },
+    ]
+  },
+  {
+    category: 'Layout',
+    link: [
+      {
+        title: 'Cards',
+        description: 'Cartes d\'information avec des images, du texte et des actions.',
+        href: '/component/card',
+      },
+      {
+        title: 'Hero Section',
+        description: 'Section héro avec image de fond, titre et bouton d\'appel à l\'action.',
+        href: '/component/hero',
+        category: 'Layout'
+      },
+      {
+        title: 'Modals',
+        description: 'Fenêtres modales pour afficher des informations supplémentaires ou des formulaires.',
+        href: '/component/modal',
+        category: 'Layout'
+      },
+      {
+        title: 'Footer',
+        description: 'Pied de page avec des liens et des informations de contact.',
+        href: '/component/footer',
+        category: 'Layout'
+      },
+    ]
+  },
+  {
+    category: 'Data Display',
+    link: [
+      {
+        title: 'Galerie',
+        description: 'Galerie d\'images avec options de filtrage et de tri.',
+        href: '/component/gallery',
+      },
+      {
+        title: 'Accordion',
+        description: 'Composant d\'accordéon pour afficher ou masquer du contenu.',
+        href: '/component/accordion',
+      }
+    ]
+  }
+
+];
 
 export const ComponentSearch = ({ onSearch }: ComponentSearchProps) => {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
@@ -18,7 +102,7 @@ export const ComponentSearch = ({ onSearch }: ComponentSearchProps) => {
         onMouseLeave={() => setIsMegaMenuOpen(false)}
       >
         <span className='flex items-center space-x-2 rounded-lg border border-gray-200 px-4 py-3 cursor-pointer'>
-          <span>Compnent</span> <FaArrowDown />
+          <span>Compnent</span> <FaChevronDown className='w-3 h-3' />
         </span>
         {isMegaMenuOpen && (
           <div
@@ -30,38 +114,22 @@ export const ComponentSearch = ({ onSearch }: ComponentSearchProps) => {
             {/* Mega Menu Content */}
             <h3 className="text-lg font-semibold mb-4 text-gray-800">Categories</h3>
             <div className="grid grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-medium text-gray-700 mb-2">Layout</h4>
-                <ul className="space-y-1">
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Grids</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Containers</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Flexbox</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-700 mb-2">Forms</h4>
-                <ul className="space-y-1">
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Inputs</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Buttons</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Selects</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-700 mb-2">Navigation</h4>
-                <ul className="space-y-1">
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Navbars</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Sidebars</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Breadcrumbs</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-700 mb-2">UI Elements</h4>
-                <ul className="space-y-1">
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Cards</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Modals</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-blue-500">Tooltips</a></li>
-                </ul>
-              </div>
+              {
+                components.map((comp) => (
+                  <div>
+                    <h4 className="font-medium text-gray-700 mb-2">{comp.category}</h4>
+                    <ul className="space-y-1">
+                      {comp.link.map((item) => (
+                        <li key={item.href}>
+                          <a href={item.href} className="text-gray-600 hover:text-blue-500">
+                            {item.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))
+              }
             </div>
             <div className="mt-6 border-t border-gray-200 pt-4">
               <a href="#" className="text-blue-600 hover:text-blue-800 font-medium">

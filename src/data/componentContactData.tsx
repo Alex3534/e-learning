@@ -1,5 +1,6 @@
 import ContactPage from "@/components/ui/Contact/contact";
 import ContactPage02 from "@/components/ui/Contact/contact02";
+import { contactCode01, contactCode02 } from "@/components/ui/Contact/contactCode";
 
 export const ComponentContactData = [
     {
@@ -13,7 +14,7 @@ export const ComponentContactData = [
                 <ContactPage />
             </div>
         ),
-        code: '',
+        code: contactCode01,
         usage: '',
     },
     {
@@ -27,7 +28,7 @@ export const ComponentContactData = [
                 <ContactPage02 />
             </div>
         ),
-        code: '',
+        code: contactCode02,
         usage: '',
     },
 

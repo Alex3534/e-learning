@@ -76,7 +76,7 @@ const ImageGallery = () => {
                 {images.map((image) => (
                     <div
                         key={image.id}
-                        className="relative group overflow-hidden rounded-xl shadow-2xl cursor-pointer transform transition-all duration-500 hover:-translate-y-2 hover:shadow-3xl"
+                        className="relative group overflow-hidden rounded-xl cursor-pointer transform transition-all duration-500 hover:-translate-y-2"
                         onClick={() => setSelectedImage(image)}
                         onKeyDown={(e) => e.key === "Enter" && setSelectedImage(image)}
                         tabIndex={0}

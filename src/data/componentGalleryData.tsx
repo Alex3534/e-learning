@@ -1,4 +1,5 @@
 import ImageGallery from "@/components/ui/Gallery/gallery";
+import { GalleryCode01 } from "@/components/ui/Gallery/galleryCode";
 
 export const ComponentGalleryData = [
     {
@@ -12,7 +13,7 @@ export const ComponentGalleryData = [
                 <ImageGallery />
             </div>
         ),
-        code: '',
+        code: GalleryCode01,
         usage: '',
     },
 

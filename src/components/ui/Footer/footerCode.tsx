@@ -1,3 +1,6 @@
+export const footerCode03 = (`
+// app/components/footer.jsx
+
 import React from 'react';
 import Link from 'next/link';
 
@@ -45,7 +48,7 @@ const resourceLinks = [
     { href: "/support", label: "Support" },
 ];
 
-export const Footer03 = () => {
+export const Footer = () => {
     return (
         <footer className="bg-gradient-to-r from-blue-800 to-indigo-500 text-white p-8">
             <div className="container mx-auto">
@@ -138,18 +141,39 @@ export const Footer03 = () => {
             </div>
         </footer>
     );
-};
+}; 
 
-// Footer 2 - Avec colonnes d'informations
-export const Footer02 = () => {
+
+// app/page.jsx
+import React from "react";
+import { Footer } from "./components/footer";
+
+export default function Home() {
+  return (
+    <React.Fragment>
+      <Footer />
+    </React.Fragment>
+  );
+}
+
+
+
+`).trim();
+
+export const footerCode02 = (`
+   // app/components/footer.jsx
+
+import React from 'react';
+
+export const Footer = () => {
     return (
         <footer className="bg-gray-900 text-white py-12">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
-                        <h3 className="text-lg font-semibold mb-4">À propos</h3>
+                        <h3 className="text-lg font-semibold mb-4">About Us</h3>
                         <p className="text-gray-400 mb-4">
-                            Notre entreprise se consacre à fournir des solutions innovantes pour répondre aux besoins de nos clients.
+                            Our company is dedicated to providing the best services in web development, design, and digital marketing. We strive to help businesses grow and succeed in the digital world.
                         </p>
                         <div className="flex space-x-4">
                             <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -167,21 +191,21 @@ export const Footer02 = () => {
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Services</h3>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Développement web</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Design UX/UI</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Marketing digital</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Conseil stratégique</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Support technique</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Digital Marketing</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Strategic Consulting</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Technical Support</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="text-lg font-semibold mb-4">Liens utiles</h3>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Carrières</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
                             <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                         </ul>
                     </div>
@@ -194,7 +218,7 @@ export const Footer02 = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                <span>123 Avenue des Affaires, 75001 Paris, France</span>
+                                <span>122 Rue de la Paix, 75002 Paris, France</span>
                             </li>
                             <li className="flex items-start">
                                 <svg className="w-5 h-5 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -215,12 +239,12 @@ export const Footer02 = () => {
                 <hr className="my-8 border-gray-800" />
 
                 <div className="flex flex-col md:flex-row justify-between items-center">
-                    <p className="text-sm text-gray-400">© 2023 Entreprise SAS. Tous droits réservés.</p>
+                    <p className="text-sm text-gray-400">© 2023 Horizon écrit. Tous droits réservés.</p>
                     <div className="mt-4 md:mt-0">
                         <ul className="flex flex-wrap space-x-4">
-                            <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
-                            <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a></li>
-                            <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Mentions légales</a></li>
+                            <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy policy</a></li>
+                            <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of service</a></li>
+                            <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Legal notice</a></li>
                         </ul>
                     </div>
                 </div>
@@ -228,3 +252,17 @@ export const Footer02 = () => {
         </footer>
     );
 };
+
+// app/page.jsx
+import React from "react";
+import { Footer } from "./components/footer";
+
+export default function Home() {
+  return (
+    <React.Fragment>
+      <Footer />
+    </React.Fragment>
+  );
+}
+ 
+`).trim();

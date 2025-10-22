@@ -1,4 +1,5 @@
 import ModalExample from "@/components/ui/Modal/modal";
+import { modalCode } from "@/components/ui/Modal/modalCode";
 
 export const ComponentModaltData = [
     {
@@ -12,7 +13,7 @@ export const ComponentModaltData = [
                 <ModalExample />
             </div>
         ),
-        code: '',
+        code: modalCode,
         usage: '',
     },
 

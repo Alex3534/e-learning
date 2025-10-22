@@ -5,26 +5,22 @@ import { ComponentDemo } from '@/components/Components/componentDemo';
 import { ComponentSearch } from '@/components/Components/ComponentSearch';
 import { Breadcrumb } from '@/components/Common/Breadcrumb';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ComponentNavigation } from '@/components/Components/ComponentNavigation';import { ComponentGalleryData } from '@/data/componentGalleryData';
+import { ComponentAccordionData } from '@/data/componentAccordionData';
 
-export default function ComponentGalleryPage() {
+export default function ComponentButtonPage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('Tous');
 
     const breadcrumbItems = [
-        {
-            label: 'Documentation',
-            path: '/documentation',
-        },
         {
             label: 'Composants',
             path: '/component',
         },
     ];
 
-    const filteredComponents = ComponentGalleryData.filter((component) => {
+    const filteredComponents = ComponentAccordionData.filter((component) => {
         const matchesSearch = component.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            component.description.toLowerCase().includes(searchQuery.toLowerCase());
+            (component.description ?? '').toLowerCase().includes(searchQuery.toLowerCase());
         const matchesCategory = selectedCategory === 'Tous' || component.category === selectedCategory;
         return matchesSearch && matchesCategory;
     });
@@ -32,7 +28,7 @@ export default function ComponentGalleryPage() {
     return (
         <>
             <Breadcrumb
-                className={"mt-20"}
+                className={"mt-[150px]"}
                 items={breadcrumbItems}
                 pageName="Bibliothèque de composants"
                 description="Explorez notre collection de composants réutilisables pour construire des interfaces modernes."
@@ -42,7 +38,6 @@ export default function ComponentGalleryPage() {
 
             <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 py-10">
                 <div className="flex flex-col lg:flex-row gap-8">
-
                     <div className="lg:w-full">
                         <div className="prose dark:prose-invert max-w-none mb-8">
                             <h1>Bibliothèque de composants</h1>
@@ -72,7 +67,7 @@ export default function ComponentGalleryPage() {
                                         <ComponentDemo
                                             componentClassname=''
                                             title={component.title}
-                                            description={component.description}
+                                            description={component.description || ''}
                                             component={component.component}
                                             code={component.code || ''}
                                         />
