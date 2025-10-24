@@ -16,6 +16,10 @@ export default function ComponentButtonPage() {
             label: 'Composants',
             path: '/component',
         },
+        {
+            label: 'Cards',
+            path: '/component/card',
+        },
     ];
 
     const filteredComponents = ComponentCardData.filter((component) => {
@@ -28,24 +32,15 @@ export default function ComponentButtonPage() {
     return (
         <>
             <Breadcrumb
-                className={"mt-[150px]"}
                 items={breadcrumbItems}
                 pageName="Bibliothèque de composants"
                 description="Explorez notre collection de composants réutilisables pour construire des interfaces modernes."
-                showBackground={true}
                 textWhite={false}
             />
 
             <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 py-10">
                 <div className="flex flex-col lg:flex-row gap-8">
                     <div className="lg:w-full">
-                        <div className="prose dark:prose-invert max-w-none mb-8">
-                            <h1>Bibliothèque de composants</h1>
-                            <p>
-                                Explorez notre collection de composants réutilisables pour
-                                construire des interfaces utilisateur modernes et accessibles.
-                            </p>
-                        </div>
 
                         <ComponentSearch
                             onSearch={setSearchQuery}

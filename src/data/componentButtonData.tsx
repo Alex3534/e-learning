@@ -11,6 +11,7 @@ import { ConnectWithMetaMask, DownloadButton, EditButton, SignInWithApple, SignI
 import React from 'react';
 import { ButtonDuotoneCode, ButtonDuotoneOutlineCode } from '@/components/ui/Button/buttonGradientCode';
 import { ComponentItem } from '@/types/component';
+import { ButtonWithIconCode } from '@/components/ui/Button/buttonWithIconCode';
 
 
 export const ButtonComponents: ComponentItem[] = [
@@ -193,7 +194,7 @@ export const ButtonComponents: ComponentItem[] = [
         <SearchButton label="Rechercher" /> */}
       </div>
     ),
-    code: '', // Tu pourras ajouter le code ici si nécessaire
+    code: ButtonWithIconCode,
     usage: 'Utilisez ces boutons pour les actions principales accompagnées d’icônes afin d’améliorer la compréhension visuelle des fonctionnalités dans votre interface.',
   }
 

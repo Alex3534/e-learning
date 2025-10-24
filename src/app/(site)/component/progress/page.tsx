@@ -33,11 +33,9 @@ export default function ComponentTooltipPage() {
     return (
         <>
             <Breadcrumb
-                className={"mt-20"}
                 items={breadcrumbItems}
                 pageName="Bibliothèque de composants"
                 description="Explorez notre collection de composants réutilisables pour construire des interfaces modernes."
-                showBackground={true}
                 textWhite={false}
             />
 
@@ -45,13 +43,6 @@ export default function ComponentTooltipPage() {
                 <div className="flex flex-col lg:flex-row gap-8">
 
                     <div className="lg:w-full">
-                        <div className="prose dark:prose-invert max-w-none mb-8">
-                            <h1>Bibliothèque de composants</h1>
-                            <p>
-                                Explorez notre collection de composants réutilisables pour
-                                construire des interfaces utilisateur modernes et accessibles.
-                            </p>
-                        </div>
 
                         <ComponentSearch
                             onSearch={setSearchQuery}

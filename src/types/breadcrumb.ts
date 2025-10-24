@@ -8,7 +8,6 @@ export interface BreadcrumbProps {
   items?: BreadcrumbItem[];
   pageName: string;
   description?: string;
-  showBackground?: boolean;
   textWhite?: boolean;
   className?: string;
 }

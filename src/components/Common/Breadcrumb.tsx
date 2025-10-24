@@ -7,7 +7,6 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   items = [],
   pageName,
   description,
-  showBackground = true,
   textWhite = false,
   className = ''
 }) => {
@@ -40,11 +39,6 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
       path: '/',
     },
     ...items,
-    {
-      label: pageName,
-      path: '#',
-      isActive: true,
-    },
   ];
 
   return (
@@ -52,11 +46,8 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`relative ${showBackground ? 'py-8 md:py-12 lg:py-16' : 'py-4'} ${className}`}
+      className={`relative py-14 ${className} mt-[100px] bg-blue-100`}
     >
-      {showBackground && (
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-10" />
-      )}
 
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
@@ -88,29 +79,29 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
             {defaultItems.map((item, index) => (
               <React.Fragment key={item.path}>
                 {index > 0 && (
-                  <ChevronRightIcon 
+                  <ChevronRightIcon
                     className={`w-4 h-4 mx-2
                       ${textWhite ? 'text-white/60' : 'text-gray-400 dark:text-gray-500'}`}
                   />
                 )}
-                
+
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center"
                 >
                   {index === 0 && (
-                    <HomeIcon 
+                    <HomeIcon
                       className={`w-4 h-4 mr-1
                         ${textWhite ? 'text-white' : 'text-gray-600 dark:text-gray-300'}`}
                     />
                   )}
-                  
+
                   {item.isActive ? (
                     <span
                       className={`font-medium
-                        ${textWhite 
-                          ? 'text-white' 
+                        ${textWhite
+                          ? 'text-white'
                           : 'text-blue-600 dark:text-blue-400'}`}
                     >
                       {item.label}
@@ -119,8 +110,8 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                     <Link
                       href={item.path}
                       className={`hover:underline transition-colors
-                        ${textWhite 
-                          ? 'text-white/80 hover:text-white' 
+                        ${textWhite
+                          ? 'text-white/80 hover:text-white'
                           : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'}`}
                     >
                       {item.label}

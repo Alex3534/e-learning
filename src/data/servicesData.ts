@@ -4,43 +4,56 @@ export interface Service {
   description: string;
   icon: string;
   features: string[];
+  language?: string[] ;
 }
 
 export const servicesData: Service[] = [
   {
-    id: "web-writing",
-    title: "Rédaction Web",
-    description: "Création de contenus optimisés SEO pour votre présence en ligne",
+    id: "1",
+    title: "Refonte de site web",
+    description: "Donnez une nouvelle vie à votre site",
     icon: "fluent:document-text-24-regular",
     features: [
-      "Articles de blog optimisés SEO",
-      "Contenus pour réseaux sociaux",
-      "Descriptions de produits",
-      "Newsletters et emails"
+      "Modernisation du design et de l’expérience utilisateur",
+      "Optimisation des performances et du SEO",
+      "Adaptation aux nouveaux standards du web",
+      "Intégration responsive (mobile, tablette, desktop)",
+      "Intégration de fonctionnalités dynamiques (API, formulaires, bases de données)"
     ]
   },
   {
-    id: "content-strategy",
-    title: "Stratégie de Contenu",
-    description: "Développement de stratégies de contenu personnalisées",
+    id: "2",
+    title: "Création de site web",
+    description: "Du concept à la mise en ligne, nous construisons un site moderne et efficace",
     icon: "fluent:target-24-regular",
     features: [
-      "Analyse de votre audience",
-      "Planification éditoriale",
-      "Stratégie de mots-clés",
-      "Suivi des performances"
+      "Conception visuelle sur mesure",
+      "Développement avec Next.js, TailwindCSS",
+      "Autres: HTML, Css, Javascript, Node.js, PHP, Laravel, MySql",
+      "Intégration de fonctionnalités dynamiques (API, formulaires, bases de données)",
+      "Suivi des performances",
+    ],
+    language: [
+      "Next.js",
+      "TailwindCSS",
+      "Node.js",
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Laravel",
+      "PHP",
     ]
   },
   {
-    id: "ecommerce",
-    title: "E-commerce",
-    description: "Solutions complètes pour votre boutique en ligne",
+    id: "3",
+    title: "Rédaction web",
+    description: "Des mots qui captivent, informent et convertissent",
     icon: "fluent:cart-24-regular",
     features: [
-      "Optimisation des fiches produits",
-      "Stratégie de conversion",
-      "Email marketing",
-      "Analyse des performances"
+      "Articles de blog optimisés SEO",
+      "Textes de présentation et storytelling de marque",
+      "Ton adapté à votre audience",
+      "Fiches produits et contenus marketing"
     ]
   },
   {
